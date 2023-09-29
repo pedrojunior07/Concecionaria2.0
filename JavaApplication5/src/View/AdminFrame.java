@@ -404,6 +404,7 @@ int y = evt.getYOnScreen();
   content.add(p1, BorderLayout.CENTER );
   content.revalidate();
   content.repaint();
+        System.out.print("git hub joba");
 
     }//GEN-LAST:event_btgsatffMouseClicked
 
