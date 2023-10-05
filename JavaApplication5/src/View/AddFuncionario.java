@@ -8,12 +8,12 @@ package View;
  *
  * @author Pedro
  */
-public class VisaoGeral extends javax.swing.JPanel {
+public class AddFuncionario extends javax.swing.JPanel {
 
     /**
-     * Creates new form VisaoGeral
+     * Creates new form AddFuncionario
      */
-    public VisaoGeral() {
+    public AddFuncionario() {
         initComponents();
     }
 

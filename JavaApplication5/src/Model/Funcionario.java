@@ -4,16 +4,37 @@
  */
 package Model;
 
+import java.util.Calendar;
+
 /**
  *
  * @author Pedro
  */
 public abstract class Funcionario {
     private String nome, apelido, naturalidade, identidade, estadocivil;
-    private int idade, anoNascimento, diaNascimento, mesNascimento, diaDoContrato,mesContrato,anoContrato;
+    private int idade;
+    private Calendar dataDeNascimento, dataDoContrato;
     private double salario;
     private boolean estado,acessoNivel1, acessoNivel2, acessoNivel3;
 
+    public Calendar getDataDeNascimento() {
+        return dataDeNascimento;
+    }
+
+    public void setDataDeNascimento(Calendar dataDeNascimento) {
+        this.dataDeNascimento = dataDeNascimento;
+    }
+
+    public Calendar getDataDoContrato() {
+        return dataDoContrato;
+    }
+
+    public void setDataDoContrato(Calendar dataDoContrato) {
+        this.dataDoContrato = dataDoContrato;
+    }
+
+    
+    
     public String getNome() {
         return nome;
     }
@@ -61,55 +82,6 @@ public abstract class Funcionario {
     public void setIdade(int idade) {
         this.idade = idade;
     }
-
-    public int getAnoNascimento() {
-        return anoNascimento;
-    }
-
-    public void setAnoNascimento(int anoNascimento) {
-        this.anoNascimento = anoNascimento;
-    }
-
-    public int getDiaNascimento() {
-        return diaNascimento;
-    }
-
-    public void setDiaNascimento(int diaNascimento) {
-        this.diaNascimento = diaNascimento;
-    }
-
-    public int getMesNascimento() {
-        return mesNascimento;
-    }
-
-    public void setMesNascimento(int mesNascimento) {
-        this.mesNascimento = mesNascimento;
-    }
-
-    public int getDiaDoContrato() {
-        return diaDoContrato;
-    }
-
-    public void setDiaDoContrato(int diaDoContrato) {
-        this.diaDoContrato = diaDoContrato;
-    }
-
-    public int getMesContrato() {
-        return mesContrato;
-    }
-
-    public void setMesContrato(int mesContrato) {
-        this.mesContrato = mesContrato;
-    }
-
-    public int getAnoContrato() {
-        return anoContrato;
-    }
-
-    public void setAnoContrato(int anoContrato) {
-        this.anoContrato = anoContrato;
-    }
-
     public boolean isEstado() {
         return estado;
     }

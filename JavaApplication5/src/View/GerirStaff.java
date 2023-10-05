@@ -28,29 +28,25 @@ public class GerirStaff extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
         BtAdd = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        btDetalhesFunc = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        btLisFunc = new javax.swing.JPanel();
+        btFunDem = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-
-        jLabel1.setText("jLabel1");
 
         setBackground(new java.awt.Color(51, 65, 130));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel5.setBackground(new java.awt.Color(51, 65, 130));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BtAdd.setBackground(new java.awt.Color(51, 65, 130));
         BtAdd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -61,145 +57,89 @@ public class GerirStaff extends javax.swing.JPanel {
                 BtAddMouseExited(evt);
             }
         });
+        BtAdd.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/peoplecc.png"))); // NOI18N
-
-        javax.swing.GroupLayout BtAddLayout = new javax.swing.GroupLayout(BtAdd);
-        BtAdd.setLayout(BtAddLayout);
-        BtAddLayout.setHorizontalGroup(
-            BtAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BtAddLayout.createSequentialGroup()
-                .addComponent(jLabel6)
-                .addGap(0, 12, Short.MAX_VALUE))
-        );
-        BtAddLayout.setVerticalGroup(
-            BtAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BtAddLayout.createSequentialGroup()
-                .addComponent(jLabel6)
-                .addGap(0, 10, Short.MAX_VALUE))
-        );
-
-        add(BtAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 387, -1, 110));
-
-        jPanel3.setBackground(new java.awt.Color(51, 65, 130));
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/user (2).png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel9))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel9)
-                .addGap(0, 10, Short.MAX_VALUE))
-        );
-
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 387, -1, 110));
-
-        jPanel4.setBackground(new java.awt.Color(51, 65, 130));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/group.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel12))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
-        );
-
-        add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(475, 387, -1, 110));
-
-        jPanel6.setBackground(new java.awt.Color(51, 65, 130));
-        jPanel6.setAutoscrolls(true);
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/id-card.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 28, Short.MAX_VALUE))
-        );
-
-        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 387, -1, 110));
-
-        jLabel3.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
-        jLabel3.setText("Um Funciorio");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 520, -1, -1));
+        BtAdd.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 130, -1));
 
         jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
-        jLabel4.setText("Funcionario");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, -1, -1));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Adicionar ");
+        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtAdd.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 130, -1));
 
-        jLabel5.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
-        jLabel5.setText("Adicionar");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, -1, -1));
+        jPanel5.add(BtAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, -1));
+
+        btDetalhesFunc.setBackground(new java.awt.Color(51, 65, 130));
+        btDetalhesFunc.setAutoscrolls(true);
+        btDetalhesFunc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btDetalhesFuncMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btDetalhesFuncMouseExited(evt);
+            }
+        });
+        btDetalhesFunc.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/id-card.png"))); // NOI18N
+        btDetalhesFunc.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 120, 90));
+
+        jLabel3.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Detalhes de Um Funciorio");
+        btDetalhesFunc.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 206, -1));
+
+        jPanel5.add(btDetalhesFunc, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, 200, -1));
+
+        btLisFunc.setBackground(new java.awt.Color(51, 65, 130));
+        btLisFunc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btLisFuncMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btLisFuncMouseExited(evt);
+            }
+        });
+        btLisFunc.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel5.add(btLisFunc, new org.netbeans.lib.awtextra.AbsoluteConstraints(564, -320, 110, 270));
+
+        btFunDem.setBackground(new java.awt.Color(51, 65, 130));
+        btFunDem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btFunDemMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btFunDemMouseExited(evt);
+            }
+        });
+        btFunDem.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/user (2).png"))); // NOI18N
+        jLabel9.setFocusTraversalPolicyProvider(true);
+        jLabel9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btFunDem.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, -1));
 
         jLabel7.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
-        jLabel7.setText("Demitidos");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 520, -1, -1));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Listar  Demitidos");
+        btFunDem.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 120, -1));
 
-        jLabel10.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
-        jLabel10.setText("Detalhes de");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 500, -1, -1));
+        jPanel5.add(btFunDem, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, -10, 140, -1));
+
+        add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 340, 810, -1));
+
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/group.png"))); // NOI18N
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 130, -1));
 
         jLabel11.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
-        jLabel11.setText("Listar  Funcionarios");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 500, -1, 20));
-
-        jLabel13.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
-        jLabel13.setText("Listar  Funcionarios");
-        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 500, -1, 20));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 620, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 620, -1));
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 620, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 620, -1));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Listar  Activos");
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 230, 20));
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtAddMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtAddMouseEntered
@@ -212,25 +152,45 @@ BtAdd.setBackground(Color.gray);
 BtAdd.setBackground(this.getBackground());        // TODO add your handling code here:
     }//GEN-LAST:event_BtAddMouseExited
 
+    private void btDetalhesFuncMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btDetalhesFuncMouseEntered
+        btDetalhesFunc.setBackground(Color.gray);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btDetalhesFuncMouseEntered
+
+    private void btDetalhesFuncMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btDetalhesFuncMouseExited
+      btDetalhesFunc.setBackground(getBackground());
+    }//GEN-LAST:event_btDetalhesFuncMouseExited
+
+    private void btFunDemMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btFunDemMouseEntered
+     btFunDem.setBackground(Color.gray);
+    }//GEN-LAST:event_btFunDemMouseEntered
+
+    private void btLisFuncMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btLisFuncMouseEntered
+       btLisFunc.setBackground(Color.gray);
+    }//GEN-LAST:event_btLisFuncMouseEntered
+
+    private void btLisFuncMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btLisFuncMouseExited
+btLisFunc.setBackground(getBackground());        // TODO add your handling code here:
+    }//GEN-LAST:event_btLisFuncMouseExited
+
+    private void btFunDemMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btFunDemMouseExited
+btFunDem.setBackground(getBackground());    // TODO add your handling code here:
+    }//GEN-LAST:event_btFunDemMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BtAdd;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
+    private javax.swing.JPanel btDetalhesFunc;
+    private javax.swing.JPanel btFunDem;
+    private javax.swing.JPanel btLisFunc;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     // End of variables declaration//GEN-END:variables
 }

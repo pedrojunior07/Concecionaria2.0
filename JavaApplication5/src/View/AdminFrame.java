@@ -32,19 +32,20 @@ int xMouse, yMouse;
         admNome = new javax.swing.JLabel();
         adminl = new javax.swing.JLabel();
         admNome1 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        menuContent = new javax.swing.JPanel();
         btgsatff = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btVG = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        btR = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        label = new javax.swing.JLabel();
         btGDB = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        btR = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        label = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         button1 = new com.pedro.swing.win_button.Button();
         button2 = new com.pedro.swing.win_button.Button();
@@ -53,8 +54,10 @@ int xMouse, yMouse;
         content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
         setLocationByPlatform(true);
         setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -82,6 +85,12 @@ int xMouse, yMouse;
         admNome1.setForeground(new java.awt.Color(255, 255, 255));
         admNome1.setText("Pedro Manjate");
         painelMenu.add(admNome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 100, 20));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/user.png"))); // NOI18N
+        painelMenu.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 130, 140));
+
+        menuContent.setBackground(new java.awt.Color(51, 65, 130));
+        menuContent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btgsatff.setBackground(new java.awt.Color(49, 63, 128));
         btgsatff.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -111,7 +120,7 @@ int xMouse, yMouse;
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         btgsatffLayout.setVerticalGroup(
             btgsatffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,7 +132,7 @@ int xMouse, yMouse;
                 .addContainerGap())
         );
 
-        painelMenu.add(btgsatff, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 230, 40));
+        menuContent.add(btgsatff, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 180, 40));
 
         btVG.setBackground(new java.awt.Color(51, 65, 130));
         btVG.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -153,18 +162,60 @@ int xMouse, yMouse;
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         btVGLayout.setVerticalGroup(
             btVGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btVGLayout.createSequentialGroup()
-                .addGroup(btVGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(0, 14, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(8, Short.MAX_VALUE))
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        painelMenu.add(btVG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 230, 40));
+        menuContent.add(btVG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 180, 40));
+
+        btGDB.setBackground(new java.awt.Color(51, 65, 130));
+        btGDB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btGDBMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btGDBMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btGDBMouseExited(evt);
+            }
+        });
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/3.png"))); // NOI18N
+
+        jLabel8.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel8.setText("Gerir Base Dados");
+
+        javax.swing.GroupLayout btGDBLayout = new javax.swing.GroupLayout(btGDB);
+        btGDB.setLayout(btGDBLayout);
+        btGDBLayout.setHorizontalGroup(
+            btGDBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btGDBLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
+        );
+        btGDBLayout.setVerticalGroup(
+            btGDBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btGDBLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(btGDBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        menuContent.add(btGDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 180, -1));
 
         btR.setBackground(new java.awt.Color(51, 65, 130));
         btR.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -194,7 +245,7 @@ int xMouse, yMouse;
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(label, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         btRLayout.setVerticalGroup(
             btRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,54 +257,11 @@ int xMouse, yMouse;
                 .addContainerGap())
         );
 
-        painelMenu.add(btR, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, -1, -1));
+        menuContent.add(btR, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 180, 40));
 
-        btGDB.setBackground(new java.awt.Color(51, 65, 130));
-        btGDB.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btGDBMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btGDBMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btGDBMouseExited(evt);
-            }
-        });
+        painelMenu.add(menuContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 180, 310));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/3.png"))); // NOI18N
-
-        jLabel8.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel8.setText("Gerir Base Dados");
-
-        javax.swing.GroupLayout btGDBLayout = new javax.swing.GroupLayout(btGDB);
-        btGDB.setLayout(btGDBLayout);
-        btGDBLayout.setHorizontalGroup(
-            btGDBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btGDBLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
-        );
-        btGDBLayout.setVerticalGroup(
-            btGDBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btGDBLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(btGDBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-
-        painelMenu.add(btGDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, -1, -1));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/user.png"))); // NOI18N
-        painelMenu.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 130, 140));
-
-        jPanel1.add(painelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 230, 540));
+        jPanel1.add(painelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 230, 620));
 
         jPanel3.setBackground(new java.awt.Color(51, 65, 130));
         jPanel3.setForeground(new java.awt.Color(255, 0, 0));
@@ -294,7 +302,7 @@ int xMouse, yMouse;
                 buttonBadges1ActionPerformed(evt);
             }
         });
-        jPanel3.add(buttonBadges1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 0, 30, 40));
+        jPanel3.add(buttonBadges1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 0, 70, 40));
 
         buttonBadges2.setBackground(new java.awt.Color(51, 65, 130));
         buttonBadges2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/noti.png"))); // NOI18N
@@ -303,9 +311,9 @@ int xMouse, yMouse;
                 buttonBadges2ActionPerformed(evt);
             }
         });
-        jPanel3.add(buttonBadges2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 30, 40));
+        jPanel3.add(buttonBadges2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 0, 50, 40));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 40));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, -1));
 
         content.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -313,177 +321,170 @@ int xMouse, yMouse;
         content.setLayout(contentLayout);
         contentLayout.setHorizontalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 540, Short.MAX_VALUE)
+            .addGap(0, 620, Short.MAX_VALUE)
         );
 
-        jPanel1.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 630, 540));
+        jPanel1.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 1000, 620));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 580));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void adminlMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminlMouseEntered
-
-    }//GEN-LAST:event_adminlMouseEntered
-
-    private void btgsatffMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btgsatffMouseEntered
-
-        btgsatff.setBackground(Color.BLACK);
-       // btgsatff.setBackground(new Color(51,65,130));// TODO add your handling code here:
-         btVG.setBackground(painelMenu.getBackground());
-  btGDB.setBackground(painelMenu.getBackground()); 
-  btR.setBackground(painelMenu.getBackground()); 
-
-    }//GEN-LAST:event_btgsatffMouseEntered
-
-    private void buttonBadges1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBadges1ActionPerformed
-      
-          mess p1 = new mess();
-  p1.setSize(630,540);
-  p1.setLocation(0,0);
-  content.removeAll();
-  content.add(p1, BorderLayout.CENTER );
-  content.revalidate();
-  content.repaint();  
-    }//GEN-LAST:event_buttonBadges1ActionPerformed
-
-    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-System.exit(0);
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button1ActionPerformed
-
-    private void btVGMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btVGMouseEntered
-btVG.setBackground(Color.black);
-        // TODO add your handling code here:
-         btgsatff.setBackground(painelMenu.getBackground());
- // btVG.setBackground(painelMenu.getBackground());
-  btGDB.setBackground(painelMenu.getBackground()); 
-  btR.setBackground(painelMenu.getBackground()); 
-    }//GEN-LAST:event_btVGMouseEntered
-
-    private void btGDBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btGDBMouseEntered
-btGDB.setBackground(Color.black);   
- btgsatff.setBackground(painelMenu.getBackground());
-  btVG.setBackground(painelMenu.getBackground());
- // btGDB.setBackground(painelMenu.getBackground()); 
-  btR.setBackground(painelMenu.getBackground()); // TODO add your handling code here:
-    }//GEN-LAST:event_btGDBMouseEntered
-
-    private void btRMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btRMouseEntered
-btR.setBackground(Color.black);     
- btgsatff.setBackground(painelMenu.getBackground());
-  btVG.setBackground(painelMenu.getBackground());
-  btGDB.setBackground(painelMenu.getBackground()); 
-//  btR.setBackground(painelMenu.getBackground()); // TODO add your handling code here:
-    }//GEN-LAST:event_btRMouseEntered
-
     private void jPanel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MousePressed
-xMouse = evt.getX();
-yMouse = evt.getY();
-
+        xMouse = evt.getX();
+        yMouse = evt.getY();
     }//GEN-LAST:event_jPanel3MousePressed
 
     private void jPanel3MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseDragged
-int x = evt.getXOnScreen();
-int y = evt.getYOnScreen();
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
         this.setLocation(x-xMouse, y-yMouse);        // TODO add your handling code here:
     }//GEN-LAST:event_jPanel3MouseDragged
 
-    private void btgsatffMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btgsatffMouseClicked
-        // TODO add your handling code here:
-          GerirStaff p1 = new GerirStaff();
-  p1.setSize(630,540);
-  p1.setLocation(0,0);
-  content.removeAll();
-  content.add(p1, BorderLayout.CENTER );
-  content.revalidate();
-  content.repaint();
-        System.out.print("git hub joba");
+    private void buttonBadges2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBadges2ActionPerformed
 
-    }//GEN-LAST:event_btgsatffMouseClicked
+        noti p1 = new noti();
+        p1.setSize(1000, 620);
+        p1.setLocation(0,0);
+        content.removeAll();
+        content.add(p1, BorderLayout.CENTER );
+        content.revalidate();
+        content.repaint();
+    }//GEN-LAST:event_buttonBadges2ActionPerformed
 
-    private void btVGMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btVGMouseClicked
-    VisaoGeral p1 = new VisaoGeral();
-  p1.setSize(630,540);
-  p1.setLocation(0,0);
-  content.removeAll();
-  content.add(p1, BorderLayout.CENTER );
-  content.revalidate();
-  content.repaint();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btVGMouseClicked
+    private void buttonBadges1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBadges1ActionPerformed
 
-    private void btGDBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btGDBMouseClicked
-    GerirBaseDados p1 = new GerirBaseDados();
-  p1.setSize(630,540);
-  p1.setLocation(0,0);
-  content.removeAll();
-  content.add(p1, BorderLayout.CENTER );
-  content.revalidate();
-  content.repaint();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btGDBMouseClicked
-
-    private void btRMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btRMouseClicked
-        // TODO add your handling code here:
-        // TODO add your handling code here:
-                // TODO add your handling code here:
-    Relatorios p1 = new Relatorios();
-  p1.setSize(630,540);
-  p1.setLocation(0,0);
-  content.removeAll();
-  content.add(p1, BorderLayout.CENTER );
-  content.revalidate();
-  content.repaint();
-   
-    }//GEN-LAST:event_btRMouseClicked
+        mess p1 = new mess();
+        p1.setSize(1000, 620);
+        p1.setLocation(0,0);
+        content.removeAll();
+        content.add(p1, BorderLayout.CENTER );
+        content.revalidate();
+        content.repaint();
+    }//GEN-LAST:event_buttonBadges1ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-       this.setState( ICONIFIED);
+        this.setState( ICONIFIED);
     }//GEN-LAST:event_button2ActionPerformed
 
-    private void btgsatffMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btgsatffMouseExited
- 
- btgsatff.setBackground(painelMenu.getBackground());
-   
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        System.exit(0);
 
-    }//GEN-LAST:event_btgsatffMouseExited
-
-    private void btVGMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btVGMouseExited
-
-  btVG.setBackground(painelMenu.getBackground());
- 
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btVGMouseExited
+    
+    }//GEN-LAST:event_button1ActionPerformed
 
     private void btGDBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btGDBMouseExited
 
-  btGDB.setBackground(painelMenu.getBackground()); 
+        btGDB.setBackground(painelMenu.getBackground());
         // TODO add your handling code here:
     }//GEN-LAST:event_btGDBMouseExited
 
+    private void btGDBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btGDBMouseEntered
+        btGDB.setBackground(Color.black);
+        btgsatff.setBackground(painelMenu.getBackground());
+        btVG.setBackground(painelMenu.getBackground());
+        // btGDB.setBackground(painelMenu.getBackground());
+        btR.setBackground(painelMenu.getBackground()); // TODO add your handling code here:
+    }//GEN-LAST:event_btGDBMouseEntered
+
+    private void btGDBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btGDBMouseClicked
+        GerirBaseDados p1 = new GerirBaseDados();
+        p1.setSize(1000, 620);
+        p1.setLocation(0,0);
+        content.removeAll();
+        content.add(p1, BorderLayout.CENTER );
+        content.revalidate();
+        content.repaint();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btGDBMouseClicked
+
     private void btRMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btRMouseExited
-btR.setBackground(painelMenu.getBackground());     
+        btR.setBackground(painelMenu.getBackground());
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btRMouseExited
 
-    private void buttonBadges2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBadges2ActionPerformed
-  
-          noti p1 = new noti();
-  p1.setSize(630,540);
-  p1.setLocation(0,0);
-  content.removeAll();
-  content.add(p1, BorderLayout.CENTER );
-  content.revalidate();
-  content.repaint();  
-    }//GEN-LAST:event_buttonBadges2ActionPerformed
+    private void btRMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btRMouseEntered
+        btR.setBackground(Color.black);
+        btgsatff.setBackground(painelMenu.getBackground());
+        btVG.setBackground(painelMenu.getBackground());
+        btGDB.setBackground(painelMenu.getBackground());
+        //  btR.setBackground(painelMenu.getBackground()); // TODO add your handling code here:
+    }//GEN-LAST:event_btRMouseEntered
+
+    private void btRMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btRMouseClicked
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        Relatorios p1 = new Relatorios();
+        p1.setSize(1000, 620);
+        p1.setLocation(0,0);
+        content.removeAll();
+        content.add(p1, BorderLayout.CENTER );
+        content.revalidate();
+        content.repaint();
+    }//GEN-LAST:event_btRMouseClicked
+
+    private void btVGMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btVGMouseExited
+
+        btVG.setBackground(painelMenu.getBackground());
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btVGMouseExited
+
+    private void btVGMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btVGMouseEntered
+        btVG.setBackground(Color.black);
+        // TODO add your handling code here:
+        btgsatff.setBackground(painelMenu.getBackground());
+        // btVG.setBackground(painelMenu.getBackground());
+        btGDB.setBackground(painelMenu.getBackground());
+        btR.setBackground(painelMenu.getBackground());
+    }//GEN-LAST:event_btVGMouseEntered
+
+    private void btVGMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btVGMouseClicked
+        VisaoGeral p1 = new VisaoGeral();
+        p1.setSize(1000, 620);
+        p1.setLocation(0,0);
+        content.removeAll();
+        content.add(p1, BorderLayout.CENTER );
+        content.revalidate();
+        content.repaint();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btVGMouseClicked
+
+    private void btgsatffMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btgsatffMouseExited
+
+        btgsatff.setBackground(painelMenu.getBackground());
+    }//GEN-LAST:event_btgsatffMouseExited
+
+    private void btgsatffMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btgsatffMouseEntered
+
+        btgsatff.setBackground(Color.BLACK);
+        // btgsatff.setBackground(new Color(51,65,130));// TODO add your handling code here:
+        btVG.setBackground(painelMenu.getBackground());
+        btGDB.setBackground(painelMenu.getBackground());
+        btR.setBackground(painelMenu.getBackground());
+    }//GEN-LAST:event_btgsatffMouseEntered
+
+    private void btgsatffMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btgsatffMouseClicked
+        // TODO add your handling code here:
+        GerirStaff p1 = new GerirStaff();
+        p1.setSize(1000, 620);
+        p1.setLocation(0,0);
+        content.removeAll();
+        content.add(p1, BorderLayout.CENTER );
+        content.revalidate();
+        content.repaint();
+    }//GEN-LAST:event_btgsatffMouseClicked
+
+    private void adminlMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminlMouseEntered
+
+    }//GEN-LAST:event_adminlMouseEntered
 
     /**
      * @param args the command line arguments
@@ -544,6 +545,7 @@ btR.setBackground(painelMenu.getBackground());
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel label;
+    private javax.swing.JPanel menuContent;
     private javax.swing.JPanel painelMenu;
     // End of variables declaration//GEN-END:variables
 }
