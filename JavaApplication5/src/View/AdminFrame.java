@@ -47,10 +47,6 @@ int xMouse, yMouse;
         jLabel5 = new javax.swing.JLabel();
         label = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        button1 = new com.pedro.swing.win_button.Button();
-        button2 = new com.pedro.swing.win_button.Button();
-        buttonBadges1 = new com.pedro.swing.win_button.ButtonBadges();
-        buttonBadges2 = new com.pedro.swing.win_button.ButtonBadges();
         content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -277,42 +273,6 @@ int xMouse, yMouse;
             }
         });
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        button1.setBackground(new java.awt.Color(255, 0, 0));
-        button1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 20));
-
-        button2.setBackground(new java.awt.Color(255, 204, 0));
-        button2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 30, 20));
-
-        buttonBadges1.setBackground(new java.awt.Color(51, 65, 130));
-        buttonBadges1.setForeground(new java.awt.Color(255, 255, 255));
-        buttonBadges1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/message.png"))); // NOI18N
-        buttonBadges1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonBadges1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(buttonBadges1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 0, 70, 40));
-
-        buttonBadges2.setBackground(new java.awt.Color(51, 65, 130));
-        buttonBadges2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/noti.png"))); // NOI18N
-        buttonBadges2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonBadges2ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(buttonBadges2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 0, 50, 40));
-
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, -1));
 
         content.setBackground(new java.awt.Color(204, 255, 255));
@@ -480,6 +440,7 @@ int xMouse, yMouse;
         content.add(p1, BorderLayout.CENTER );
         content.revalidate();
         content.repaint();
+        System.out.println("GIT djoba");
     }//GEN-LAST:event_btgsatffMouseClicked
 
     private void adminlMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminlMouseEntered
@@ -529,10 +490,6 @@ int xMouse, yMouse;
     private javax.swing.JPanel btR;
     private javax.swing.JPanel btVG;
     private javax.swing.JPanel btgsatff;
-    private com.pedro.swing.win_button.Button button1;
-    private com.pedro.swing.win_button.Button button2;
-    private com.pedro.swing.win_button.ButtonBadges buttonBadges1;
-    private com.pedro.swing.win_button.ButtonBadges buttonBadges2;
     private javax.swing.JPanel content;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
