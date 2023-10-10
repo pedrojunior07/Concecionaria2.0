@@ -28,7 +28,7 @@ public class Relatorios extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(51, 65, 130));
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(630, 540));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

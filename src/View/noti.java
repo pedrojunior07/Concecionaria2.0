@@ -29,7 +29,7 @@ public class noti extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(51, 65, 130));
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/warning (3).png"))); // NOI18N
 

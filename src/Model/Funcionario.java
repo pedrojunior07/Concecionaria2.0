@@ -12,10 +12,28 @@ import java.util.Calendar;
  */
 public abstract class Funcionario {
     private String nome, apelido, naturalidade, identidade, estadocivil, especialidade;
-    private int idade;
+    private int idade, Id;
     private Calendar dataDeNascimento, dataDoContrato;
     private double salario;
     private boolean estado,acessoNivel1, acessoNivel2, acessoNivel3;
+
+    public String getEspecialidade() {
+        return especialidade;
+    }
+
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int Id) {
+        this.Id = Id;
+    }
+    
+    
 
     public Calendar getDataDeNascimento() {
         return dataDeNascimento;

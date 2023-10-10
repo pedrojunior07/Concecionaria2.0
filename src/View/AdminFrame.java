@@ -277,7 +277,7 @@ int xMouse, yMouse;
 
         content.setBackground(new java.awt.Color(204, 255, 255));
         content.setLayout(new java.awt.BorderLayout());
-        jPanel1.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 1000, 620));
+        jPanel1.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 1000, 620));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 660));
 
