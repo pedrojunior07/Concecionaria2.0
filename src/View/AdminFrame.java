@@ -48,6 +48,7 @@ int xMouse, yMouse;
         label = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         content = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -277,7 +278,22 @@ int xMouse, yMouse;
 
         content.setBackground(new java.awt.Color(204, 255, 255));
         content.setLayout(new java.awt.BorderLayout());
-        jPanel1.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 1000, 620));
+        jPanel1.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 1000, 620));
+
+        jPanel2.setBackground(new java.awt.Color(51, 65, 130));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1230, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 660));
 
@@ -489,6 +505,7 @@ int xMouse, yMouse;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel label;
     private javax.swing.JPanel menuContent;

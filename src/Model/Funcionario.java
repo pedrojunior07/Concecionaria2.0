@@ -11,12 +11,38 @@ import java.util.Calendar;
  * @author Pedro
  */
 public abstract class Funcionario {
-    private String nome, apelido, naturalidade, identidade, estadocivil, especialidade;
-    private int idade, Id;
+    private String nome,sexo, apelido, naturalidade, identidade, estadocivil, especialidade, eMail;
+    private int idade, Id, telefone;
     private Calendar dataDeNascimento, dataDoContrato;
     private double salario;
     private boolean estado,acessoNivel1, acessoNivel2, acessoNivel3;
 
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String geteMail() {
+        return eMail;
+    }
+
+    public void seteMail(String eMail) {
+        this.eMail = eMail;
+    }
+
+    public int getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(int telefone) {
+        this.telefone = telefone;
+    }
+
+    
+    
     public String getEspecialidade() {
         return especialidade;
     }

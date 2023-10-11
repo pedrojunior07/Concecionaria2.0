@@ -57,41 +57,43 @@ public class AddFuncionario extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        pECivil = new javax.swing.JPanel();
+        lECivil = new javax.swing.JLabel();
+        cECivil = new javax.swing.JComboBox<>();
         pTxEmail = new javax.swing.JPanel();
         txEmail = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        lEmail = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         pTxApelido = new javax.swing.JPanel();
         txApelido = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        lApelido = new javax.swing.JLabel();
+        pEsoecialidade = new javax.swing.JPanel();
+        lEspecialidade = new javax.swing.JLabel();
+        cEspe = new javax.swing.JComboBox<>();
+        pNacionalidade = new javax.swing.JPanel();
+        lNacionalidade = new javax.swing.JLabel();
+        cNacionalidade = new javax.swing.JComboBox<>();
         pTxNome1 = new javax.swing.JPanel();
         txnome1 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        lNome = new javax.swing.JLabel();
+        pSexo = new javax.swing.JPanel();
+        lSexo = new javax.swing.JLabel();
+        cSexo = new javax.swing.JComboBox<>();
         btGuardar = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         pTxSalario = new javax.swing.JPanel();
         txSalario1 = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        lSalario = new javax.swing.JLabel();
+        dollar = new javax.swing.JLabel();
         pTxContacto = new javax.swing.JPanel();
         txContacto = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
+        lTel = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
-        setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Adicionar Funcionario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto Medium", 0, 18))); // NOI18N
+        setBackground(new java.awt.Color(153, 204, 255));
+        setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Adicionar Funcionario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto Medium", 0, 18))); // NOI18N
+        setForeground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -99,21 +101,29 @@ public class AddFuncionario extends javax.swing.JPanel {
         jLabel3.setToolTipText("");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, 30));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pECivil.setBackground(new java.awt.Color(255, 255, 255));
+        pECivil.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pECivil.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jLabel2.setText("Estado Civil");
-        jLabel2.setToolTipText("");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 30));
+        lECivil.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lECivil.setText("Estado Civil");
+        lECivil.setToolTipText("");
+        pECivil.add(lECivil, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 30));
 
-        jComboBox1.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Solteiro/a", "Casado/a", "Divorciado/a", "Viuvo/a" }));
-        jComboBox1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 160, 30));
+        cECivil.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        cECivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Solteiro/a", "Casado/a", "Divorciado/a", "Viuvo/a" }));
+        cECivil.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        cECivil.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cECivilFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cECivilFocusLost(evt);
+            }
+        });
+        pECivil.add(cECivil, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 160, 30));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 300, 50));
+        add(pECivil, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 300, 50));
 
         pTxEmail.setBackground(new java.awt.Color(255, 255, 255));
         pTxEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -136,10 +146,10 @@ public class AddFuncionario extends javax.swing.JPanel {
         });
         pTxEmail.add(txEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 170, 30));
 
-        jLabel4.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jLabel4.setText("E-mail :");
-        jLabel4.setToolTipText("");
-        pTxEmail.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 30));
+        lEmail.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lEmail.setText("E-mail :");
+        lEmail.setToolTipText("");
+        pTxEmail.add(lEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/gmail.png"))); // NOI18N
         pTxEmail.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, -1, 30));
@@ -167,44 +177,60 @@ public class AddFuncionario extends javax.swing.JPanel {
         });
         pTxApelido.add(txApelido, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 210, 30));
 
-        jLabel5.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jLabel5.setText("Apelido:");
-        jLabel5.setToolTipText("");
-        pTxApelido.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 30));
+        lApelido.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lApelido.setText("Apelido:");
+        lApelido.setToolTipText("");
+        pTxApelido.add(lApelido, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 30));
 
         add(pTxApelido, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 300, 50));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pEsoecialidade.setBackground(new java.awt.Color(255, 255, 255));
+        pEsoecialidade.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pEsoecialidade.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jLabel6.setText("Especialidade");
-        jLabel6.setToolTipText("");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 20));
+        lEspecialidade.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lEspecialidade.setText("Especialidade");
+        lEspecialidade.setToolTipText("");
+        pEsoecialidade.add(lEspecialidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 20));
 
-        jComboBox2.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vendedor", "Gerente", "Outro" }));
-        jComboBox2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel2.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 170, 30));
+        cEspe.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        cEspe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vendedor", "Gerente", "Outro" }));
+        cEspe.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        cEspe.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cEspeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cEspeFocusLost(evt);
+            }
+        });
+        pEsoecialidade.add(cEspe, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 170, 30));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 300, 50));
+        add(pEsoecialidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 300, 50));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pNacionalidade.setBackground(new java.awt.Color(255, 255, 255));
+        pNacionalidade.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pNacionalidade.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jLabel7.setText("Nacionalidade");
-        jLabel7.setToolTipText("");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 20));
+        lNacionalidade.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lNacionalidade.setText("Nacionalidade");
+        lNacionalidade.setToolTipText("");
+        pNacionalidade.add(lNacionalidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 20));
 
-        jComboBox3.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mocambicana", "Outra" }));
-        jComboBox3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel3.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 160, 30));
+        cNacionalidade.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        cNacionalidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mocambicana", "Outra" }));
+        cNacionalidade.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        cNacionalidade.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cNacionalidadeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cNacionalidadeFocusLost(evt);
+            }
+        });
+        pNacionalidade.add(cNacionalidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 160, 30));
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 300, 50));
+        add(pNacionalidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 300, 50));
 
         pTxNome1.setBackground(new java.awt.Color(255, 255, 255));
         pTxNome1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -222,28 +248,36 @@ public class AddFuncionario extends javax.swing.JPanel {
         });
         pTxNome1.add(txnome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 210, 30));
 
-        jLabel8.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jLabel8.setText("Nome:");
-        jLabel8.setToolTipText("");
-        pTxNome1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 30));
+        lNome.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lNome.setText("Nome:");
+        lNome.setToolTipText("");
+        pTxNome1.add(lNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, 30));
 
         add(pTxNome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 300, 50));
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pSexo.setBackground(new java.awt.Color(255, 255, 255));
+        pSexo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pSexo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel9.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jLabel9.setText("Sexo");
-        jLabel9.setToolTipText("");
-        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 30));
+        lSexo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lSexo.setText("Sexo");
+        lSexo.setToolTipText("");
+        pSexo.add(lSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 30));
 
-        jComboBox4.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Masculino", "Feminino" }));
-        jComboBox4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel4.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 220, 30));
+        cSexo.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        cSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Masculino", "Feminino" }));
+        cSexo.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        cSexo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cSexoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cSexoFocusLost(evt);
+            }
+        });
+        pSexo.add(cSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 220, 30));
 
-        add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 300, 50));
+        add(pSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 300, 50));
 
         btGuardar.setBackground(new java.awt.Color(204, 204, 204));
         btGuardar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -299,14 +333,14 @@ public class AddFuncionario extends javax.swing.JPanel {
         });
         pTxSalario.add(txSalario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 170, 30));
 
-        jLabel12.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jLabel12.setText("Salario :");
-        jLabel12.setToolTipText("");
-        pTxSalario.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 30));
+        lSalario.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lSalario.setText("Salario :");
+        lSalario.setToolTipText("");
+        pTxSalario.add(lSalario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 30));
 
-        jLabel13.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        jLabel13.setText("$");
-        pTxSalario.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 30, 30));
+        dollar.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        dollar.setText("$");
+        pTxSalario.add(dollar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 30, 30));
 
         add(pTxSalario, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, 300, 50));
 
@@ -315,7 +349,6 @@ public class AddFuncionario extends javax.swing.JPanel {
         pTxContacto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txContacto.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        txContacto.setText("+258");
         txContacto.setBorder(null);
         txContacto.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -334,16 +367,23 @@ public class AddFuncionario extends javax.swing.JPanel {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txContactoKeyPressed(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txContactoKeyTyped(evt);
+            }
         });
-        pTxContacto.add(txContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 170, 30));
+        pTxContacto.add(txContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 150, 30));
 
-        jLabel10.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jLabel10.setText("Telefone :");
-        jLabel10.setToolTipText("");
-        pTxContacto.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 30));
+        lTel.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lTel.setText("Telefone :");
+        lTel.setToolTipText("");
+        pTxContacto.add(lTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 30));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/Contacto.png"))); // NOI18N
         pTxContacto.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, -1, 30));
+
+        jLabel2.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jLabel2.setText("+258");
+        pTxContacto.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 17, -1, 20));
 
         add(pTxContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 300, 50));
     }// </editor-fold>//GEN-END:initComponents
@@ -357,10 +397,10 @@ public class AddFuncionario extends javax.swing.JPanel {
     }//GEN-LAST:event_txApelidoActionPerformed
 
     private void txEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txEmailFocusGained
-       
-        Border a=  javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(20, 0, 200));
+        lEmail.setForeground(new java.awt.Color(20, 0, 200));
+        Border a=  javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(20, 0, 200));
         txEmail.setBorder(a);
-        Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 0, 200));
+        Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 0, 200),2);
         pTxEmail.setBorder(b);
     }//GEN-LAST:event_txEmailFocusGained
 
@@ -369,12 +409,14 @@ public class AddFuncionario extends javax.swing.JPanel {
      txEmail.setBorder(null);
     Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0));
       pTxEmail.setBorder(b);
+      lEmail.setForeground(new java.awt.Color(0, 0, 00));
     }//GEN-LAST:event_txEmailFocusLost
 
     private void txApelidoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txApelidoFocusGained
-       Border a=  javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(20, 0, 200));
-        txApelido.setBorder(a);
-        Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 0, 200));
+       Border a=  javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(20, 0, 200));
+      lApelido.setForeground(new java.awt.Color(20, 0, 200));
+       txApelido.setBorder(a);
+        Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 0, 200),2);
         pTxApelido.setBorder(b);
     }//GEN-LAST:event_txApelidoFocusGained
 
@@ -383,18 +425,22 @@ public class AddFuncionario extends javax.swing.JPanel {
      txApelido.setBorder(null);
     Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0));
       pTxApelido.setBorder(b);
+      lApelido.setForeground(new java.awt.Color(0, 0, 0));
     }//GEN-LAST:event_txApelidoFocusLost
 
     private void txnome1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txnome1FocusGained
-       Border a=  javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(20, 0, 200));
+       Border a=  javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(20, 0, 200));
+       lNome.setForeground(new java.awt.Color(20, 0, 200));
         txnome1.setBorder(a);
-        Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 0, 200));
+        Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 0, 200),2);
+        
         pTxNome1.setBorder(b);
     }//GEN-LAST:event_txnome1FocusGained
 
     private void txnome1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txnome1FocusLost
          javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0));
      txnome1.setBorder(null);
+     lNome.setForeground(new java.awt.Color(0, 0, 0));
     Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0));
       pTxNome1.setBorder(b);
     }//GEN-LAST:event_txnome1FocusLost
@@ -410,17 +456,21 @@ public class AddFuncionario extends javax.swing.JPanel {
     }//GEN-LAST:event_btGuardarMouseExited
 
     private void txSalario1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txSalario1FocusGained
-         Border a=  javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(20, 0, 200));
+        lSalario.setForeground( new java.awt.Color(20, 0, 200));
+        dollar.setForeground( new java.awt.Color(20, 0, 200));
+        Border a=  javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(20, 0, 200));
         txSalario1.setBorder(a);
-        Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 0, 200));
+        Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 0, 200),2);
         pTxSalario.setBorder(b);
     }//GEN-LAST:event_txSalario1FocusGained
 
     private void txSalario1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txSalario1FocusLost
+          dollar.setForeground( new java.awt.Color(0, 0, 0));
         javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0));
      txSalario1.setBorder(null);
     Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0));
       pTxSalario.setBorder(b);
+       lSalario.setForeground( new java.awt.Color(0, 0, 0));
     }//GEN-LAST:event_txSalario1FocusLost
 
     private void txSalario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txSalario1ActionPerformed
@@ -428,32 +478,34 @@ public class AddFuncionario extends javax.swing.JPanel {
     }//GEN-LAST:event_txSalario1ActionPerformed
 
     private void txContactoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txContactoFocusGained
-        Border a=  javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(20, 0, 200));
+        Border a=  javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(20, 0, 200));
         txContacto.setBorder(a);
-        Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 0, 200));
+        Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 0, 200),2);
         pTxContacto.setBorder(b);
+        lTel.setForeground(new java.awt.Color(20, 0, 200));
         //============================================
-//        
-//          AbstractDocument doc = (AbstractDocument) txContacto.getDocument();
-//        doc.setDocumentFilter(new DocumentFilter() {
-//            @Override
-//            public void replace(DocumentFilter.FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
-//                String newText = fb.getDocument().getText(0, fb.getDocument().getLength()) + text;
-//                if (newText.matches("\\d*")) { // Verifica se newText contém apenas dígitos
-//                    super.replace(fb, offset, length, text, attrs);
-//                } else {
-//                    // Se o texto não for numérico, não faça nada
-//                    Toolkit.getDefaultToolkit().beep(); // Emita um som de erro
-//                }
-//            }
-//        });
+////////////        
+          AbstractDocument doc = (AbstractDocument) txContacto.getDocument();
+     doc.setDocumentFilter(new DocumentFilter() {
+            @Override
+         public void replace(DocumentFilter.FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+            String newText = fb.getDocument().getText(0, fb.getDocument().getLength()) + text;
+                if (newText.matches("\\d*")) { // Verifica se newText contém apenas dígitos
+                   super.replace(fb, offset, length, text, attrs);
+                } else {
+                   // Se o texto não for numérico, não faça nada
+                    Toolkit.getDefaultToolkit().beep(); // Emita um som de erro
+                }
+           }
+       });
     }//GEN-LAST:event_txContactoFocusGained
 
     private void txContactoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txContactoFocusLost
-      javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0));
+  //    javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0));
      txContacto.setBorder(null);
     Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0));
       pTxContacto.setBorder(b);
+      lTel.setForeground(new java.awt.Color(0, 0,0));
     }//GEN-LAST:event_txContactoFocusLost
 
     private void txContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txContactoActionPerformed
@@ -461,45 +513,118 @@ public class AddFuncionario extends javax.swing.JPanel {
     }//GEN-LAST:event_txContactoActionPerformed
 
     private void txContactoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txContactoKeyPressed
-//           lb.setForeground(Color.black);
-// Border a=  javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(20, 0, 200));
-//        txContacto.setBorder(a);
-//
-//        if(txContacto.getText().length()>=14){
-// Border a1=  javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(200, 0, 20));
-//        txContacto.setBorder(a1);
-//        }else if(txContacto.getText().length()<=5){
-//           evt.consume();
-//      }
+         
+
+    
     }//GEN-LAST:event_txContactoKeyPressed
+
+    private void cSexoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cSexoFocusGained
+       Border a=  javax.swing.BorderFactory.createMatteBorder(02, 02, 2, 02, new java.awt.Color(20, 0, 200));
+        cSexo.setBorder(a);
+        Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 0, 200),2);
+        pSexo.setBorder(b);
+        lSexo.setForeground(new java.awt.Color(20, 0, 200));
+        
+    }//GEN-LAST:event_cSexoFocusGained
+
+    private void cSexoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cSexoFocusLost
+ cSexo.setBorder(null);
+ lSexo.setForeground(new java.awt.Color(0, 0, 0));
+    Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0));
+      pSexo.setBorder(b);
+    
+    }//GEN-LAST:event_cSexoFocusLost
+
+    private void cNacionalidadeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cNacionalidadeFocusGained
+       Border a=  javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(20, 0, 200));
+        cNacionalidade.setBorder(a);
+        Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 0, 200),2);
+        pNacionalidade.setBorder(b);
+        lNacionalidade.setForeground(new java.awt.Color(20, 0, 200));
+    }//GEN-LAST:event_cNacionalidadeFocusGained
+
+    private void cNacionalidadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cNacionalidadeFocusLost
+       cNacionalidade.setBorder(null);
+ lNacionalidade.setForeground(new java.awt.Color(0, 0, 0));
+    Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0));
+      pNacionalidade.setBorder(b);
+    }//GEN-LAST:event_cNacionalidadeFocusLost
+
+    private void cECivilFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cECivilFocusGained
+    Border a=  javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(20, 0, 200));
+        cECivil.setBorder(a);
+        Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 0, 200),2);
+        pECivil.setBorder(b);
+        lECivil.setForeground(new java.awt.Color(20, 0, 200));
+    }//GEN-LAST:event_cECivilFocusGained
+
+    private void cEspeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cEspeFocusGained
+      Border a=  javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(20, 0, 200));
+        cEspe.setBorder(a);
+        Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 0, 200),2);
+        pEsoecialidade.setBorder(b);
+        lEspecialidade.setForeground(new java.awt.Color(20, 0, 200));
+    }//GEN-LAST:event_cEspeFocusGained
+
+    private void cEspeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cEspeFocusLost
+           cEspe.setBorder(null);
+ lEspecialidade.setForeground(new java.awt.Color(0, 0, 0));
+    Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0));
+      pEsoecialidade.setBorder(b);
+    }//GEN-LAST:event_cEspeFocusLost
+
+    private void cECivilFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cECivilFocusLost
+         cECivil.setBorder(null);
+ lECivil.setForeground(new java.awt.Color(0, 0, 0));
+    Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0));
+      pECivil.setBorder(b);
+    }//GEN-LAST:event_cECivilFocusLost
+
+    private void txContactoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txContactoKeyTyped
+         if(txContacto.getText().length()>=9){
+ Border a1=  javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(200, 0, 20));
+        txContacto.setBorder(a1);
+        txContacto.setForeground(Color.RED);
+        }else if(txContacto.getText().length()<=10){
+             txContacto.setForeground(Color.black);
+           txContacto.setForeground(Color.black);
+ Border a=  javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(20, 0, 200));
+        txContacto.setBorder(a);
+      }else {
+          txContacto.setForeground(Color.black);
+ Border a=  javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(20, 0, 200));
+        txContacto.setBorder(a);
+        }
+    }//GEN-LAST:event_txContactoKeyTyped
 
     
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btGuardar;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JComboBox<String> cECivil;
+    private javax.swing.JComboBox<String> cEspe;
+    private javax.swing.JComboBox<String> cNacionalidade;
+    private javax.swing.JComboBox<String> cSexo;
+    private javax.swing.JLabel dollar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel lApelido;
+    private javax.swing.JLabel lECivil;
+    private javax.swing.JLabel lEmail;
+    private javax.swing.JLabel lEspecialidade;
+    private javax.swing.JLabel lNacionalidade;
+    private javax.swing.JLabel lNome;
+    private javax.swing.JLabel lSalario;
+    private javax.swing.JLabel lSexo;
+    private javax.swing.JLabel lTel;
+    private javax.swing.JPanel pECivil;
+    private javax.swing.JPanel pEsoecialidade;
+    private javax.swing.JPanel pNacionalidade;
+    private javax.swing.JPanel pSexo;
     private javax.swing.JPanel pTxApelido;
     private javax.swing.JPanel pTxContacto;
     private javax.swing.JPanel pTxEmail;
