@@ -4,6 +4,12 @@
  */
 package View;
 
+import View.Admin.AddFuncionario;
+import View.Admin.GerirBaseDados;
+import View.Admin.VisaoGeral;
+import View.Admin.noti;
+import View.Admin.mess;
+import View.Admin.Relatorios;
 import java.awt.BorderLayout;
 import java.awt.Color;
 
@@ -54,6 +60,7 @@ int xMouse, yMouse;
         setAlwaysOnTop(true);
         setLocationByPlatform(true);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1330, 660));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -242,7 +249,7 @@ int xMouse, yMouse;
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(label, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
         btRLayout.setVerticalGroup(
             btRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,7 +285,7 @@ int xMouse, yMouse;
 
         content.setBackground(new java.awt.Color(204, 255, 255));
         content.setLayout(new java.awt.BorderLayout());
-        jPanel1.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 1000, 620));
+        jPanel1.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 970, 620));
 
         jPanel2.setBackground(new java.awt.Color(51, 65, 130));
 
@@ -286,14 +293,14 @@ int xMouse, yMouse;
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1230, Short.MAX_VALUE)
+            .addGap(0, 1200, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 40));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 660));
 

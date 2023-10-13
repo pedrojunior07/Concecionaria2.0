@@ -13,6 +13,7 @@ public abstract class  Veiculo  {
   private int anoDeFabrico, idProduto;
   private double preco;
 
+  
     public String getCategoria() {
         return categoria;
     }

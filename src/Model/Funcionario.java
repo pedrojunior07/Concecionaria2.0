@@ -5,15 +5,16 @@
 package Model;
 
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  *
  * @author Pedro
  */
 public abstract class Funcionario {
-    private String nome,sexo, apelido, naturalidade, identidade, estadocivil, especialidade, eMail;
+    private String nome,sexo, apelido, naturalidade, identidade, estadocivil, especialidade, eMail, senha;
     private int idade, Id, telefone;
-    private Calendar dataDeNascimento, dataDoContrato;
+    private Date dataDeNascimento, dataDoContrato;
     private double salario;
     private boolean estado,acessoNivel1, acessoNivel2, acessoNivel3;
 
@@ -58,24 +59,33 @@ public abstract class Funcionario {
     public void setId(int Id) {
         this.Id = Id;
     }
-    
-    
 
-    public Calendar getDataDeNascimento() {
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public Date getDataDeNascimento() {
         return dataDeNascimento;
     }
 
-    public void setDataDeNascimento(Calendar dataDeNascimento) {
+    public void setDataDeNascimento(Date dataDeNascimento) {
         this.dataDeNascimento = dataDeNascimento;
     }
 
-    public Calendar getDataDoContrato() {
+    public Date getDataDoContrato() {
         return dataDoContrato;
     }
 
-    public void setDataDoContrato(Calendar dataDoContrato) {
+    public void setDataDoContrato(Date dataDoContrato) {
         this.dataDoContrato = dataDoContrato;
     }
+    
+    
+
 
     
     
