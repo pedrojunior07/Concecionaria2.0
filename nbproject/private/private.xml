@@ -3,16 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/Model/Carro.java</file>
-            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/Model/Funcionario.java</file>
-            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/Model/Veiculo.java</file>
-            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/DAO/CarroDAO.java</file>
-            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Admin/mess.java</file>
-            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Admin/AddFuncionario.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/ADMFrame.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/style/FlatMacLightLaf.properties</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Admin/Relatorios.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/GerenteFrame.java</file>
-            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Login.java</file>
-            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Gerente/AdicionarCarro.java</file>
         </group>
     </open-files>
 </project-private>

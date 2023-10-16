@@ -26,20 +26,86 @@ public class Relatorios extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        txNome = new textfield.TextField();
+        txNome1 = new textfield.TextField();
+        txApelido = new textfield.TextField();
+        txNome3 = new textfield.TextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        txNome4 = new textfield.TextField();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        txNome2 = new textfield.TextField();
+        txNome6 = new textfield.TextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(630, 540));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new java.awt.GridLayout(6, 2, 280, 40));
+        add(jPanel1);
+        add(jPanel3);
 
-        jLabel1.setFont(new java.awt.Font("Roboto Medium", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 255, 255));
-        jLabel1.setText("Relatorios");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 129, 64));
+        txNome.setToolTipText("Nome");
+        txNome.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        txNome.setLabelText("Nome");
+        txNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txNomeActionPerformed(evt);
+            }
+        });
+        add(txNome);
+
+        txNome1.setToolTipText("Nome");
+        txNome1.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        txNome1.setLabelText("Nome");
+        add(txNome1);
+
+        txApelido.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        txApelido.setLabelText("Apelido");
+        add(txApelido);
+
+        txNome3.setToolTipText("Nome");
+        txNome3.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        txNome3.setLabelText("Nome");
+        add(txNome3);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sexo", "Masculino", "Feminino" }));
+        add(jComboBox1);
+
+        txNome4.setToolTipText("Nome");
+        txNome4.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        txNome4.setLabelText("Nome");
+        add(txNome4);
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nacionalidade", " " }));
+        add(jComboBox2);
+
+        txNome2.setToolTipText("Nome");
+        txNome2.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        txNome2.setLabelText("Nome");
+        add(txNome2);
+
+        txNome6.setToolTipText("Nome");
+        txNome6.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        txNome6.setLabelText("Nome");
+        add(txNome6);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txNomeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private textfield.TextField txApelido;
+    private textfield.TextField txNome;
+    private textfield.TextField txNome1;
+    private textfield.TextField txNome2;
+    private textfield.TextField txNome3;
+    private textfield.TextField txNome4;
+    private textfield.TextField txNome6;
     // End of variables declaration//GEN-END:variables
 }

@@ -14,8 +14,15 @@ public class Carro extends Veiculo implements carrosMetodos {
 private String modelo, tracao;
 private int numMotor, numChassi, quilometosPercoridos;
 private boolean vendido, operacional;
+private Fornecedor fornecedor;
 
+    public Fornecedor getFornecedor() {
+        return fornecedor;
+    }
 
+    public void setFornecedor(Fornecedor fornecedor) {
+        this.fornecedor = fornecedor;
+    }
 
     public String getModelo() {
         return modelo;

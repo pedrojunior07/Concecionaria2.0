@@ -51,13 +51,10 @@ public class AdicionarCarro extends javax.swing.JPanel {
         lMZN = new javax.swing.JLabel();
         pCTipCOmbus1 = new javax.swing.JPanel();
         lTipCombus1 = new javax.swing.JLabel();
-        cCategoria = new combo_suggestion.ComboBoxSuggestion();
         pCTipCOmbus = new javax.swing.JPanel();
         lTipCombus = new javax.swing.JLabel();
-        cTipCombustivel = new combo_suggestion.ComboBoxSuggestion();
         pCTipCOmbus2 = new javax.swing.JPanel();
         lTipCombus2 = new javax.swing.JLabel();
-        cTracao = new combo_suggestion.ComboBoxSuggestion();
         pTxNumMotor = new javax.swing.JPanel();
         txNumMotor = new javax.swing.JTextField();
         lNumMotor = new javax.swing.JLabel();
@@ -68,13 +65,11 @@ public class AdicionarCarro extends javax.swing.JPanel {
         txPreco1 = new javax.swing.JTextField();
         lPreco1 = new javax.swing.JLabel();
         lMZN1 = new javax.swing.JLabel();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
 
-        setBackground(new java.awt.Color(255, 255, 255));
-        setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Adicionar Veiculo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto Medium", 0, 18))); // NOI18N
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pTxMarca.setBackground(new java.awt.Color(255, 255, 255));
-        pTxMarca.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pTxMarca.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txMarca.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
@@ -198,11 +193,6 @@ public class AdicionarCarro extends javax.swing.JPanel {
         lTipCombus1.setToolTipText("");
         pCTipCOmbus1.add(lTipCombus1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 30));
 
-        cCategoria.setEditable(false);
-        cCategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "suv", "caminhao", "van", "bus", "dunner" }));
-        cCategoria.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        pCTipCOmbus1.add(cCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 210, -1));
-
         add(pCTipCOmbus1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, 300, 50));
 
         pCTipCOmbus.setBackground(new java.awt.Color(255, 255, 255));
@@ -214,11 +204,6 @@ public class AdicionarCarro extends javax.swing.JPanel {
         lTipCombus.setToolTipText("");
         pCTipCOmbus.add(lTipCombus, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 30));
 
-        cTipCombustivel.setEditable(false);
-        cTipCombustivel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Gasolina", "Disel", "Gas", "Eletrico", "Hibrido" }));
-        cTipCombustivel.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        pCTipCOmbus.add(cTipCombustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 10, 140, -1));
-
         add(pCTipCOmbus, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 300, 50));
 
         pCTipCOmbus2.setBackground(new java.awt.Color(255, 255, 255));
@@ -229,11 +214,6 @@ public class AdicionarCarro extends javax.swing.JPanel {
         lTipCombus2.setText("Tracao");
         lTipCombus2.setToolTipText("");
         pCTipCOmbus2.add(lTipCombus2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 30));
-
-        cTracao.setEditable(false);
-        cTracao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Manual", "Automatico" }));
-        cTracao.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        pCTipCOmbus2.add(cTracao, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 210, -1));
 
         add(pCTipCOmbus2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 300, 50));
 
@@ -328,6 +308,9 @@ public class AdicionarCarro extends javax.swing.JPanel {
         pTxPreco1.add(lMZN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, -1, 30));
 
         add(pTxPreco1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 410, 300, 50));
+
+        jFormattedTextField1.setText("jFormattedTextField1");
+        add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, 230, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txMarcaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txMarcaFocusGained
@@ -346,23 +329,6 @@ public class AdicionarCarro extends javax.swing.JPanel {
         Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0));
         pTxMarca.setBorder(b);
     }//GEN-LAST:event_txMarcaFocusLost
-
-    private void txModeloFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txModeloFocusGained
-       Border a=  javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(20, 0, 200));
-        lModelo.setForeground(new java.awt.Color(20, 0, 200));
-        txModelo.setBorder(a);
-        Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 0, 200),2);
-
-        pTxModelo.setBorder(b);
-    }//GEN-LAST:event_txModeloFocusGained
-
-    private void txModeloFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txModeloFocusLost
-        javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0));
-        txModelo.setBorder(null);
-        lModelo.setForeground(new java.awt.Color(0, 0, 0));
-        Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0));
-        pTxModelo.setBorder(b);
-    }//GEN-LAST:event_txModeloFocusLost
 
     private void txAnoDeFabricoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txAnoDeFabricoFocusGained
   
@@ -546,11 +512,26 @@ public class AdicionarCarro extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txPreco1KeyTyped
 
+    private void txModeloFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txModeloFocusLost
+        javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0));
+        txModelo.setBorder(null);
+        lModelo.setForeground(new java.awt.Color(0, 0, 0));
+        Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0));
+        pTxModelo.setBorder(b);
+    }//GEN-LAST:event_txModeloFocusLost
+
+    private void txModeloFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txModeloFocusGained
+        Border a=  javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(20, 0, 200));
+        lModelo.setForeground(new java.awt.Color(20, 0, 200));
+        txModelo.setBorder(a);
+        Border b = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 0, 200),2);
+
+        pTxModelo.setBorder(b);
+    }//GEN-LAST:event_txModeloFocusGained
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private combo_suggestion.ComboBoxSuggestion cCategoria;
-    private combo_suggestion.ComboBoxSuggestion cTipCombustivel;
-    private combo_suggestion.ComboBoxSuggestion cTracao;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel lAnoDeFabrico;
     private javax.swing.JLabel lMZN;
     private javax.swing.JLabel lMZN1;

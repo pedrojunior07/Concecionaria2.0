@@ -4,51 +4,106 @@
  */
 package View;
 
+import View.Admin.AddFuncionario;
 import View.Admin.Header;
+import View.Admin.ListarFuncionarios;
+import com.formdev.flatlaf.FlatIntelliJLaf;
+import com.formdev.flatlaf.FlatLaf;
+import com.formdev.flatlaf.extras.FlatAnimatedLafChange;
+import com.formdev.flatlaf.extras.components.FlatButton;
+import static com.formdev.flatlaf.extras.components.FlatButton.ButtonType.roundRect;
+import com.formdev.flatlaf.icons.FlatAnimatedIcon;
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatGitHubDarkIJTheme;
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatGitHubIJTheme;
+import com.formdev.flatlaf.themes.FlatMacDarkLaf;
+import com.formdev.flatlaf.themes.FlatMacLightLaf;
+import com.formdev.flatlaf.ui.FlatButtonBorder;
+import com.formdev.flatlaf.ui.FlatButtonUI;
+import com.formdev.flatlaf.ui.FlatRoundBorder;
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.EventQueue;
 import javaswingdev.drawer.Drawer;
 import javaswingdev.drawer.DrawerController;
 import javaswingdev.drawer.DrawerItem;
 import javaswingdev.drawer.EventDrawer;
+import javax.management.Notification;
 import javax.swing.ImageIcon;
+import javax.swing.UIManager;
 
 /**
  *
  * @author Pedro
  */
 public class ADMFrame extends javax.swing.JFrame {
-
+int xMouse, yMouse;
     DrawerController drawer ;
     public ADMFrame() {
-        initComponents();
-         drawer = Drawer.newDrawer(this)
-                .background(new Color(90, 90, 90))
-                .closeOnPress(true)
-                .backgroundTransparent(0.3f)
-                .leftDrawer(true)
-                .enableScroll(true)
-                .enableScrollUI(false)
-                .headerHeight(190)
-                .header(new Header())
-                .space(3)
-                .addChild(new DrawerItem("Adicionar Funcionario ").icon(new ImageIcon(getClass().getResource("/icon/user.png"))).build())
-                .addChild(new DrawerItem("Fornecedores").icon(new ImageIcon(getClass().getResource("/icon/cont.png"))).build())
-                .addChild(new DrawerItem("Relatorios").icon(new ImageIcon(getClass().getResource("/icon/report.png"))).build())
-                .addChild(new DrawerItem("Receita").icon(new ImageIcon(getClass().getResource("/icon/income.png"))).build())
-                .addChild(new DrawerItem("Despesa").icon(new ImageIcon(getClass().getResource("/icon/expense.png"))).build())
-                .addChild(new DrawerItem("Dados").icon(new ImageIcon(getClass().getResource("/icon/data.png"))).build())
-                .addFooter(new DrawerItem("Sair").icon(new ImageIcon(getClass().getResource("/icon/exit.png"))).build())
-                .event(new EventDrawer() {
-                    @Override
-                    public void selected(int index, DrawerItem item) {
-                     if(drawer.isShow()){
-                         drawer.hide();
-                     }
-                     
-                     
-                    }
-                })
-                .build();
+       
+          initComponents();
+         UIManager.put( "Button.arc" , 999 );
+          //============PopUP
+      
+          //===============================
+          //++++++++++++++++++++++++++++++++++++++++++
+        btMassage.setBackground(this.getForeground());
+        btNoti.setBackground(this.getForeground());
+      FlatGitHubIJTheme.installBorder(bt1, "Round");
+
+    //++++++++++++++++++++++++++++++++++++++++++
+    //======================================================================
+//        drawer = Drawer.newDrawer(this)
+//                .background(new Color(90, 90, 90))
+//                 .drawerBackground(this.getBackground())
+//                .closeOnPress(true)
+//                .backgroundTransparent(0.3f)
+//                .leftDrawer(true)
+//                .enableScroll(true)
+//                .enableScrollUI(false)
+//                .headerHeight(190)
+//                .header(new Header())
+//                .space(3)
+//                .addChild(new DrawerItem("Adicionar Funcionario ").icon(new ImageIcon(getClass().getResource("/icon/user.png"))).build())
+//                .addChild(new DrawerItem("Fornecedores").icon(new ImageIcon(getClass().getResource("/icon/cont.png"))).build())
+//                .addChild(new DrawerItem("Relatorios").icon(new ImageIcon(getClass().getResource("/icon/report.png"))).build())
+//                .addChild(new DrawerItem("Receita").icon(new ImageIcon(getClass().getResource("/icon/income.png"))).build())
+//                .addChild(new DrawerItem("Despesa").icon(new ImageIcon(getClass().getResource("/icon/expense.png"))).build())
+//                .addChild(new DrawerItem("Dados").icon(new ImageIcon(getClass().getResource("/icon/data.png"))).build())
+//                .addFooter(new DrawerItem("Sair").icon(new ImageIcon(getClass().getResource("/icon/exit.png"))).build())
+//                .event(new EventDrawer() {
+//                    @Override
+//                    public void selected(int index, DrawerItem item) {
+//                     if(drawer.isShow()){
+//                         drawer.hide();
+//                     }
+//                     
+//                     switch (index) {
+//    case 1:{System.out.println("1");}break;
+//    case 2 :{
+//        System.out.println("2");
+//    }break;
+//     case 3 :{
+//         System.out.println("3");}break;
+//      case 4 :{System.out.println("4");}break;
+//       case 5 :{System.out.println("5");}break;
+//        case 6 :{  System.exit(0);;}break;
+//         case 0 :{
+//            AddFuncionario p1 = new AddFuncionario();
+//        p1.setSize(1000, 620);
+//        p1.setLocation(0,0);
+//        content.removeAll();
+//        content.add(p1, BorderLayout.CENTER );
+//        content.revalidate();
+//        content.repaint();
+//         }break;
+//     
+//                     }
+//
+//                     
+//                    }
+//                })
+//                .build();
+    //======================================================================
     }
 
     /**
@@ -63,23 +118,41 @@ public class ADMFrame extends javax.swing.JFrame {
         content = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        bt3 = new javax.swing.JButton();
+        bt1 = new javax.swing.JButton();
+        btListar = new javax.swing.JButton();
+        bt6 = new javax.swing.JButton();
+        bt4 = new javax.swing.JButton();
+        bt7 = new javax.swing.JButton();
+        bt5 = new javax.swing.JButton();
+        BArraDeTitulo = new javax.swing.JPanel();
+        btMassage = new com.pedro.swing.win_button.ButtonBadges();
+        btNoti = new com.pedro.swing.win_button.ButtonBadges();
+        escuro = new javax.swing.JRadioButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        content.setBackground(new java.awt.Color(204, 255, 255));
         content.setLayout(new java.awt.BorderLayout());
-        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 1006, 626));
+        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 1010, 626));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        jButton1.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        jButton1.setText("|||");
+        jButton1.setFont(new java.awt.Font("Roboto Medium", 1, 48)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/outline_menu_open_black_18.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        bt1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/2.png"))); // NOI18N
+        bt1.setDoubleBuffered(true);
+
+        btListar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/5.png"))); // NOI18N
+        btListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btListarActionPerformed(evt);
             }
         });
 
@@ -89,84 +162,258 @@ public class ADMFrame extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bt4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btListar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bt1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bt3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bt6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bt7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bt5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(576, Short.MAX_VALUE))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77)
+                .addComponent(bt1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btListar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bt3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bt4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bt5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bt6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(bt7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(115, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 45, -1, 630));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        BArraDeTitulo.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                BArraDeTituloMouseDragged(evt);
+            }
+        });
+        BArraDeTitulo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                BArraDeTituloMousePressed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        btMassage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/message.png"))); // NOI18N
+        btMassage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btMassageActionPerformed(evt);
+            }
+        });
+
+        btNoti.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/noti.png"))); // NOI18N
+
+        escuro.setText("ModoEscuro");
+        escuro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                escuroActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("jButton3");
+
+        javax.swing.GroupLayout BArraDeTituloLayout = new javax.swing.GroupLayout(BArraDeTitulo);
+        BArraDeTitulo.setLayout(BArraDeTituloLayout);
+        BArraDeTituloLayout.setHorizontalGroup(
+            BArraDeTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BArraDeTituloLayout.createSequentialGroup()
+                .addContainerGap(416, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addGap(187, 187, 187)
+                .addComponent(escuro)
+                .addGap(180, 180, 180)
+                .addComponent(btNoti, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btMassage, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(76, 76, 76))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 48, Short.MAX_VALUE)
+        BArraDeTituloLayout.setVerticalGroup(
+            BArraDeTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BArraDeTituloLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(BArraDeTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btNoti, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btMassage, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(BArraDeTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(escuro)
+                        .addComponent(jButton3)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1096, -1));
+        getContentPane().add(BArraDeTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1096, 40));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BArraDeTituloMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BArraDeTituloMousePressed
+xMouse= evt.getX();
+yMouse = evt.getY();
+    }//GEN-LAST:event_BArraDeTituloMousePressed
+
+    private void BArraDeTituloMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BArraDeTituloMouseDragged
+        setLocation(evt.getXOnScreen()-xMouse, evt.getYOnScreen()-yMouse);
+    }//GEN-LAST:event_BArraDeTituloMouseDragged
+
+    private void btMassageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMassageActionPerformed
+
+    }//GEN-LAST:event_btMassageActionPerformed
+
+    private void escuroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_escuroActionPerformed
+  
+       
+        if(escuro.isSelected()){
+       EventQueue.invokeLater(new Runnable() {
+           @Override
+           public void run() {
+                FlatAnimatedLafChange.showSnapshot();
+                FlatGitHubDarkIJTheme.setup();
+                 FlatLaf.updateUI();
+                FlatAnimatedLafChange.hideSnapshotWithAnimation();
+           
+                //++++++++++++++++++++++++++++++++++++++++++
+       
+           }
+       });
+   }else{
+   
+    EventQueue.invokeLater(new Runnable() {
+           @Override
+           public void run() {
+                FlatAnimatedLafChange.showSnapshot();
+                  FlatGitHubIJTheme.setup();
+                 FlatLaf.updateUI();
+                FlatAnimatedLafChange.hideSnapshotWithAnimation();
+           }
+       });
+    
+    
+   }//===========================================================
+            btMassage.setBackground(this.getForeground());
+        btNoti.setBackground(this.getForeground());
+        //=============================================================
+        
+        
+        
+    }//GEN-LAST:event_escuroActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       if(drawer.isShow()){
-       drawer.hide();
-       }else{
-       drawer.show();}
+
+        drawer = Drawer.newDrawer(this)
+        .background(new Color(90, 90, 90))
+        .drawerBackground(this.getBackground())
+        .closeOnPress(true)
+        .backgroundTransparent(0.3f)
+        .leftDrawer(true)
+        .enableScroll(true)
+        .enableScrollUI(false)
+        .headerHeight(190)
+        .header(new Header())
+        .space(3)
+        .addChild(new DrawerItem("Adicionar Funcionario ").icon(new ImageIcon(getClass().getResource("/icon/user.png"))).build())
+        .addChild(new DrawerItem("Fornecedores").icon(new ImageIcon(getClass().getResource("/icon/cont.png"))).build())
+        .addChild(new DrawerItem("Relatorios").icon(new ImageIcon(getClass().getResource("/icon/report.png"))).build())
+        .addChild(new DrawerItem("Receita").icon(new ImageIcon(getClass().getResource("/icon/income.png"))).build())
+        .addChild(new DrawerItem("Despesa").icon(new ImageIcon(getClass().getResource("/icon/expense.png"))).build())
+        .addChild(new DrawerItem("Dados").icon(new ImageIcon(getClass().getResource("/icon/data.png"))).build())
+        .addFooter(new DrawerItem("Sair").icon(new ImageIcon(getClass().getResource("/icon/exit.png"))).build())
+        .event(new EventDrawer() {
+            @Override
+            public void selected(int index, DrawerItem item) {
+                if(drawer.isShow()){
+                    drawer.hide();
+                }
+
+                switch (index) {
+                    case 1:{System.out.println("1");}break;
+                    case 2 :{
+                        System.out.println("2");
+                    }break;
+                    case 3 :{
+                        System.out.println("3");}break;
+                    case 4 :{System.out.println("4");}break;
+                    case 5 :{System.out.println("5");}break;
+                    case 6 :{  System.exit(0);;}break;
+                    case 0 :{
+                        bt1.setVisible(false);
+                        btListar.setVisible(false);
+                        bt4.setVisible(false); bt3.setVisible(false);
+                        bt5.setVisible(false);
+                        bt6.setVisible(false);
+                        bt7.setVisible(false);
+                        AddFuncionario p1 = new AddFuncionario();
+                        p1.setSize(1000, 620);
+                        p1.setLocation(0,0);
+                        content.removeAll();
+                        content.add(p1, BorderLayout.CENTER );
+                        content.revalidate();
+                        content.repaint();
+                    }break;
+
+                }
+
+            }
+        })
+        .build();
+        //=======================================================
+        if(drawer.isShow()){
+            drawer.hide();
+        }else{
+            drawer.show();}
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListarActionPerformed
+        ListarFuncionarios p1 = new ListarFuncionarios();
+                        p1.setSize(1000, 620);
+                        p1.setLocation(0,0);
+                        content.removeAll();
+                        content.add(p1, BorderLayout.CENTER );
+                        content.revalidate();
+                        content.repaint();
+    }//GEN-LAST:event_btListarActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ADMFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ADMFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ADMFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ADMFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
+        FlatMacLightLaf.registerCustomDefaultsSource("style");
+        FlatMacLightLaf.setup();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ADMFrame().setVisible(true);
             }
         });
     }
-
+  
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BArraDeTitulo;
+    private javax.swing.JButton bt1;
+    private javax.swing.JButton bt3;
+    private javax.swing.JButton bt4;
+    private javax.swing.JButton bt5;
+    private javax.swing.JButton bt6;
+    private javax.swing.JButton bt7;
+    private javax.swing.JButton btListar;
+    private com.pedro.swing.win_button.ButtonBadges btMassage;
+    private com.pedro.swing.win_button.ButtonBadges btNoti;
     private javax.swing.JPanel content;
+    private javax.swing.JRadioButton escuro;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
