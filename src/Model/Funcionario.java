@@ -14,6 +14,10 @@ import java.util.Date;
 public abstract class Funcionario {
     private String nome,sexo, apelido, naturalidade, identidade, estadocivil, especialidade, eMail, senha;
     private int idade, Id, telefone;
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
     private Date dataDeNascimento, dataDoContrato;
     private double salario;
     private boolean estado,acessoNivel1, acessoNivel2, acessoNivel3;

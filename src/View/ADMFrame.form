@@ -3,7 +3,7 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="undecorated" type="boolean" value="true"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -19,7 +19,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-90,0,0,4,72"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-90,0,0,4,96"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -27,47 +27,60 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="content">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="cc" type="rgb"/>
-        </Property>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="90" y="50" width="1006" height="626"/>
+          <AbsoluteConstraints x="100" y="50" width="1010" height="626"/>
         </Constraint>
       </Constraints>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel1">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="50" width="-1" height="-1"/>
+          <AbsoluteConstraints x="0" y="45" width="-1" height="630"/>
         </Constraint>
       </Constraints>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="54" max="-2" attributes="0"/>
-                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="bt4" max="32767" attributes="0"/>
+                      <Component id="btListar" alignment="0" max="32767" attributes="0"/>
+                      <Component id="bt1" alignment="0" max="32767" attributes="0"/>
+                      <Component id="bt3" max="32767" attributes="0"/>
+                      <Component id="bt6" alignment="0" max="32767" attributes="0"/>
+                      <Component id="bt7" alignment="0" max="32767" attributes="0"/>
+                      <Component id="bt5" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
+              <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace pref="576" max="32767" attributes="0"/>
+                  <Component id="jButton1" min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+                  <Component id="bt1" min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btListar" min="-2" pref="51" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="bt3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="bt4" min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="bt5" min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="bt6" min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <Component id="bt7" min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace pref="115" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -76,40 +89,122 @@
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Roboto Medium" size="18" style="1"/>
+              <Font name="Roboto Medium" size="48" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="|||"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/dashboard/icon/outline_menu_open_black_18.png"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
           </Events>
         </Component>
+        <Component class="javax.swing.JButton" name="bt3">
+        </Component>
+        <Component class="javax.swing.JButton" name="bt1">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/dashboard/icon/2.png"/>
+            </Property>
+            <Property name="doubleBuffered" type="boolean" value="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btListar">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/dashboard/icon/5.png"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btListarActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="bt6">
+        </Component>
+        <Component class="javax.swing.JButton" name="bt4">
+        </Component>
+        <Component class="javax.swing.JButton" name="bt7">
+        </Component>
+        <Component class="javax.swing.JButton" name="bt5">
+        </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="jPanel2">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
-      </Properties>
+    <Container class="javax.swing.JPanel" name="BArraDeTitulo">
+      <Events>
+        <EventHandler event="mouseDragged" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="BArraDeTituloMouseDragged"/>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BArraDeTituloMousePressed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="1096" height="-1"/>
+          <AbsoluteConstraints x="0" y="0" width="1096" height="40"/>
         </Constraint>
       </Constraints>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="416" max="32767" attributes="0"/>
+                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
+                  <Component id="escuro" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
+                  <Component id="btNoti" min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="btMassage" min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="48" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="btNoti" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="btMassage" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="escuro" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
       </Layout>
+      <SubComponents>
+        <Component class="com.pedro.swing.win_button.ButtonBadges" name="btMassage">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/dashboard/icon/message.png"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btMassageActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="com.pedro.swing.win_button.ButtonBadges" name="btNoti">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/dashboard/icon/noti.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="escuro">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ModoEscuro"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="escuroActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jButton3"/>
+          </Properties>
+        </Component>
+      </SubComponents>
     </Container>
   </SubComponents>
 </Form>
