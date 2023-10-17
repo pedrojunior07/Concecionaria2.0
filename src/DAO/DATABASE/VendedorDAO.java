@@ -30,10 +30,10 @@ public class VendedorDAO {
         String sql ="INSERT INTO `vendedor` ( `Apelido`, `Identidade`, `EstadoCivil`, `Especialidade`, `E-mail`, `Senha`, `Idade`, `Nome`, `Telefone`, `DataNascimento`, `DataContrato`, `estado`, `salario`, `acessoNivel1`, `acessoNivel2`, `acessoNivel3`, `naturalidade`, `numeroVendas`, `sexo`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         PreparedStatement statement = connection.prepareStatement(sql);
-       java.util.Date utilDate = user.getDataDeNascimento();
-      java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+    
+      java.sql.Date sqlDate = new java.sql.Date(   user.getDataDeNascimento().getYear(), user.getDataDeNascimento().getMonth(), user.getDataDeNascimento().getDay());
       java.util.Date utilDate1 = user.getDataDeNascimento();
-      java.sql.Date sqlDate1 = new java.sql.Date(utilDate.getTime());
+     // java.sql.Date sqlDate1 = new java.sql.Date(utilDate.getTime());
 
        statement.setString(1, user.getApelido());
         statement.setString(2, user.getIdentidade());
@@ -45,7 +45,7 @@ public class VendedorDAO {
              statement.setString(8,  user.getNome());
               statement.setInt(9,  user.getTelefone());
                statement.setDate(10, sqlDate);
-                statement.setDate(11, sqlDate1);
+                statement.setDate(11, sqlDate);
                
                   statement.setBoolean(12,  user.isEstado());
                    statement.setDouble( 13,  user.getSalario());

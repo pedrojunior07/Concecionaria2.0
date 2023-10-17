@@ -29,6 +29,7 @@ import javaswingdev.drawer.DrawerItem;
 import javaswingdev.drawer.EventDrawer;
 import javax.management.Notification;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.UIManager;
 
 /**
@@ -38,8 +39,9 @@ import javax.swing.UIManager;
 public class ADMFrame extends javax.swing.JFrame {
 int xMouse, yMouse;
     DrawerController drawer ;
+    JFrame fr = this;
     public ADMFrame() {
-       
+        UIManager.put( "Button.arc" , 999 );
           initComponents();
          UIManager.put( "Button.arc" , 999 );
           //============PopUP
@@ -48,7 +50,7 @@ int xMouse, yMouse;
           //++++++++++++++++++++++++++++++++++++++++++
         btMassage.setBackground(this.getForeground());
         btNoti.setBackground(this.getForeground());
-      FlatGitHubIJTheme.installBorder(bt1, "Round");
+     // FlatGitHubIJTheme.installBorder(bt1, "Round");
 
     //++++++++++++++++++++++++++++++++++++++++++
     //======================================================================
@@ -129,7 +131,6 @@ int xMouse, yMouse;
         btMassage = new com.pedro.swing.win_button.ButtonBadges();
         btNoti = new com.pedro.swing.win_button.ButtonBadges();
         escuro = new javax.swing.JRadioButton();
-        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -139,7 +140,7 @@ int xMouse, yMouse;
         getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 1010, 626));
 
         jButton1.setFont(new java.awt.Font("Roboto Medium", 1, 48)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/outline_menu_open_black_18.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/menu1.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -148,8 +149,13 @@ int xMouse, yMouse;
 
         bt1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/2.png"))); // NOI18N
         bt1.setDoubleBuffered(true);
+        bt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt1ActionPerformed(evt);
+            }
+        });
 
-        btListar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/5.png"))); // NOI18N
+        btListar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/employees.png"))); // NOI18N
         btListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btListarActionPerformed(evt);
@@ -177,8 +183,8 @@ int xMouse, yMouse;
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77)
+                .addComponent(jButton1)
+                .addGap(70, 70, 70)
                 .addComponent(bt1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btListar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -192,7 +198,7 @@ int xMouse, yMouse;
                 .addComponent(bt6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(bt7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 45, -1, 630));
@@ -224,16 +230,12 @@ int xMouse, yMouse;
             }
         });
 
-        jButton3.setText("jButton3");
-
         javax.swing.GroupLayout BArraDeTituloLayout = new javax.swing.GroupLayout(BArraDeTitulo);
         BArraDeTitulo.setLayout(BArraDeTituloLayout);
         BArraDeTituloLayout.setHorizontalGroup(
             BArraDeTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BArraDeTituloLayout.createSequentialGroup()
-                .addContainerGap(416, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(187, 187, 187)
+                .addContainerGap(678, Short.MAX_VALUE)
                 .addComponent(escuro)
                 .addGap(180, 180, 180)
                 .addComponent(btNoti, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -248,9 +250,7 @@ int xMouse, yMouse;
                 .addGroup(BArraDeTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btNoti, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btMassage, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(BArraDeTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(escuro)
-                        .addComponent(jButton3)))
+                    .addComponent(escuro))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -355,7 +355,7 @@ yMouse = evt.getY();
                         bt5.setVisible(false);
                         bt6.setVisible(false);
                         bt7.setVisible(false);
-                        AddFuncionario p1 = new AddFuncionario();
+                        AddFuncionario p1 = new AddFuncionario(fr);
                         p1.setSize(1000, 620);
                         p1.setLocation(0,0);
                         content.removeAll();
@@ -377,7 +377,7 @@ yMouse = evt.getY();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListarActionPerformed
-        ListarFuncionarios p1 = new ListarFuncionarios();
+        ListarFuncionarios p1 = new ListarFuncionarios(this);
                         p1.setSize(1000, 620);
                         p1.setLocation(0,0);
                         content.removeAll();
@@ -386,12 +386,23 @@ yMouse = evt.getY();
                         content.repaint();
     }//GEN-LAST:event_btListarActionPerformed
 
+    private void bt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt1ActionPerformed
+                AddFuncionario p1 = new AddFuncionario(this);
+        p1.setSize(1000, 620);
+        p1.setLocation(0,0);
+        content.removeAll();
+        content.add(p1, BorderLayout.CENTER );
+        content.revalidate();
+        content.repaint();
+
+    }//GEN-LAST:event_bt1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        FlatMacLightLaf.registerCustomDefaultsSource("style");
-        FlatMacLightLaf.setup();
+       // FlatGitHubIJTheme.registerCustomDefaultsSource("style");
+        FlatGitHubIJTheme.setup();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ADMFrame().setVisible(true);
@@ -413,7 +424,6 @@ yMouse = evt.getY();
     private javax.swing.JPanel content;
     private javax.swing.JRadioButton escuro;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,18 +4,38 @@
  */
 package View.Admin;
 
+import Controller.AdminController;
+import Model.Vendedor;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Pedro
  */
 public class ListarFuncionarios extends javax.swing.JPanel {
-
-    /**
-     * Creates new form ListarFuncionarios
-     */
-    public ListarFuncionarios() {
+    JFrame frame ;
+    DefaultTableModel model;
+    
+    
+    public ListarFuncionarios( JFrame frame) {
+        this.frame = frame;
         initComponents();
-        
+                model = new DefaultTableModel();
+		model.addColumn("Id");
+		model.addColumn("Nome");
+		model.addColumn("Apelido");
+		model.addColumn("Categoria");
+		model.addColumn("Salario");
+		model.addColumn("E-Mail");
+		model.addColumn("Nacionalidade");
+		
+		
+        Tabela.setModel(model);
     }
 
     /**
@@ -28,19 +48,32 @@ public class ListarFuncionarios extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Tabela = new javax.swing.JTable();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        listarTodos = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
 
-        jScrollPane1.setViewportView(jTable1);
+        Tabela.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(Tabela);
 
         jRadioButton1.setText("Listar Ativos");
 
         jRadioButton2.setText("Listar Demitidos");
 
-        jCheckBox1.setText("Listar Todos");
+        listarTodos.setText("Listar Todos");
+        listarTodos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listarTodosActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Limpar");
 
@@ -54,7 +87,7 @@ public class ListarFuncionarios extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jCheckBox1)
+                                .addComponent(listarTodos)
                                 .addGap(132, 132, 132))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton1)
@@ -77,20 +110,47 @@ public class ListarFuncionarios extends javax.swing.JPanel {
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButton2)
-                    .addComponent(jCheckBox1))
+                    .addComponent(listarTodos))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 534, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void listarTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarTodosActionPerformed
+     if(listarTodos.isSelected()){
+         
+          while (model.getRowCount() > 0) {
+			model.removeRow(0);
+		}
+          
+          AdminController cc = new AdminController(frame);
+         ArrayList<Vendedor> lista;
+         try {
+             lista = cc.sellectAllFuncionario();
+               for (Vendedor v : lista) {
+	  
+           
+           
+                 
+			model.addRow(new Object[] {   v.getId(), v.getNome(),v.getApelido(),v.getEspecialidade(),v.getSalario(), v.geteMail(), v.getNaturalidade() });
+		}
+         } catch (SQLException ex) {
+             Logger.getLogger(ListarFuncionarios.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (ClassNotFoundException ex) {
+             Logger.getLogger(ListarFuncionarios.class.getName()).log(Level.SEVERE, null, ex);
+         }
+    
+     }
+    }//GEN-LAST:event_listarTodosActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable Tabela;
     private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JCheckBox listarTodos;
     // End of variables declaration//GEN-END:variables
 }

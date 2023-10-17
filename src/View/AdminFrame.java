@@ -445,7 +445,7 @@ int xMouse, yMouse;
 
     private void btgsatffMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btgsatffMouseClicked
         // TODO add your handling code here:
-        AddFuncionario p1 = new AddFuncionario();
+        AddFuncionario p1 = new AddFuncionario(this);
         p1.setSize(1000, 620);
         p1.setLocation(0,0);
         content.removeAll();
