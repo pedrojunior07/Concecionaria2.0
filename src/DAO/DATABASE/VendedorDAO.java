@@ -49,6 +49,7 @@ public class VendedorDAO {
                
                   statement.setBoolean(12,  user.isEstado());
                    statement.setDouble( 13,  user.getSalario());
+                   System.out.println(user.getSalario());
                      statement.setBoolean(14,  user.isAcessoNivel1());
                       statement.setBoolean(15,  user.isAcessoNivel2());
                        statement.setBoolean(16,  user.isAcessoNivel3());

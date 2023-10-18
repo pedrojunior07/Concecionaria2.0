@@ -4,9 +4,13 @@
  */
 package View;
 
+import Controller.AdminController;
+import Model.Vendedor;
 import View.Admin.AddFuncionario;
 import View.Admin.Header;
 import View.Admin.ListarFuncionarios;
+import View.Admin.ProcurarFuncionario;
+import View.Gerente.AdicionarCarro;
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.extras.FlatAnimatedLafChange;
@@ -23,6 +27,10 @@ import com.formdev.flatlaf.ui.FlatRoundBorder;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javaswingdev.drawer.Drawer;
 import javaswingdev.drawer.DrawerController;
 import javaswingdev.drawer.DrawerItem;
@@ -40,10 +48,15 @@ public class ADMFrame extends javax.swing.JFrame {
 int xMouse, yMouse;
     DrawerController drawer ;
     JFrame fr = this;
+     ArrayList<Vendedor> useri;
     public ADMFrame() {
         UIManager.put( "Button.arc" , 999 );
+         UIManager.put( "TextField.arc" , 999 );
           initComponents();
          UIManager.put( "Button.arc" , 999 );
+         
+           
+          content.setLayout(new BorderLayout());
           //============PopUP
       
           //===============================
@@ -118,6 +131,7 @@ int xMouse, yMouse;
     private void initComponents() {
 
         content = new javax.swing.JPanel();
+        imageAvatar1 = new View.Admin.ImageAvatar();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         bt3 = new javax.swing.JButton();
@@ -136,7 +150,9 @@ int xMouse, yMouse;
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        content.setLayout(new java.awt.BorderLayout());
+        content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        content.add(imageAvatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 170, 140));
+
         getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 1010, 626));
 
         jButton1.setFont(new java.awt.Font("Roboto Medium", 1, 48)); // NOI18N
@@ -144,6 +160,13 @@ int xMouse, yMouse;
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        bt3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/SearchEmployye.png"))); // NOI18N
+        bt3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt3ActionPerformed(evt);
             }
         });
 
@@ -161,6 +184,8 @@ int xMouse, yMouse;
                 btListarActionPerformed(evt);
             }
         });
+
+        bt7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/5.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -390,12 +415,32 @@ yMouse = evt.getY();
                 AddFuncionario p1 = new AddFuncionario(this);
         p1.setSize(1000, 620);
         p1.setLocation(0,0);
+        content.setLayout(new BorderLayout());
         content.removeAll();
         content.add(p1, BorderLayout.CENTER );
         content.revalidate();
         content.repaint();
 
     }//GEN-LAST:event_bt1ActionPerformed
+
+    private void bt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt3ActionPerformed
+        AdminController cc = new AdminController(fr);
+   
+    try {
+        useri = cc.sellectAllFuncionario();
+    } catch (SQLException ex) {
+        Logger.getLogger(ADMFrame.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (ClassNotFoundException ex) {
+        Logger.getLogger(ADMFrame.class.getName()).log(Level.SEVERE, null, ex);
+    }
+        ProcurarFuncionario p1 = new ProcurarFuncionario(fr, useri);
+                        p1.setSize(1000, 620);
+                        p1.setLocation(0,0);
+                        content.removeAll();
+                        content.add(p1, BorderLayout.CENTER );
+                        content.revalidate();
+                        content.repaint();
+    }//GEN-LAST:event_bt3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -423,6 +468,7 @@ yMouse = evt.getY();
     private com.pedro.swing.win_button.ButtonBadges btNoti;
     private javax.swing.JPanel content;
     private javax.swing.JRadioButton escuro;
+    private View.Admin.ImageAvatar imageAvatar1;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
