@@ -173,6 +173,11 @@ public class AddFuncionario extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 190, 30, -1));
 
         jTextField1.setText("FileChooser");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
         add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 240, 210, -1));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -191,6 +196,10 @@ JOptionPane.showConfirmDialog(dateChooser1, "Salvar?");
     private void txContactoComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_txContactoComponentShown
         // TODO add your handling code here:
     }//GEN-LAST:event_txContactoComponentShown
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     
     
