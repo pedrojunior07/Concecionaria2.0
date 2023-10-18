@@ -47,14 +47,14 @@ import javax.swing.UIManager;
 public class ADMFrame extends javax.swing.JFrame {
 int xMouse, yMouse;
     DrawerController drawer ;
-    JFrame fr;
+    JFrame fr = this;
      ArrayList<Vendedor> useri;
     public ADMFrame() {
         UIManager.put( "Button.arc" , 999 );
          UIManager.put( "TextField.arc" , 999 );
           initComponents();
          UIManager.put( "Button.arc" , 999 );
-         this.fr = this;
+         
            
           content.setLayout(new BorderLayout());
           //============PopUP
