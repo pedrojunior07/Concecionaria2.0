@@ -5,6 +5,7 @@
 package View.Admin;
 
 import View.ADMFrame;
+
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.ui.FlatRoundBorder;
 import com.formdev.flatlaf.ui.FlatTextBorder;
@@ -29,7 +30,7 @@ public class AddFuncionario extends javax.swing.JPanel {
     /**
      * Creates new form AddFuncionario
      */
-    public AddFuncionario() {
+    public AddFuncionario(JFrame fr) {
         initComponents();
       dateChooser1.setTextRefernce(txData);
         //---------------------------------------------------

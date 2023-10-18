@@ -4,9 +4,13 @@
  */
 package View;
 
+import Controller.AdminController;
+import Model.Vendedor;
 import View.Admin.AddFuncionario;
 import View.Admin.Header;
 import View.Admin.ListarFuncionarios;
+import View.Admin.ProcurarFuncionario;
+import View.Gerente.AdicionarCarro;
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.extras.FlatAnimatedLafChange;
@@ -23,12 +27,17 @@ import com.formdev.flatlaf.ui.FlatRoundBorder;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javaswingdev.drawer.Drawer;
 import javaswingdev.drawer.DrawerController;
 import javaswingdev.drawer.DrawerItem;
 import javaswingdev.drawer.EventDrawer;
 import javax.management.Notification;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.UIManager;
 
 /**
@@ -38,17 +47,23 @@ import javax.swing.UIManager;
 public class ADMFrame extends javax.swing.JFrame {
 int xMouse, yMouse;
     DrawerController drawer ;
+    JFrame fr;
+     ArrayList<Vendedor> useri;
     public ADMFrame() {
-       
+        UIManager.put( "Button.arc" , 999 );
+         UIManager.put( "TextField.arc" , 999 );
           initComponents();
          UIManager.put( "Button.arc" , 999 );
+         this.fr = this;
+           
+          content.setLayout(new BorderLayout());
           //============PopUP
       
           //===============================
           //++++++++++++++++++++++++++++++++++++++++++
         btMassage.setBackground(this.getForeground());
         btNoti.setBackground(this.getForeground());
-      FlatGitHubIJTheme.installBorder(bt1, "Round");
+     // FlatGitHubIJTheme.installBorder(bt1, "Round");
 
     //++++++++++++++++++++++++++++++++++++++++++
     //======================================================================
@@ -116,6 +131,7 @@ int xMouse, yMouse;
     private void initComponents() {
 
         content = new javax.swing.JPanel();
+        imageAvatar1 = new View.Admin.ImageAvatar();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         bt3 = new javax.swing.JButton();
@@ -129,32 +145,47 @@ int xMouse, yMouse;
         btMassage = new com.pedro.swing.win_button.ButtonBadges();
         btNoti = new com.pedro.swing.win_button.ButtonBadges();
         escuro = new javax.swing.JRadioButton();
-        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        content.setLayout(new java.awt.BorderLayout());
+        content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        content.add(imageAvatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 170, 140));
+
         getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 1010, 626));
 
         jButton1.setFont(new java.awt.Font("Roboto Medium", 1, 48)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/outline_menu_open_black_18.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/menu1.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
+        bt3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/SearchEmployye.png"))); // NOI18N
+        bt3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt3ActionPerformed(evt);
+            }
+        });
+
         bt1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/2.png"))); // NOI18N
         bt1.setDoubleBuffered(true);
+        bt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt1ActionPerformed(evt);
+            }
+        });
 
-        btListar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/5.png"))); // NOI18N
+        btListar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/employees.png"))); // NOI18N
         btListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btListarActionPerformed(evt);
             }
         });
+
+        bt7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/5.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -177,8 +208,8 @@ int xMouse, yMouse;
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77)
+                .addComponent(jButton1)
+                .addGap(70, 70, 70)
                 .addComponent(bt1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btListar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -192,7 +223,7 @@ int xMouse, yMouse;
                 .addComponent(bt6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(bt7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 45, -1, 630));
@@ -224,16 +255,12 @@ int xMouse, yMouse;
             }
         });
 
-        jButton3.setText("jButton3");
-
         javax.swing.GroupLayout BArraDeTituloLayout = new javax.swing.GroupLayout(BArraDeTitulo);
         BArraDeTitulo.setLayout(BArraDeTituloLayout);
         BArraDeTituloLayout.setHorizontalGroup(
             BArraDeTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BArraDeTituloLayout.createSequentialGroup()
-                .addContainerGap(416, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(187, 187, 187)
+                .addContainerGap(678, Short.MAX_VALUE)
                 .addComponent(escuro)
                 .addGap(180, 180, 180)
                 .addComponent(btNoti, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -248,9 +275,7 @@ int xMouse, yMouse;
                 .addGroup(BArraDeTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btNoti, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btMassage, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(BArraDeTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(escuro)
-                        .addComponent(jButton3)))
+                    .addComponent(escuro))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -355,7 +380,7 @@ yMouse = evt.getY();
                         bt5.setVisible(false);
                         bt6.setVisible(false);
                         bt7.setVisible(false);
-                        AddFuncionario p1 = new AddFuncionario();
+                        AddFuncionario p1 = new AddFuncionario(fr);
                         p1.setSize(1000, 620);
                         p1.setLocation(0,0);
                         content.removeAll();
@@ -377,7 +402,7 @@ yMouse = evt.getY();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListarActionPerformed
-        ListarFuncionarios p1 = new ListarFuncionarios();
+        ListarFuncionarios p1 = new ListarFuncionarios(this);
                         p1.setSize(1000, 620);
                         p1.setLocation(0,0);
                         content.removeAll();
@@ -386,12 +411,43 @@ yMouse = evt.getY();
                         content.repaint();
     }//GEN-LAST:event_btListarActionPerformed
 
+    private void bt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt1ActionPerformed
+                AddFuncionario p1 = new AddFuncionario(this);
+        p1.setSize(1000, 620);
+        p1.setLocation(0,0);
+        content.setLayout(new BorderLayout());
+        content.removeAll();
+        content.add(p1, BorderLayout.CENTER );
+        content.revalidate();
+        content.repaint();
+
+    }//GEN-LAST:event_bt1ActionPerformed
+
+    private void bt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt3ActionPerformed
+        AdminController cc = new AdminController(fr);
+   
+    try {
+        useri = cc.sellectAllFuncionario();
+    } catch (SQLException ex) {
+        Logger.getLogger(ADMFrame.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (ClassNotFoundException ex) {
+        Logger.getLogger(ADMFrame.class.getName()).log(Level.SEVERE, null, ex);
+    }
+        ProcurarFuncionario p1 = new ProcurarFuncionario(fr, useri);
+                        p1.setSize(1000, 620);
+                        p1.setLocation(0,0);
+                        content.removeAll();
+                        content.add(p1, BorderLayout.CENTER );
+                        content.revalidate();
+                        content.repaint();
+    }//GEN-LAST:event_bt3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        FlatMacLightLaf.registerCustomDefaultsSource("style");
-        FlatMacLightLaf.setup();
+       // FlatGitHubIJTheme.registerCustomDefaultsSource("style");
+        FlatGitHubIJTheme.setup();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ADMFrame().setVisible(true);
@@ -412,8 +468,8 @@ yMouse = evt.getY();
     private com.pedro.swing.win_button.ButtonBadges btNoti;
     private javax.swing.JPanel content;
     private javax.swing.JRadioButton escuro;
+    private View.Admin.ImageAvatar imageAvatar1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

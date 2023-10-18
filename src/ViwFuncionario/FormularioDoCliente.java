@@ -5,20 +5,24 @@
 package ViwFuncionario;
 
 import com.raven.datechooser.DateChooser;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import jnafilechooser.api.JnaFileChooser;
 
 /**
  *
  * @author Celso Mongane
  */
 public class FormularioDoCliente extends javax.swing.JPanel {
-
+JFrame painel;
     /**
      * Creates new form FormularioDoCliente
      */
     public FormularioDoCliente() {
         initComponents();
-        
-        Datas.setTextRefernce(txData);
+        JFrame painel =null;
+        Datas.setTextRefernce(DatedeNascimento);
     }
 
     /**
@@ -32,37 +36,37 @@ public class FormularioDoCliente extends javax.swing.JPanel {
 
         Datas = new ViwFuncionario.DateChooser();
         jPanel1 = new javax.swing.JPanel();
-        jTextField6 = new javax.swing.JTextField();
+        NomedoCliente = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        Apelido = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        Nacionalidade = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        BilhetedeIdentidade = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
+        Email = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
-        txData = new javax.swing.JTextField();
+        DatedeNascimento = new javax.swing.JTextField();
         jToggleButton1 = new javax.swing.JToggleButton();
-        jTextField13 = new javax.swing.JTextField();
+        Especialidade = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
+        Telefone = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         imageAvatar2 = new View.Admin.ImageAvatar();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        Selecionar = new javax.swing.JButton();
+        Registar = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
         setLayout(null);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 255, 153)));
 
-        jTextField6.setText("jTextField1");
+        NomedoCliente.setText("jTextField1");
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel7.setText("Preechimento do formulario do cliente");
@@ -71,20 +75,20 @@ public class FormularioDoCliente extends javax.swing.JPanel {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/2.png"))); // NOI18N
         jLabel3.setText("Nome do cliente");
 
-        jTextField7.setText("jTextField2");
+        Apelido.setText("jTextField2");
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setText("Apelido");
 
-        jTextField8.setText("jTextField3");
+        Nacionalidade.setText("jTextField3");
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel9.setText("BI");
 
-        jTextField9.setText("jTextField4");
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        BilhetedeIdentidade.setText("jTextField4");
+        BilhetedeIdentidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                BilhetedeIdentidadeActionPerformed(evt);
             }
         });
 
@@ -94,7 +98,7 @@ public class FormularioDoCliente extends javax.swing.JPanel {
         jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel11.setText("Especialidade");
 
-        jTextField11.setText("jTextField11");
+        Email.setText("jTextField11");
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel12.setText("Sexo:");
@@ -111,9 +115,9 @@ public class FormularioDoCliente extends javax.swing.JPanel {
 
         jRadioButton2.setText("Femenino");
 
-        txData.addActionListener(new java.awt.event.ActionListener() {
+        DatedeNascimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txDataActionPerformed(evt);
+                DatedeNascimentoActionPerformed(evt);
             }
         });
 
@@ -123,12 +127,12 @@ public class FormularioDoCliente extends javax.swing.JPanel {
             }
         });
 
-        jTextField13.setText("jTextField1");
+        Especialidade.setText("jTextField1");
 
         jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel14.setText("Data de Nascimento");
 
-        jTextField14.setText("jTextField14");
+        Telefone.setText("jTextField14");
 
         jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cont.png"))); // NOI18N
@@ -138,9 +142,14 @@ public class FormularioDoCliente extends javax.swing.JPanel {
         imageAvatar2.setGradientColor2(new java.awt.Color(242, 242, 242));
         imageAvatar2.setImage(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/user.png"))); // NOI18N
 
-        jButton1.setText("Selecionar foto");
+        Selecionar.setText("Selecionar foto");
+        Selecionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SelecionarActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Registar");
+        Registar.setText("Registar");
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/datechooser/previous.png"))); // NOI18N
         jButton3.setText("Voltar");
@@ -155,53 +164,49 @@ public class FormularioDoCliente extends javax.swing.JPanel {
                         .addGap(49, 49, 49)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NomedoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jRadioButton1)
                                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jRadioButton2))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField13, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE))))
+                                .addComponent(Especialidade, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Nacionalidade, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(186, 186, 186)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txData)
-                                    .addComponent(jTextField11, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton1)
-                                .addContainerGap(337, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(485, Short.MAX_VALUE)))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel14)
-                            .addContainerGap(471, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Selecionar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
                                 .addComponent(imageAvatar2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(112, 112, 112))))
+                        .addGap(112, 112, 112))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(DatedeNascimento)
+                                    .addComponent(Email, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(BilhetedeIdentidade, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                                    .addComponent(Apelido, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jToggleButton1))
+                            .addComponent(Registar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(259, 259, 259)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -220,28 +225,28 @@ public class FormularioDoCliente extends javax.swing.JPanel {
                             .addComponent(jLabel8))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-                            .addComponent(jTextField7))
+                            .addComponent(NomedoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                            .addComponent(Apelido))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
                             .addComponent(jLabel9))
                         .addGap(12, 12, 12)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BilhetedeIdentidade, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(4, 4, 4)
-                                .addComponent(jTextField8))))
+                                .addComponent(Nacionalidade))))
                     .addComponent(imageAvatar2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(Selecionar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Especialidade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -249,8 +254,8 @@ public class FormularioDoCliente extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-                    .addComponent(txData))
+                    .addComponent(Telefone, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                    .addComponent(DatedeNascimento))
                 .addGap(24, 24, 24)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -260,7 +265,7 @@ public class FormularioDoCliente extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
-                    .addComponent(jButton2))
+                    .addComponent(Registar))
                 .addGap(59, 59, 59))
         );
 
@@ -268,9 +273,9 @@ public class FormularioDoCliente extends javax.swing.JPanel {
         jPanel1.setBounds(0, 0, 909, 553);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void BilhetedeIdentidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BilhetedeIdentidadeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
+    }//GEN-LAST:event_BilhetedeIdentidadeActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
@@ -281,16 +286,37 @@ public class FormularioDoCliente extends javax.swing.JPanel {
         Datas.showPopup();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
-    private void txDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txDataActionPerformed
+    private void DatedeNascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DatedeNascimentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txDataActionPerformed
+    }//GEN-LAST:event_DatedeNascimentoActionPerformed
+
+    private void SelecionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelecionarActionPerformed
+        // TODO add your handling code here:
+         JnaFileChooser ch = new JnaFileChooser() ;
+         ch.showOpenDialog(painel);
+    
+    String selectedFile = ch.getSelectedFile().toString();
+     ImageIcon c = new ImageIcon(selectedFile);
+         imageAvatar2.setImage(c);
+         
+         
+   
+    }//GEN-LAST:event_SelecionarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Apelido;
+    private javax.swing.JTextField BilhetedeIdentidade;
     private ViwFuncionario.DateChooser Datas;
+    private javax.swing.JTextField DatedeNascimento;
+    private javax.swing.JTextField Email;
+    private javax.swing.JTextField Especialidade;
+    private javax.swing.JTextField Nacionalidade;
+    private javax.swing.JTextField NomedoCliente;
+    private javax.swing.JButton Registar;
+    private javax.swing.JButton Selecionar;
+    private javax.swing.JTextField Telefone;
     private View.Admin.ImageAvatar imageAvatar2;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -305,14 +331,6 @@ public class FormularioDoCliente extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JTextField txData;
     // End of variables declaration//GEN-END:variables
 }
