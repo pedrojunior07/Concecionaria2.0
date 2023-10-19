@@ -9,7 +9,7 @@ package Model;
  * @author Pedro
  */
 public class Cliente {
-      private String nome,sexo, apelido, naturalidade, identidade, estadocivil, especialidade, eMail, senha;
+    private String nome,sexo, apelido, naturalidade, identidade, estadocivil, especialidade, eMail, senha;
     private int idade, Id, telefone;
     private Venda venda;
 
