@@ -261,7 +261,7 @@ int xMouse, yMouse;
         BArraDeTituloLayout.setHorizontalGroup(
             BArraDeTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BArraDeTituloLayout.createSequentialGroup()
-                .addContainerGap(678, Short.MAX_VALUE)
+                .addContainerGap(681, Short.MAX_VALUE)
                 .addComponent(escuro)
                 .addGap(180, 180, 180)
                 .addComponent(btNoti, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)

@@ -5,6 +5,7 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
@@ -14,6 +15,8 @@ import javax.swing.ImageIcon;
 public class ImagemDirectorios implements Serializable {
     
   private String identidade;
+  private int numChassi;
+  private ArrayList<ImageIcon> carroImagens;
    private ImageIcon icon;
    int chassi;
 

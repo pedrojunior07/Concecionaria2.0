@@ -15,6 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import AppPackage.AnimationClass;
 
 /**
  *
@@ -41,8 +42,6 @@ public class GerenteFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        contente = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         imageAvatar1 = new View.Admin.ImageAvatar();
         Messagem = new com.pedro.swing.win_button.ButtonBadges();
@@ -52,7 +51,6 @@ public class GerenteFrame extends javax.swing.JFrame {
         Acao2 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         lbNome = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -62,14 +60,11 @@ public class GerenteFrame extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
+        PainelZim = new javax.swing.JPanel();
+        jToggleButton1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        contente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        contente.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 180, 30));
-
-        getContentPane().add(contente, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 1000, 620));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(imageAvatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 180, 140));
@@ -96,9 +91,6 @@ public class GerenteFrame extends javax.swing.JFrame {
         jPanel1.add(lbNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 170, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 190, 630));
-
-        jButton1.setText("jButton1");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 40, 30));
 
         jButton2.setText("jButton1");
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, -1, 40));
@@ -127,8 +119,24 @@ public class GerenteFrame extends javax.swing.JFrame {
         jButton13.setText("jButton1");
         getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, 40));
 
+        PainelZim.setBackground(new java.awt.Color(255, 0, 51));
+        getContentPane().add(PainelZim, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, -200, 1000, 200));
+
+        jToggleButton1.setText(">>>");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 70, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+      AnimationClass painl = new AnimationClass();
+      painl.
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     public static void main(String args[]) {
       
@@ -149,10 +157,9 @@ public class GerenteFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Acao2;
     private com.pedro.swing.win_button.ButtonBadges Messagem;
+    private javax.swing.JPanel PainelZim;
     private com.pedro.swing.win_button.ButtonBadges buttonBadges2;
-    private javax.swing.JPanel contente;
     private View.Admin.ImageAvatar imageAvatar1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
@@ -166,7 +173,7 @@ public class GerenteFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JLabel lbNome;
     // End of variables declaration//GEN-END:variables
 }

@@ -53,7 +53,7 @@ public class CarroDao {
                
        statement.execute();
         connection.close();
-        JOptionPane.showMessageDialog(null, "Usuario Salvo  com Sucesso", "Base De Dados",
+        JOptionPane.showMessageDialog(null, "Carro Salvo  com Sucesso", "Base De Dados",
                     JOptionPane.INFORMATION_MESSAGE);  
 
     }
