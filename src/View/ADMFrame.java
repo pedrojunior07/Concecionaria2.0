@@ -5,6 +5,7 @@
 package View;
 
 import Controller.AdminController;
+import Model.Funcionario;
 import Model.Vendedor;
 import View.Admin.AddFuncionario;
 import View.Admin.Header;
@@ -48,7 +49,7 @@ public class ADMFrame extends javax.swing.JFrame {
 int xMouse, yMouse;
     DrawerController drawer ;
     JFrame fr = this;
-     ArrayList<Vendedor> useri;
+     ArrayList<Funcionario> useri;
     public ADMFrame() {
          UIManager.put( "Button.arc" , 999 );
          UIManager.put( "TextField.arc" , 999 );
@@ -153,7 +154,7 @@ int xMouse, yMouse;
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         content.add(imageAvatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 170, 140));
 
-        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 1010, 626));
+        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 1010, 626));
 
         jButton1.setFont(new java.awt.Font("Roboto Medium", 1, 48)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/menu1.png"))); // NOI18N

@@ -29,7 +29,7 @@ public class GerenteDao {
     public void insertGerente(Gerente user) throws SQLException {
        
       
-           String sql = "INSERT INTO gerente (nome, sexo, apelido, naturalidade, identidade, estadocivil, especialidade, eMail, senha, idade, telefone, Id, dataDeNascimento, dataDoContrato, estado, acessoNivel1, acessoNivel2, acessoNivel3) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+           String sql = "INSERT INTO `gerente` (`nome`, `sexo`, `apelido`, `naturalidade`, `identidade`, `estadocivil`, `especialidade`, `eMail`, `senha`, `idade`, `telefone`, `salario`, `dataDeNascimento`, `dataDoContrato`, `estado`, `acessoNivel1`, `acessoNivel2`, `acessoNivel3`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
          
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -46,7 +46,7 @@ public class GerenteDao {
             preparedStatement.setString(9, user.getSenha());
             preparedStatement.setInt(10, user.getIdade());
             preparedStatement.setInt(11, user.getTelefone());
-            preparedStatement.setInt(12, user.getId());
+            preparedStatement.setDouble(12, user.getSalario());
             preparedStatement.setString(13, user.getDataDeNascimento());
             preparedStatement.setString(14, user.getDataDoContrato());
             preparedStatement.setBoolean(15, user.isEstado());

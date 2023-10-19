@@ -6,6 +6,7 @@ package View.Admin;
 
 import Controller.AdminController;
 import DAO.ImagemDirectorioDAO;
+import Model.Gerente;
 import Model.ImagemDirectorios;
 import Model.Vendedor;
 import View.ADMFrame;
@@ -230,9 +231,9 @@ dateChooser1.showPopup();
         int ano=    dateChooser1.getSelectedDate().getYear();
         int mes =  dateChooser1.getSelectedDate().getMonth();
         int dia = dateChooser1.getSelectedDate().getDay();
-        a.setDataDeNascimento(dateChooser1.getSelectedDate().toString());
+        a.setDataDeNascimento("djshj");
           Calendar b = Calendar.getInstance();
-       // a.setDataDoContrato(new Date(b.getTime().getYear(),b.getTime().getMonth()),b.getTime().getDate());
+       a.setDataDoContrato("20/20/20");
         a.setEspecialidade(cCategoria.getSelectedItem().toString());
         a.setEstado(true);
         a.setEstadocivil(cECivil.getSelectedItem().toString());
@@ -265,7 +266,48 @@ dateChooser1.showPopup();
          
         
       }else if(cCategoria.getSelectedItem().toString().equalsIgnoreCase("gerente")){
-      
+          Gerente a = new Gerente();
+       a.setNome(txNome.getText());
+        a.setNaturalidade(cNacinalidade.getSelectedItem().toString());
+        a.setAcessoNivel1(false);
+        a.setAcessoNivel2(true);
+        a.setAcessoNivel3(false);
+        a.setApelido(txApelido.getText());
+        int ano=    dateChooser1.getSelectedDate().getYear();
+        int mes =  dateChooser1.getSelectedDate().getMonth();
+        int dia = dateChooser1.getSelectedDate().getDay();
+        a.setDataDeNascimento("dsidis");
+          Calendar b = Calendar.getInstance();
+          a.setDataDoContrato("ywey");
+       // a.setDataDoContrato(new Date(b.getTime().getYear(),b.getTime().getMonth()),b.getTime().getDate());
+        a.setEspecialidade(cCategoria.getSelectedItem().toString());
+        a.setEstado(true);
+        a.setEstadocivil(cECivil.getSelectedItem().toString());
+        a.setIdade(2023-dateChooser1.getSelectedDate().getYear());
+        a.setIdentidade(txIdentidade.getText());
+     
+        a.setSalario(Double.parseDouble(txSalario.getText()));
+        a.setSenha("12345");
+        a.setSexo(cSexo.getSelectedItem().toString());
+        a.setTelefone(Integer.parseInt(txContacto.getText()));
+        a.seteMail(txEmail.getText());
+          System.out.println(a.getSalario()+txSalario.getText());
+          AdminController cc = new AdminController(frame);
+          
+          ImagemDirectorios icon = new ImagemDirectorios();
+          icon.setIdentidade(txIdentidade.getText());
+          icon.setIcon(icone);
+          ImagemDirectorioDAO imDir = new ImagemDirectorioDAO();
+         imDir.insert(icon, "Imagens");
+            
+         
+         try {
+                cc.insertGerente(a);
+            } catch (SQLException ex) {
+                Logger.getLogger(AddFuncionario.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(AddFuncionario.class.getName()).log(Level.SEVERE, null, ex);
+            }
       }
     }//GEN-LAST:event_jButton2ActionPerformed
 

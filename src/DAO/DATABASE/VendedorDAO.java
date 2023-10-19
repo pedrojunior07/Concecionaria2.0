@@ -122,8 +122,7 @@ private ArrayList<Vendedor> pesquisa(PreparedStatement statement1) throws SQLExc
         statement1.execute();
         ResultSet resultSet = statement1.getResultSet();
          while (resultSet.next()) {
-              java.sql.Date sqlDate ;
-               java.sql.Date sqlDate1 ;
+              
                 Vendedor user = new Vendedor();
                 user.setId(resultSet.getInt("id"));
                 user.setApelido(resultSet.getString("Apelido"));
@@ -135,15 +134,9 @@ private ArrayList<Vendedor> pesquisa(PreparedStatement statement1) throws SQLExc
                 user.setIdade(resultSet.getInt("Idade"));
                 user.setNome(resultSet.getString("Nome"));
                 user.setTelefone(resultSet.getInt("Telefone"));
-                sqlDate = resultSet.getDate("DataNascimento");
+                user.setDataDeNascimento( resultSet.getString("DataNascimento"));
+                user.setDataDoContrato(resultSet.getString("DataContrato"));
                
-                    user.setDataDeNascimento(resultSet.getString("DataNascimento"));
-                
-               
-                
-                    user.setDataDeNascimento(resultSet.getString("DataContrato"));
-                
-              
                 user.setEstado(resultSet.getBoolean("estado"));
                 user.setSalario(resultSet.getDouble("salario"));
                 user.setAcessoNivel1(resultSet.getBoolean("acessoNivel1"));
