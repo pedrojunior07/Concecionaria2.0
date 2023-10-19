@@ -219,7 +219,7 @@ dateChooser1.showPopup();
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         int p = JOptionPane.showConfirmDialog(this, "Salvar?");
 
-      if(p==0){
+      if(cCategoria.getSelectedItem().toString().equalsIgnoreCase("vendedor")){
           Vendedor a = new Vendedor();
        a.setNome(txNome.getText());
         a.setNaturalidade(cNacinalidade.getSelectedItem().toString());
@@ -255,7 +255,7 @@ dateChooser1.showPopup();
             
          
          try {
-                cc.insert(a);
+                cc.insertVendedor(a);
             } catch (SQLException ex) {
                 Logger.getLogger(AddFuncionario.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ClassNotFoundException ex) {
@@ -264,6 +264,8 @@ dateChooser1.showPopup();
         
          
         
+      }else if(cCategoria.getSelectedItem().toString().equalsIgnoreCase("gerente")){
+      
       }
     }//GEN-LAST:event_jButton2ActionPerformed
 

@@ -5,6 +5,7 @@
 package View.Admin;
 
 import Controller.AdminController;
+import Model.Funcionario;
 import Model.Vendedor;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -125,10 +126,10 @@ public class ListarFuncionarios extends javax.swing.JPanel {
 		}
           
           AdminController cc = new AdminController(frame);
-         ArrayList<Vendedor> lista;
+         ArrayList<Funcionario> lista;
          try {
              lista = cc.sellectAllFuncionario();
-               for (Vendedor v : lista) {
+               for (Funcionario v : lista) {
 	  
            
            
