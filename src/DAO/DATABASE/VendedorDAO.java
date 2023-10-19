@@ -31,8 +31,7 @@ public class VendedorDAO {
 
         PreparedStatement statement = connection.prepareStatement(sql);
     
-      java.sql.Date sqlDate = new java.sql.Date(   user.getDataDeNascimento().getYear(), user.getDataDeNascimento().getMonth(), user.getDataDeNascimento().getDay());
-      java.util.Date utilDate1 = user.getDataDeNascimento();
+      
      // java.sql.Date sqlDate1 = new java.sql.Date(utilDate.getTime());
 
        statement.setString(1, user.getApelido());
@@ -44,8 +43,8 @@ public class VendedorDAO {
             statement.setInt(7,  user.getIdade());
              statement.setString(8,  user.getNome());
               statement.setInt(9,  user.getTelefone());
-               statement.setDate(10, sqlDate);
-                statement.setDate(11, sqlDate);
+               statement.setString(10, user.getDataDeNascimento());
+                statement.setString(11, user.getDataDoContrato());
                
                   statement.setBoolean(12,  user.isEstado());
                    statement.setDouble( 13,  user.getSalario());
@@ -70,10 +69,6 @@ public class VendedorDAO {
                      "WHERE `id`=?";
         
         
-           java.util.Date utilDate = user.getDataDeNascimento();
-      java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-      java.util.Date utilDate1 = user.getDataDeNascimento();
-      java.sql.Date sqlDate1 = new java.sql.Date(utilDate.getTime());
       
       
             PreparedStatement statement = connection.prepareStatement(sql);
@@ -86,8 +81,8 @@ public class VendedorDAO {
             statement.setInt(7, user.getIdade());
             statement.setString(8, user.getNome());
             statement.setInt(9, user.getTelefone());
-            statement.setDate(10, sqlDate);
-            statement.setDate(11, sqlDate1);
+            statement.setString(10, user.getDataDeNascimento());
+            statement.setString(11, user.getDataDeNascimento());
             statement.setBoolean(12, user.isEstado());
             statement.setDouble(13, user.getSalario());
             statement.setBoolean(14, user.isAcessoNivel1());
@@ -141,15 +136,13 @@ private ArrayList<Vendedor> pesquisa(PreparedStatement statement1) throws SQLExc
                 user.setNome(resultSet.getString("Nome"));
                 user.setTelefone(resultSet.getInt("Telefone"));
                 sqlDate = resultSet.getDate("DataNascimento");
-                if (sqlDate != null) {
-                    user.setDataDeNascimento(new Date(sqlDate.getTime()));
-                }
+               
+                    user.setDataDeNascimento(resultSet.getString("DataNascimento"));
+                
                
                 
-                sqlDate1 = resultSet.getDate("DataContrato");
-                if (sqlDate1 != null) {
-                    user.setDataDeNascimento(new Date(sqlDate1.getTime()));
-                }
+                    user.setDataDeNascimento(resultSet.getString("DataContrato"));
+                
               
                 user.setEstado(resultSet.getBoolean("estado"));
                 user.setSalario(resultSet.getDouble("salario"));
@@ -176,4 +169,5 @@ public Vendedor selectPorId(int id)throws SQLException{
    return  pesquisa(statement).get(0);
     
 }
+
 }

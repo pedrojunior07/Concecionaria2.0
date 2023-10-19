@@ -135,6 +135,11 @@ public class AddFuncionario extends javax.swing.JPanel {
 
         txSalario.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         txSalario.setLabelText("Salario");
+        txSalario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txSalarioActionPerformed(evt);
+            }
+        });
         add(txSalario, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 290, -1));
 
         txContacto.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
@@ -142,6 +147,11 @@ public class AddFuncionario extends javax.swing.JPanel {
         txContacto.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 txContactoComponentShown(evt);
+            }
+        });
+        txContacto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txContactoActionPerformed(evt);
             }
         });
         add(txContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 290, -1));
@@ -220,7 +230,7 @@ dateChooser1.showPopup();
         int ano=    dateChooser1.getSelectedDate().getYear();
         int mes =  dateChooser1.getSelectedDate().getMonth();
         int dia = dateChooser1.getSelectedDate().getDay();
-        a.setDataDeNascimento(new Date(ano, mes, dia));
+        a.setDataDeNascimento(dateChooser1.getSelectedDate().toString());
           Calendar b = Calendar.getInstance();
        // a.setDataDoContrato(new Date(b.getTime().getYear(),b.getTime().getMonth()),b.getTime().getDate());
         a.setEspecialidade(cCategoria.getSelectedItem().toString());
@@ -281,6 +291,14 @@ dateChooser1.showPopup();
       txIdentidade.setEnabled(true);
      }
     }//GEN-LAST:event_cNacinalidadeActionPerformed
+
+    private void txContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txContactoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txContactoActionPerformed
+
+    private void txSalarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txSalarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txSalarioActionPerformed
 
     
     

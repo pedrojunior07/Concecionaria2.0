@@ -50,7 +50,7 @@ int xMouse, yMouse;
     JFrame fr = this;
      ArrayList<Vendedor> useri;
     public ADMFrame() {
-        UIManager.put( "Button.arc" , 999 );
+         UIManager.put( "Button.arc" , 999 );
          UIManager.put( "TextField.arc" , 999 );
           initComponents();
          UIManager.put( "Button.arc" , 999 );
@@ -226,7 +226,7 @@ int xMouse, yMouse;
                 .addContainerGap(125, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 45, -1, 630));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, 630));
 
         BArraDeTitulo.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {

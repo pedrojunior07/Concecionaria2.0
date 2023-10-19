@@ -18,7 +18,7 @@ public abstract class Funcionario {
     public void setSalario(double salario) {
         this.salario = salario;
     }
-    private Date dataDeNascimento, dataDoContrato;
+    private String dataDeNascimento, dataDoContrato;
     private double salario;
     private boolean estado,acessoNivel1, acessoNivel2, acessoNivel3;
 
@@ -72,20 +72,24 @@ public abstract class Funcionario {
         this.senha = senha;
     }
 
-    public Date getDataDeNascimento() {
+    public String getDataDeNascimento() {
         return dataDeNascimento;
     }
 
-    public void setDataDeNascimento(Date dataDeNascimento) {
+    public void setDataDeNascimento(String dataDeNascimento) {
         this.dataDeNascimento = dataDeNascimento;
     }
 
-    public Date getDataDoContrato() {
+    public String getDataDoContrato() {
         return dataDoContrato;
     }
 
-    public void setDataDoContrato(Date dataDoContrato) {
+    public void setDataDoContrato(String dataDoContrato) {
         this.dataDoContrato = dataDoContrato;
+    }
+
+    public double getSalario() {
+        return salario;
     }
     
     
@@ -173,7 +177,7 @@ public abstract class Funcionario {
     }
     
     
-    public abstract double getSalario();
+   
     public abstract int getIdade(int anoNascimento);
     public abstract int tempoNaEmpresa(int anoDeEntrada);
     

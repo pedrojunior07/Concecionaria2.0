@@ -35,10 +35,7 @@ public class OutrosFuncionarios extends Funcionario {
     }
     
     //Esse Metodo retorna o salario do gerente
-    @Override
-    public double getSalario() {
-        return 0;
-    }
+   
     //Esse Metodo Retorna a idade Do Gerente
 
     @Override
