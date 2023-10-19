@@ -12,11 +12,19 @@ import java.util.Date;
  */
 public class Fornecedor {
    private String nomeDaEntidade, tipoDeComercio, email;
-   private int numeroDoNegogio, contacto;
+   private int numeroDoNegogio, contacto,ID;
    
   private Date         dataDoNegocio;
    private double precoDoNegocio;
    boolean status;
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 
     public String getNomeDaEntidade() {
         return nomeDaEntidade;

@@ -16,10 +16,10 @@ import javax.swing.JFrame;
 public class ProcurarFuncionario extends javax.swing.JPanel {
     JFrame frame;
     String teste;
-    ArrayList<Vendedor> user;
+    ArrayList<Funcionario> user;
     
     
-    public ProcurarFuncionario(JFrame frame,ArrayList<Vendedor> user) {
+    public ProcurarFuncionario(JFrame frame,ArrayList<Funcionario> user) {
         this.frame = frame;
         this.user = user;
         initComponents();
@@ -102,14 +102,17 @@ public class ProcurarFuncionario extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
      
         teste = new String();
-        for (Vendedor funcionario : user) {
+        for (Funcionario funcionario : user) {
             if(funcionario.geteMail().equalsIgnoreCase(txEmail.getText())){
             lId.setText("ID: "+funcionario.getId());
             LnomeComleto.setText(funcionario.getNome()+" "+funcionario.getApelido());
             lIdade.setText("Idade :  "+funcionario.getIdade());
             LEspecialidade.setText("Especialidade: "+funcionario.getEspecialidade());
             lSalario.setText("Salario: "+funcionario.getSalario());
-            lNumdevendas.setText("Numero De Vendas "+funcionario.getNumeroDeVendas() );
+            if(funcionario.getEspecialidade().equalsIgnoreCase("vendedor")){
+          Vendedor vende;
+                
+                lNumdevendas.setText("Numero De Vendas "+0 );}
              lEmail.setText(" Identidade : "+funcionario.getIdentidade());
            teste = funcionario.getIdentidade();
             }

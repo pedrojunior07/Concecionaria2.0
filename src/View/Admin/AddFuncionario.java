@@ -6,6 +6,7 @@ package View.Admin;
 
 import Controller.AdminController;
 import DAO.ImagemDirectorioDAO;
+import Model.Gerente;
 import Model.ImagemDirectorios;
 import Model.Vendedor;
 import View.ADMFrame;
@@ -135,6 +136,11 @@ public class AddFuncionario extends javax.swing.JPanel {
 
         txSalario.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         txSalario.setLabelText("Salario");
+        txSalario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txSalarioActionPerformed(evt);
+            }
+        });
         add(txSalario, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 290, -1));
 
         txContacto.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
@@ -142,6 +148,11 @@ public class AddFuncionario extends javax.swing.JPanel {
         txContacto.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 txContactoComponentShown(evt);
+            }
+        });
+        txContacto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txContactoActionPerformed(evt);
             }
         });
         add(txContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 290, -1));
@@ -209,7 +220,7 @@ dateChooser1.showPopup();
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         int p = JOptionPane.showConfirmDialog(this, "Salvar?");
 
-      if(p==0){
+      if(cCategoria.getSelectedItem().toString().equalsIgnoreCase("vendedor")){
           Vendedor a = new Vendedor();
        a.setNome(txNome.getText());
         a.setNaturalidade(cNacinalidade.getSelectedItem().toString());
@@ -220,9 +231,9 @@ dateChooser1.showPopup();
         int ano=    dateChooser1.getSelectedDate().getYear();
         int mes =  dateChooser1.getSelectedDate().getMonth();
         int dia = dateChooser1.getSelectedDate().getDay();
-        a.setDataDeNascimento(new Date(ano, mes, dia));
+        a.setDataDeNascimento("djshj");
           Calendar b = Calendar.getInstance();
-       // a.setDataDoContrato(new Date(b.getTime().getYear(),b.getTime().getMonth()),b.getTime().getDate());
+       a.setDataDoContrato("20/20/20");
         a.setEspecialidade(cCategoria.getSelectedItem().toString());
         a.setEstado(true);
         a.setEstadocivil(cECivil.getSelectedItem().toString());
@@ -245,7 +256,7 @@ dateChooser1.showPopup();
             
          
          try {
-                cc.insert(a);
+                cc.insertVendedor(a);
             } catch (SQLException ex) {
                 Logger.getLogger(AddFuncionario.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ClassNotFoundException ex) {
@@ -254,6 +265,49 @@ dateChooser1.showPopup();
         
          
         
+      }else if(cCategoria.getSelectedItem().toString().equalsIgnoreCase("gerente")){
+          Gerente a = new Gerente();
+       a.setNome(txNome.getText());
+        a.setNaturalidade(cNacinalidade.getSelectedItem().toString());
+        a.setAcessoNivel1(false);
+        a.setAcessoNivel2(true);
+        a.setAcessoNivel3(false);
+        a.setApelido(txApelido.getText());
+        int ano=    dateChooser1.getSelectedDate().getYear();
+        int mes =  dateChooser1.getSelectedDate().getMonth();
+        int dia = dateChooser1.getSelectedDate().getDay();
+        a.setDataDeNascimento("dsidis");
+          Calendar b = Calendar.getInstance();
+          a.setDataDoContrato("ywey");
+       // a.setDataDoContrato(new Date(b.getTime().getYear(),b.getTime().getMonth()),b.getTime().getDate());
+        a.setEspecialidade(cCategoria.getSelectedItem().toString());
+        a.setEstado(true);
+        a.setEstadocivil(cECivil.getSelectedItem().toString());
+        a.setIdade(2023-dateChooser1.getSelectedDate().getYear());
+        a.setIdentidade(txIdentidade.getText());
+     
+        a.setSalario(Double.parseDouble(txSalario.getText()));
+        a.setSenha("12345");
+        a.setSexo(cSexo.getSelectedItem().toString());
+        a.setTelefone(Integer.parseInt(txContacto.getText()));
+        a.seteMail(txEmail.getText());
+          System.out.println(a.getSalario()+txSalario.getText());
+          AdminController cc = new AdminController(frame);
+          
+          ImagemDirectorios icon = new ImagemDirectorios();
+          icon.setIdentidade(txIdentidade.getText());
+          icon.setIcon(icone);
+          ImagemDirectorioDAO imDir = new ImagemDirectorioDAO();
+         imDir.insert(icon, "Imagens");
+            
+         
+         try {
+                cc.insertGerente(a);
+            } catch (SQLException ex) {
+                Logger.getLogger(AddFuncionario.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(AddFuncionario.class.getName()).log(Level.SEVERE, null, ex);
+            }
       }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -281,6 +335,14 @@ dateChooser1.showPopup();
       txIdentidade.setEnabled(true);
      }
     }//GEN-LAST:event_cNacinalidadeActionPerformed
+
+    private void txContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txContactoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txContactoActionPerformed
+
+    private void txSalarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txSalarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txSalarioActionPerformed
 
     
     

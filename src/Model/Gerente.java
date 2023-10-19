@@ -42,11 +42,7 @@ public class Gerente extends Funcionario {
     Calendar calendario = Calendar.getInstance();
 
     //Esse Metodo retorna o salario do gerente
-    @Override
-    public double getSalario() {
-        return 0;
-    }
-    //Esse Metodo Retorna a idade Do Gerente
+   
 
     @Override
     public int getIdade(int anoNascimento) {

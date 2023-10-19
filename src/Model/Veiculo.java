@@ -9,9 +9,18 @@ package Model;
  * @author Pedro
  */
 public abstract class  Veiculo  {
+    int Id;
   private String categoria,  tipoDeComustivel, fabricante;
   private int anoDeFabrico, idProduto;
   private double preco;
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int Id) {
+        this.Id = Id;
+    }
 
   
     public String getCategoria() {

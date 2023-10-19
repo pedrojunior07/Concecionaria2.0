@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Celso%20Mongane/Documents/GitHub/Concecionaria2.0/src/DAO/VendedorDao.java</file>
             <file>file:/C:/Users/Celso%20Mongane/Documents/GitHub/Concecionaria2.0/src/DAO/DATABASE/Conexao.java</file>
             <file>file:/C:/Users/Celso%20Mongane/Documents/GitHub/Concecionaria2.0/src/ViwFuncionario/FormularioDoCliente.java</file>
@@ -13,6 +14,31 @@
             <file>file:/C:/Users/Celso%20Mongane/Documents/GitHub/Concecionaria2.0/src/View/Admin/AddFuncionario.java</file>
             <file>file:/C:/Users/Celso%20Mongane/Documents/GitHub/Concecionaria2.0/src/Model/Cliente.java</file>
             <file>file:/C:/Users/Celso%20Mongane/Documents/GitHub/Concecionaria2.0/src/ViwFuncionario/Pagamentos.java</file>
+=======
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/ADMFrame.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/Model/Carro.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/DAO/DATABASE/VendedorDAO.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/DAO/DATABASE/GerenteDao.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/Model/Gerente.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Admin/Relatorios.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/GerenteFrame.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Admin/VisaoGeral.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Gerente/AdicionarCarro.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/ViwFuncionario/Base.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/Model/ImagemDirectorios.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/Model/Veiculo.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Admin/AddFuncionario.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/DAO/DATABASE/CarroDao.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/AdminFrame.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Admin/ProcurarFuncionario.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/Model/Fornecedor.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/DAO/ImagemDirectorioDAO.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Admin/ImageAvatar.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Login.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/NewClass.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/ViwFuncionario/EfectuarVenda.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/DAO/VendedorDao.java</file>
+>>>>>>> a1323933caf4b4b1c1004118698f956e592905a9
         </group>
     </open-files>
 </project-private>

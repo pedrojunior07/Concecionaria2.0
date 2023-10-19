@@ -15,7 +15,18 @@ public class ImagemDirectorios implements Serializable {
     
   private String identidade;
    private ImageIcon icon;
+   int chassi;
 
+  
+   
+   public int getChassi() {
+        return chassi;
+    }
+
+    public void setChassi(int chassi) {
+        this.chassi = chassi;
+    }
+   
     public String getIdentidade() {
         return identidade;
     }
