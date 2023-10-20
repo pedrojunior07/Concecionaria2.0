@@ -4,6 +4,8 @@
  */
 package ViwFuncionario;
 
+import java.awt.BorderLayout;
+
 /**
  *
  * @author Celso Mongane
@@ -26,6 +28,7 @@ public class Pagamentos extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        BaseLocal = new javax.swing.JPanel();
         BasePagamento = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         Avista = new javax.swing.JRadioButton();
@@ -36,17 +39,20 @@ public class Pagamentos extends javax.swing.JPanel {
         jRadioButton4 = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         ComboPrestacoes = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        Avancar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
+        BaseLocal.setLayout(new java.awt.BorderLayout());
+
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel6.setText("Efectuar Pagamento");
+        jLabel6.setText("Formulario De Pagamento");
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 255)));
 
+        Avista.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         Avista.setText("Avista");
         Avista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,6 +63,7 @@ public class Pagamentos extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel2.setText("Detalhes do veiculo");
 
+        Prestacoes.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         Prestacoes.setText("Prestacoes");
         Prestacoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,8 +74,10 @@ public class Pagamentos extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel3.setText("Forma de Pagamento");
 
+        Cartao.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         Cartao.setText("Cartao");
 
+        jRadioButton4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jRadioButton4.setText("Dinheiro vivo");
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -81,10 +90,10 @@ public class Pagamentos extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setText("Pagar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Avancar.setText("Avancar");
+        Avancar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                AvancarActionPerformed(evt);
             }
         });
 
@@ -102,26 +111,30 @@ public class Pagamentos extends javax.swing.JPanel {
             .addGroup(BasePagamentoLayout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addGroup(BasePagamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(BasePagamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Prestacoes)
-                        .addComponent(Avista)
-                        .addComponent(jLabel3)
-                        .addComponent(Cartao)
-                        .addComponent(jRadioButton4)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ComboPrestacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(BasePagamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BasePagamentoLayout.createSequentialGroup()
-                        .addGap(139, 139, 139)
                         .addGroup(BasePagamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(69, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BasePagamentoLayout.createSequentialGroup()
+                            .addComponent(Prestacoes)
+                            .addComponent(jLabel3)
+                            .addComponent(Cartao)
+                            .addComponent(jRadioButton4)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ComboPrestacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(201, 201, 201))))
+                        .addGap(201, 201, 201))
+                    .addGroup(BasePagamentoLayout.createSequentialGroup()
+                        .addComponent(Avista)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BasePagamentoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(387, 387, 387))
+            .addGroup(BasePagamentoLayout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addComponent(Avancar, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(117, 117, 117)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(69, Short.MAX_VALUE))
             .addGroup(BasePagamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(BasePagamentoLayout.createSequentialGroup()
                     .addGap(64, 64, 64)
@@ -131,15 +144,15 @@ public class Pagamentos extends javax.swing.JPanel {
         BasePagamentoLayout.setVerticalGroup(
             BasePagamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BasePagamentoLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(BasePagamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BasePagamentoLayout.createSequentialGroup()
-                        .addGap(127, 127, 127)
+                        .addContainerGap()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(137, 137, 137)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(BasePagamentoLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Avista)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Prestacoes)
@@ -155,8 +168,8 @@ public class Pagamentos extends javax.swing.JPanel {
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ComboPrestacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51)
-                        .addComponent(jButton1))
+                        .addGap(73, 73, 73)
+                        .addComponent(Avancar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(76, 76, 76))
             .addGroup(BasePagamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,7 +179,9 @@ public class Pagamentos extends javax.swing.JPanel {
                     .addContainerGap(441, Short.MAX_VALUE)))
         );
 
-        add(BasePagamento, java.awt.BorderLayout.CENTER);
+        BaseLocal.add(BasePagamento, java.awt.BorderLayout.PAGE_START);
+
+        add(BaseLocal, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void PrestacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrestacoesActionPerformed
@@ -186,18 +201,23 @@ public class Pagamentos extends javax.swing.JPanel {
         
     }//GEN-LAST:event_ComboPrestacoesActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void AvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AvancarActionPerformed
+        FormularioDoCliente form = new FormularioDoCliente();
+        BaseLocal.removeAll();
+        BaseLocal.add(form,BorderLayout.CENTER);
+        BaseLocal.revalidate();
+        BaseLocal.repaint();
+    }//GEN-LAST:event_AvancarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Avancar;
     private javax.swing.JRadioButton Avista;
+    private javax.swing.JPanel BaseLocal;
     private javax.swing.JPanel BasePagamento;
     private javax.swing.JRadioButton Cartao;
     private javax.swing.JComboBox<String> ComboPrestacoes;
     private javax.swing.JRadioButton Prestacoes;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
