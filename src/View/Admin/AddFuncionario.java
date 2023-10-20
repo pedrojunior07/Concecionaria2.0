@@ -29,6 +29,7 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DocumentFilter;
 import jnafilechooser.api.JnaFileChooser;
+import raven.toast.Notifications;
 
 /**
  *
@@ -218,8 +219,13 @@ dateChooser1.showPopup();
     }//GEN-LAST:event_txDataActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        int p = JOptionPane.showConfirmDialog(this, "Salvar?");
-
+      //  int p = JOptionPane.showConfirmDialog(this, "Salvar?");
+ if(txNome.getText().isEmpty()||txApelido.getText().isEmpty()||txContacto.getText().isEmpty()||txEmail.getText().isEmpty()||txIdentidade.getText().isEmpty()||txSalario.getText().isEmpty()){
+     
+       
+        Notifications.getInstance().show(Notifications.Type.ERROR
+                , "Preencha Todos Campos");}else{
+      
       if(cCategoria.getSelectedItem().toString().equalsIgnoreCase("vendedor")){
           Vendedor a = new Vendedor();
        a.setNome(txNome.getText());
@@ -308,7 +314,7 @@ dateChooser1.showPopup();
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(AddFuncionario.class.getName()).log(Level.SEVERE, null, ex);
             }
-      }
+      }}
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void txContactoComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_txContactoComponentShown

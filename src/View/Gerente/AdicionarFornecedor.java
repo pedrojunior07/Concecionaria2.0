@@ -20,6 +20,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import jnafilechooser.api.JnaFileChooser;
+import raven.toast.Notifications;
 
 /**
  *
@@ -100,9 +101,15 @@ public class AdicionarFornecedor extends javax.swing.JPanel {
     }//GEN-LAST:event_txTelefoneActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    int p = JOptionPane.showConfirmDialog(this, "Salvar?");
 
+        
+     //   int p = JOptionPane.showConfirmDialog(this, "Salvar?");
+
+    if(txEntidadeEmail.getText().isEmpty()||txNomeEntidade.getText().isEmpty()|| txTelefone.getText().isEmpty()){
     
+     
+        Notifications.getInstance().show(Notifications.Type.ERROR
+                , "Preencha Todos Campos");}else{
           ImagemDirectorios icon = new ImagemDirectorios();
          
           icon.setIdentidade(txTelefone.getText());
@@ -130,7 +137,7 @@ public class AdicionarFornecedor extends javax.swing.JPanel {
             Logger.getLogger(AdicionarFornecedor.class.getName()).log(Level.SEVERE, null, ex);
         }
          
-         
+    }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

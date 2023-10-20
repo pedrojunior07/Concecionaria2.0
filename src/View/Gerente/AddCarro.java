@@ -20,6 +20,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import jnafilechooser.api.JnaFileChooser;
+import raven.toast.Notifications;
 
 /**
  *
@@ -151,7 +152,10 @@ public class AddCarro extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-      icons.setCarroImagens(imagens);
+
+        
+        if(!(txAnoDeFabrico.getText().isEmpty()||txKMPercoridos.getText().isEmpty()||txMarca.getText().isEmpty()||txModelo.getText().isEmpty()||txNumChassi.getText().isEmpty()||txNumMotor.getText().isEmpty()||txPreco.getText().isEmpty())){
+        icons.setCarroImagens(imagens);
         Carro c= new Carro();
        c.setFabricante(txMarca.getText());
        c.setModelo(txModelo.getText());
@@ -173,10 +177,11 @@ public class AddCarro extends javax.swing.JPanel {
         GerenteController cc = new GerenteController(frame);
        
           ImagemDirectorioDAO dao = new ImagemDirectorioDAO();
-          ArrayList<ImagemDirectorios> users = new ArrayList<>();
-          users.add(icons);
-         dao.closeFile(users, "Imagens");
-       icons.setChassi(Integer.parseInt(txNumChassi.getText()));
+        
+           icons.setChassi(Integer.parseInt(txNumChassi.getText()));
+          
+         dao.insert(icons, "Imagens");
+      
         
       try {
           cc.insertCarrro(c);
@@ -192,7 +197,10 @@ public class AddCarro extends javax.swing.JPanel {
         frame.getContente().removeAll();
        // contente.add(p1, BorderLayout.CENTER );
         frame.getContente().revalidate();
-        frame.getContente().repaint();
+        frame.getContente().repaint();}else{
+         
+        Notifications.getInstance().show(Notifications.Type.ERROR
+                , "Preencha Todos Campos");}
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

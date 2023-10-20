@@ -4,7 +4,7 @@
  */
 package View;
 
-import DAO.DATABASE.AutenticacaoUsuario;
+
 import Model.Vendedor;
 import ViwFuncionario.Base;
 import java.util.ArrayList;

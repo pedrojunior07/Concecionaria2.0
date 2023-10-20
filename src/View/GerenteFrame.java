@@ -22,6 +22,7 @@ import View.Gerente.AdicionarFornecedor;
 import View.Gerente.ListarPesquisarCarro;
 import java.sql.SQLException;
 import javax.swing.JPanel;
+import raven.toast.Notifications;
 
 /**
  *
@@ -184,6 +185,7 @@ public class GerenteFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       
       
         ListarPesquisarCarro p1 = new ListarPesquisarCarro();
         p1.setSize(1000, 620);
