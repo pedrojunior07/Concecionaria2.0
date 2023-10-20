@@ -53,10 +53,10 @@ public class Base extends javax.swing.JFrame {
         jColorChooser1 = new javax.swing.JColorChooser();
         Butons = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        Estatisticas = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         EfectuarVenda = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        VisualizarFuncio = new javax.swing.JButton();
         imageAvatar2 = new View.Admin.ImageAvatar();
         escuro = new javax.swing.JRadioButton();
         Base2 = new javax.swing.JPanel();
@@ -137,14 +137,14 @@ public class Base extends javax.swing.JFrame {
         Butons.add(jButton1);
         jButton1.setBounds(20, 210, 80, 50);
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/4.png"))); // NOI18N
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        Estatisticas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/4.png"))); // NOI18N
+        Estatisticas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                EstatisticasActionPerformed(evt);
             }
         });
-        Butons.add(jButton4);
-        jButton4.setBounds(20, 270, 80, 50);
+        Butons.add(Estatisticas);
+        Estatisticas.setBounds(20, 270, 80, 50);
 
         jButton5.setText("jButton1");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -155,7 +155,7 @@ public class Base extends javax.swing.JFrame {
         Butons.add(jButton5);
         jButton5.setBounds(20, 390, 80, 50);
 
-        EfectuarVenda.setText("Vender");
+        EfectuarVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ViwFuncionario/Carrinho.png"))); // NOI18N
         EfectuarVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EfectuarVendaActionPerformed(evt);
@@ -164,14 +164,14 @@ public class Base extends javax.swing.JFrame {
         Butons.add(EfectuarVenda);
         EfectuarVenda.setBounds(20, 150, 80, 50);
 
-        jButton7.setText("jButton1");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        VisualizarFuncio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ViwFuncionario/comercial1.png"))); // NOI18N
+        VisualizarFuncio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                VisualizarFuncioActionPerformed(evt);
             }
         });
-        Butons.add(jButton7);
-        jButton7.setBounds(20, 330, 80, 50);
+        Butons.add(VisualizarFuncio);
+        VisualizarFuncio.setBounds(20, 330, 80, 50);
 
         imageAvatar2.setGradientColor1(new java.awt.Color(242, 242, 242));
         imageAvatar2.setGradientColor2(new java.awt.Color(242, 242, 242));
@@ -208,7 +208,7 @@ public class Base extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         inicial.add(jScrollPane1);
-        jScrollPane1.setBounds(80, 310, 790, 160);
+        jScrollPane1.setBounds(80, 340, 790, 160);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 255, 153), 2));
 
@@ -280,13 +280,13 @@ public class Base extends javax.swing.JFrame {
         jPanel2.setBounds(60, 50, 400, 150);
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel7.setText("Carros mais vendidos do ultimo mes");
+        jLabel7.setText("Carro mais Vendido");
         inicial.add(jLabel7);
-        jLabel7.setBounds(330, 280, 450, 21);
+        jLabel7.setBounds(360, 310, 160, 21);
 
         Base2.add(inicial, java.awt.BorderLayout.CENTER);
 
-        getContentPane().add(Base2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 960, 570));
+        getContentPane().add(Base2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 1010, 570));
 
         pack();
         setLocationRelativeTo(null);
@@ -302,9 +302,13 @@ public class Base extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void EstatisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstatisticasActionPerformed
+        EstatisticasVendas c = new EstatisticasVendas();
+        Base2.removeAll();
+        Base2.add(c,BorderLayout.CENTER);
+        Base2.revalidate();
+        Base2.repaint();
+    }//GEN-LAST:event_EstatisticasActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
@@ -318,10 +322,10 @@ public class Base extends javax.swing.JFrame {
         Base2.repaint();
     }//GEN-LAST:event_EfectuarVendaActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void VisualizarFuncioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizarFuncioActionPerformed
         // TODO add your handling code here:
         Base2.add(this);
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_VisualizarFuncioActionPerformed
 
     private void escuroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_escuroActionPerformed
          
@@ -373,13 +377,13 @@ run();
     private javax.swing.JPanel Base2;
     private javax.swing.JPanel Butons;
     private javax.swing.JButton EfectuarVenda;
+    private javax.swing.JButton Estatisticas;
+    private javax.swing.JButton VisualizarFuncio;
     private javax.swing.JRadioButton escuro;
     private View.Admin.ImageAvatar imageAvatar2;
     private javax.swing.JPanel inicial;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton7;
     private javax.swing.JColorChooser jColorChooser1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -185,7 +185,7 @@ public class EfectuarVenda extends javax.swing.JPanel {
     }//GEN-LAST:event_Voltar1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        FormularioDoCliente form = new FormularioDoCliente();
+        Pagamentos form = new Pagamentos();
         Base3.removeAll();
         Base3.add(form);
         Base3.revalidate();
