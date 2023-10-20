@@ -4,11 +4,18 @@
  */
 package View;
 
+import Controller.AdminController;
+import DAO.ImagemDirectorioDAO;
+import Model.Funcionario;
+import Model.ImagemDirectorios;
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import com.formdev.flatlaf.extras.FlatDesktop;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatArcDarkIJTheme;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.UIManager;
@@ -21,12 +28,17 @@ import raven.toast.Notifications;
  */
 public class Login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Login
-     */
-    public Login() {
+  
+    Funcionario object ;
+    ImageIcon icon ;
+    
+    ArrayList<Funcionario> sellectAllFuncionario;
+   
+    public Login() throws SQLException, ClassNotFoundException {
+        Controller.AdminController cc= new AdminController(this);
+        sellectAllFuncionario = cc.sellectAllFuncionario();
+        
         initComponents();
-       
     }
 
     /**
@@ -38,70 +50,86 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        lb = new javax.swing.JLabel();
+        pfSenha = new javax.swing.JPasswordField();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        txEmail = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jToggleButton1.setText("butao do");
-        jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jToggleButton1MouseEntered(evt);
-            }
-        });
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        pfSenha.setText("jPasswordField1");
+        pfSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                pfSenhaActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 190, 38));
+        getContentPane().add(pfSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 320, 50));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setText("senha");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 60, 10));
+
+        jButton1.setText("Entrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 164, 205, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, 100, 30));
+        getContentPane().add(txEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 320, 50));
 
-        jPasswordField1.setText("jPasswordField1");
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 247, 320, 50));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 360, 243, 39));
-
-        lb.setText("jLabel1");
-        getContentPane().add(lb, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 80, 30));
+        jLabel2.setText("Nome Do Usuario");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-    Notifications.getInstance().setJFrame(this);
-        Notifications.getInstance().show(Notifications.Type.WARNING
-                , "ola Caralho");
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
-
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void pfSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pfSenhaActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_pfSenhaActionPerformed
 
-    private void jToggleButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1MouseEntered
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+   for(Funcionario f : sellectAllFuncionario){
+   if(f.geteMail().equalsIgnoreCase(txEmail.getText())){
+   object = f;
+   
+   }
+   }
+   String senha = new String(pfSenha.getPassword()).trim();
+   if(senha.equalsIgnoreCase(object.getSenha())){
+       ImagemDirectorioDAO dao = new ImagemDirectorioDAO();
+       
+//       ArrayList<ImagemDirectorios> openFile = dao.openFile("Imagens");
+//       for(int i =0; i<openFile.size(); i++ ){
+//       if(openFile.get(i).getIdentidade().equalsIgnoreCase(object.getIdentidade())){
+//      
+//             new GerenteFrame(openFile.get(i).getIcon(), object).setVisible(true);
+//       
+//       }
+//         
+//       }
+//   
+
+String teste= object.getIdentidade();
+
+   
+            ImagemDirectorioDAO img = new ImagemDirectorioDAO();
+            ArrayList<ImagemDirectorios> openFile = img.openFile("Imagens");
+              for (int i=0; i<openFile.size();i++){
+                  
+              if(teste.equalsIgnoreCase(openFile.get(i).getIdentidade())){
+             
+                  new GerenteFrame(openFile.get(i).getIcon(), object).setVisible(true);
+
+              }
+                  }
+   }
+   
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,16 +144,23 @@ public class Login extends javax.swing.JFrame {
         }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                try {
+                    new Login().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JLabel lb;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPasswordField pfSenha;
+    private javax.swing.JTextField txEmail;
     // End of variables declaration//GEN-END:variables
 }

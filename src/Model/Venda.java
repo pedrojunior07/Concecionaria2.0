@@ -11,19 +11,37 @@ import java.util.Date;
  * @author Pedro
  */
 public class Venda {
-    private  Carro carro;
+    private  int numMotor;
     private int numeroDaVenda;
-    private Date dataDavenda, DataDaGarantia;
+    private String dataDavenda, DataDaGarantia;
     private double precoDaVenda;
     private boolean estado;
 
-    public Carro getCarro() {
-        return carro;
+    public int getNumMotor() {
+        return numMotor;
     }
 
-    public void setCarro(Carro carro) {
-        this.carro = carro;
+    public void setNumMotor(int numMotor) {
+        this.numMotor = numMotor;
     }
+
+    public String getDataDavenda() {
+        return dataDavenda;
+    }
+
+    public void setDataDavenda(String dataDavenda) {
+        this.dataDavenda = dataDavenda;
+    }
+
+    public String getDataDaGarantia() {
+        return DataDaGarantia;
+    }
+
+    public void setDataDaGarantia(String DataDaGarantia) {
+        this.DataDaGarantia = DataDaGarantia;
+    }
+
+  
 
     public int getNumeroDaVenda() {
         return numeroDaVenda;
@@ -33,21 +51,7 @@ public class Venda {
         this.numeroDaVenda = numeroDaVenda;
     }
 
-    public Date getDataDavenda() {
-        return dataDavenda;
-    }
-
-    public void setDataDavenda(Date dataDavenda) {
-        this.dataDavenda = dataDavenda;
-    }
-
-    public Date getDataDaGarantia() {
-        return DataDaGarantia;
-    }
-
-    public void setDataDaGarantia(Date DataDaGarantia) {
-        this.DataDaGarantia = DataDaGarantia;
-    }
+   
 
     public double getPrecoDaVenda() {
         return precoDaVenda;

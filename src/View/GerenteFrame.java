@@ -16,11 +16,13 @@ import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import AppPackage.AnimationClass;
+import Model.Funcionario;
 import View.Admin.AddFuncionario;
 import View.Gerente.AddCarro;
 import View.Gerente.AdicionarFornecedor;
 import View.Gerente.ListarPesquisarCarro;
 import java.sql.SQLException;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import raven.toast.Notifications;
 
@@ -29,17 +31,16 @@ import raven.toast.Notifications;
  * @author Pedro
  */
 public class GerenteFrame extends javax.swing.JFrame {
-
-    /**
-     * Creates new form GerenteFrame
-     */
-    public GerenteFrame() {
+ImageIcon icon;
+Funcionario funcionrio;
+    public GerenteFrame(ImageIcon icon, Funcionario funcionrio) {
         // UIManager.put( "Button.arc" , 999 );
-         
+         this.icon = icon;
+         this.funcionrio= funcionrio;
           initComponents();
         // UIManager.put( "Button.arc" , 999 );
-        initComponents();
-        
+        imagem.setImage(icon);
+        lbNome.setText(funcionrio.getNome()+" "+funcionrio.getApelido());
           
        
     }
@@ -50,7 +51,7 @@ public class GerenteFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        imageAvatar1 = new View.Admin.ImageAvatar();
+        imagem = new View.Admin.ImageAvatar();
         Messagem = new com.pedro.swing.win_button.ButtonBadges();
         buttonBadges2 = new com.pedro.swing.win_button.ButtonBadges();
         jButton9 = new javax.swing.JButton();
@@ -72,7 +73,7 @@ public class GerenteFrame extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(imageAvatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 180, 140));
+        jPanel1.add(imagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 180, 140));
 
         Messagem.setText("mess");
         jPanel1.add(Messagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 80, 70));
@@ -93,7 +94,7 @@ public class GerenteFrame extends javax.swing.JFrame {
         jPanel1.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, -1, 90));
 
         lbNome.setText("Nome Completo");
-        jPanel1.add(lbNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 170, -1));
+        jPanel1.add(lbNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 170, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 190, 630));
 
@@ -152,9 +153,9 @@ public class GerenteFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-              AddCarro p1;
+            
         try {
-            p1 = new AddCarro(this);
+            AddCarro   p1 = new AddCarro(this);
               p1.setSize(1000, 620);
         p1.setLocation(0,0);
         contente.setLayout(new BorderLayout());
@@ -187,14 +188,24 @@ public class GerenteFrame extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
        
       
-        ListarPesquisarCarro p1 = new ListarPesquisarCarro();
-        p1.setSize(1000, 620);
+       
+        try {
+             ListarPesquisarCarro p1;
+            p1 = new ListarPesquisarCarro(this);
+             p1.setSize(1000, 620);
+              
         p1.setLocation(0,0);
         contente.setLayout(new BorderLayout());
         contente.removeAll();
         contente.add(p1, BorderLayout.CENTER );
         contente.revalidate();
         contente.repaint();
+        } catch (SQLException ex) {
+            Logger.getLogger(GerenteFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(GerenteFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      
     }//GEN-LAST:event_jButton5ActionPerformed
 
     public static void main(String args[]) {
@@ -208,7 +219,7 @@ public class GerenteFrame extends javax.swing.JFrame {
         }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GerenteFrame().setVisible(true);
+            //    new GerenteFrame().setVisible(true);
             }
         });
     }
@@ -230,7 +241,7 @@ public class GerenteFrame extends javax.swing.JFrame {
     private com.pedro.swing.win_button.ButtonBadges Messagem;
     private com.pedro.swing.win_button.ButtonBadges buttonBadges2;
     private javax.swing.JPanel contente;
-    private View.Admin.ImageAvatar imageAvatar1;
+    private View.Admin.ImageAvatar imagem;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;

@@ -46,15 +46,15 @@ public class AddCarro extends javax.swing.JPanel {
            
           
       model.addElement(a.getNomeDaEntidade());
-            initComponents();    
+            
        
       
-      }  
+      }   initComponents();   
       
         jnaCh = new JnaFileChooser();
             this.frame = frame;
             icons = new ImagemDirectorios();
-            
+          
 
 }
 
