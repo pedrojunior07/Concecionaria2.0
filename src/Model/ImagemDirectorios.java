@@ -20,6 +20,22 @@ public class ImagemDirectorios implements Serializable {
    private ImageIcon icon;
    int chassi;
 
+    public int getNumChassi() {
+        return numChassi;
+    }
+
+    public void setNumChassi(int numChassi) {
+        this.numChassi = numChassi;
+    }
+
+    public ArrayList<ImageIcon> getCarroImagens() {
+        return carroImagens;
+    }
+
+    public void setCarroImagens(ArrayList<ImageIcon> carroImagens) {
+        this.carroImagens = carroImagens;
+    }
+
   
    
    public int getChassi() {

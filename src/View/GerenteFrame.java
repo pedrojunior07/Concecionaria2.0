@@ -16,6 +16,8 @@ import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import AppPackage.AnimationClass;
+import View.Admin.AddFuncionario;
+import View.Gerente.AddCarro;
 
 /**
  *
@@ -60,8 +62,8 @@ public class GerenteFrame extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
-        PainelZim = new javax.swing.JPanel();
         jToggleButton1 = new javax.swing.JToggleButton();
+        contente = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -92,35 +94,37 @@ public class GerenteFrame extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 190, 630));
 
-        jButton2.setText("jButton1");
+        jButton2.setText("Add Car");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, -1, 40));
 
-        jButton3.setText("jButton1");
+        jButton3.setText("Editar");
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, 40));
 
-        jButton4.setText("jButton1");
+        jButton4.setText("Pagar");
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, -1, 40));
 
-        jButton5.setText("jButton1");
+        jButton5.setText("Listar");
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, -1, 40));
 
-        jButton6.setText("jButton1");
+        jButton6.setText("Comprimir");
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, -1, 40));
 
-        jButton7.setText("jButton1");
+        jButton7.setText("Butao");
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 10, -1, 40));
 
         jButton8.setText("jButton1");
         getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 10, -1, 40));
 
-        jButton11.setText("jButton1");
+        jButton11.setText("Carlitos");
         getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 10, -1, 40));
 
-        jButton13.setText("jButton1");
+        jButton13.setText("butao");
         getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, 40));
-
-        PainelZim.setBackground(new java.awt.Color(255, 0, 51));
-        getContentPane().add(PainelZim, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, -200, 1000, 200));
 
         jToggleButton1.setText(">>>");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -129,14 +133,28 @@ public class GerenteFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 70, -1));
+        getContentPane().add(contente, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 990, 610));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
       AnimationClass painl = new AnimationClass();
-      painl.
+      
     }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+              AddCarro p1 = new AddCarro(this);
+              
+        p1.setSize(1000, 620);
+        p1.setLocation(0,0);
+        contente.setLayout(new BorderLayout());
+        contente.removeAll();
+        contente.add(p1, BorderLayout.CENTER );
+        contente.revalidate();
+        contente.repaint();
+
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {
       
@@ -157,8 +175,8 @@ public class GerenteFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Acao2;
     private com.pedro.swing.win_button.ButtonBadges Messagem;
-    private javax.swing.JPanel PainelZim;
     private com.pedro.swing.win_button.ButtonBadges buttonBadges2;
+    private javax.swing.JPanel contente;
     private View.Admin.ImageAvatar imageAvatar1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
