@@ -24,7 +24,7 @@ public class FornecedorDao {
     }
     
      public boolean insert(Fornecedor user) throws SQLException {
-        String query = "INSERT INTO fornecedor (nomeDaEntidade, tipoDeComercio, email, numeroDoNegocio, contato, dataDoNegocio, precoDoNegocio, status) " +
+        String query = "INSERT INTO fornecedor (nomeDaEntidade, tipoDeComercio, email, numeroDoNegocio, contacto, dataDoNegocio, precoDoNegocio, status) " +
                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
          PreparedStatement preparedStatement = connection.prepareStatement(query);
@@ -46,7 +46,7 @@ public class FornecedorDao {
       public boolean update(Fornecedor user) {
         String query = "UPDATE fornecedor " +
                        "SET nomeDaEntidade = ?, tipoDeComercio = ?, email = ?, " +
-                       "numeroDoNegocio = ?, contato = ?, dataDoNegocio = ?, precoDoNegocio = ?, status = ? " +
+                       "numeroDoNegocio = ?, contacto = ?, dataDoNegocio = ?, precoDoNegocio = ?, status = ? " +
                        "WHERE ID = ?";
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -83,7 +83,7 @@ public class FornecedorDao {
                 user.setTipoDeComercio(resultSet.getString("tipoDeComercio"));
                 user.setEmail(resultSet.getString("email"));
                 user.setNumeroDoNegogio(resultSet.getInt("numeroDoNegocio"));
-                user.setContacto(resultSet.getInt("contato"));
+                user.setContacto(resultSet.getInt("contacto"));
                 user.setDataDoNegocio(resultSet.getString("dataDoNegocio"));
                 user.setPrecoDoNegocio(resultSet.getDouble("precoDoNegocio"));
                 user.setStatus(resultSet.getBoolean("status"));

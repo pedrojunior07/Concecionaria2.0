@@ -26,30 +26,80 @@ public class ListarPesquisarCarro extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        Anterior = new javax.swing.JButton();
 
-        jLabel1.setText("jLabel1");
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(134, 134, 134)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(349, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(280, Short.MAX_VALUE))
-        );
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 710, 370));
+
+        jRadioButton1.setText("Listas Todos");
+        add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 80, -1, -1));
+
+        jRadioButton2.setText("Listar Disponiveis");
+        add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 110, -1, -1));
+
+        jRadioButton3.setText("Listar Vendidos");
+        add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 140, -1, -1));
+
+        jLabel1.setText("Dispinibilidade");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 80, 40));
+
+        jLabel2.setText("Marca");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 80, 40));
+
+        jLabel3.setText("Modelo");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 80, 40));
+
+        jLabel4.setText("Trcacao");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 80, 40));
+
+        jLabel5.setText("Foto");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 470, 230));
+
+        jButton1.setText("Proxima");
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, -1, 30));
+
+        Anterior.setText("Anterior");
+        add(Anterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, -1, 30));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Anterior;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

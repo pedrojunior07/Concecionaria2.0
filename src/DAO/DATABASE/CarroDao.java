@@ -30,7 +30,7 @@ public class CarroDao {
  
     public void insertBaseDedados(Carro user) throws SQLException {
 
-        String sql ="INSERT INTO `carro` ( `modelo`, `tracao`, `categoria`, `fabricante`, `anoDeFabrico`, `numChassi`, `quilometosPercoridos`, `FornecedorID`, `preco`, `vendido`, `operacional`,`numMotor`, `tipoDeComustivel`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql ="INSERT INTO `carro` ( `modelo`, `tracao`, `categoria`, `fabricante`, `anoDeFabrico`, `numChassi`, `quilometosPercoridos`, `FornecedorID`, `preco`, `vendido`, `operacional`,`numMotor`, `tipoDeComustivel`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)";
 
         PreparedStatement statement = connection.prepareStatement(sql);
     

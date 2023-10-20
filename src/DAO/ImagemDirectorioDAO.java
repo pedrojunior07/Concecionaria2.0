@@ -23,7 +23,7 @@ public class ImagemDirectorioDAO {
         ArrayList<ImagemDirectorios> usuario = openFile(file);
         usuario.add(user);
         closeFile(usuario, file);
-            JOptionPane.showMessageDialog(null, "Vendedor Registrado com Sucesso", "DMI",
+            JOptionPane.showMessageDialog(null, "Imagem Guardada com sucesso", "Ficheiro de Imagens",
                     JOptionPane.INFORMATION_MESSAGE);  
     }
  

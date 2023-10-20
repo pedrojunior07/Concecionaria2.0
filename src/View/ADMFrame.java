@@ -11,7 +11,7 @@ import View.Admin.AddFuncionario;
 import View.Admin.Header;
 import View.Admin.ListarFuncionarios;
 import View.Admin.ProcurarFuncionario;
-import View.Gerente.AdicionarCarro;
+
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.extras.FlatAnimatedLafChange;

@@ -4,14 +4,19 @@
  */
 package View.Gerente;
 
+import Controller.AdminController;
 import Controller.GerenteController;
 import DAO.ImagemDirectorioDAO;
 import Model.Carro;
+import Model.Fornecedor;
 import Model.ImagemDirectorios;
+import View.GerenteFrame;
+import java.awt.BorderLayout;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import jnafilechooser.api.JnaFileChooser;
@@ -22,16 +27,33 @@ import jnafilechooser.api.JnaFileChooser;
  */
 public class AddCarro extends javax.swing.JPanel {
   public int count =0;
-  public  JFrame frame;
+  public  GerenteFrame frame;
+  DefaultComboBoxModel<String> model; 
+    ArrayList<Fornecedor> sellectAllFornecedors;
     ArrayList<ImageIcon> imagens = new ArrayList<>();
     ImagemDirectorios  icons ;
   JnaFileChooser jnaCh; 
 
-    public AddCarro(  JFrame frame) {
+    public AddCarro(  GerenteFrame frame) throws SQLException, ClassNotFoundException {
+        GerenteController cc = new GerenteController(frame);
+       sellectAllFornecedors = cc.sellectAllFornecedors();
+      
+        model = new DefaultComboBoxModel<>();
+         model.removeAllElements();
+         model.addElement("Fornecedor");
+        for(Fornecedor a : sellectAllFornecedors) {
+           
+          
+      model.addElement(a.getNomeDaEntidade());
+            initComponents();    
+       
+      
+      }  
+      
         jnaCh = new JnaFileChooser();
             this.frame = frame;
             icons = new ImagemDirectorios();
-                initComponents();    
+            
 
 }
 
@@ -59,6 +81,7 @@ public class AddCarro extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         lbnum = new javax.swing.JLabel();
         txNumChassi = new textfield.TextField();
+        cFornecedor = new javax.swing.JComboBox<>();
 
         setEnabled(false);
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -104,7 +127,7 @@ public class AddCarro extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, 370, 20));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, 370, 30));
 
         jButton2.setText("Guardar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -112,11 +135,19 @@ public class AddCarro extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, 370, -1));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, 370, 30));
         add(lbnum, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 60, 130, 40));
 
-        txNumChassi.setLabelText("Numero Do Motor");
+        txNumChassi.setLabelText("Numero Do chassi");
         add(txNumChassi, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, 220, -1));
+
+        cFornecedor.setModel(model);
+        cFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cFornecedorActionPerformed(evt);
+            }
+        });
+        add(cFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 500, 210, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -131,7 +162,21 @@ public class AddCarro extends javax.swing.JPanel {
        c.setTracao(cCambio.getSelectedItem().toString());
        c.setNumChassi(Integer.parseInt(txNumChassi.getText()));
        c.setNumMotor(Integer.parseInt(txNumMotor.getText())  );
+       for(Fornecedor v : sellectAllFornecedors){
+       if(cFornecedor.getSelectedItem().toString().equalsIgnoreCase(v.getNomeDaEntidade())){
+       
+       c.setFornecedor(v);
+       c.setFornecedorId(v.getID());
+       }
+           
+           }
         GerenteController cc = new GerenteController(frame);
+       
+          ImagemDirectorioDAO dao = new ImagemDirectorioDAO();
+          ArrayList<ImagemDirectorios> users = new ArrayList<>();
+          users.add(icons);
+         dao.closeFile(users, "Imagens");
+       icons.setChassi(Integer.parseInt(txNumChassi.getText()));
         
       try {
           cc.insertCarrro(c);
@@ -141,11 +186,13 @@ public class AddCarro extends javax.swing.JPanel {
           Logger.getLogger(AddCarro.class.getName()).log(Level.SEVERE, null, ex);
       }
        
-        ImagemDirectorioDAO dao = new ImagemDirectorioDAO();
-    ArrayList<ImagemDirectorios> users = new ArrayList<>();
-    users.add(icons);
-        dao.closeFile(users, "Imagens");
-       icons.setChassi(Integer.parseInt(txNumChassi.getText()));
+     
+      
+        frame.getContente().setLayout(new BorderLayout());
+        frame.getContente().removeAll();
+       // contente.add(p1, BorderLayout.CENTER );
+        frame.getContente().revalidate();
+        frame.getContente().repaint();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -163,10 +210,15 @@ public class AddCarro extends javax.swing.JPanel {
       
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void cFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cFornecedorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cFornecedorActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cCambio;
     private javax.swing.JComboBox<String> cCategoria;
+    private javax.swing.JComboBox<String> cFornecedor;
     private javax.swing.JComboBox<String> cTipCombus;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

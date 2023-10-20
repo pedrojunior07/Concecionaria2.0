@@ -5,7 +5,7 @@
 package View;
 
 
-import View.Gerente.AdicionarCarro;
+
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatGitHubIJTheme;
 import com.formdev.flatlaf.themes.FlatMacDarkLaf;
@@ -18,6 +18,10 @@ import javax.swing.UnsupportedLookAndFeelException;
 import AppPackage.AnimationClass;
 import View.Admin.AddFuncionario;
 import View.Gerente.AddCarro;
+import View.Gerente.AdicionarFornecedor;
+import View.Gerente.ListarPesquisarCarro;
+import java.sql.SQLException;
+import javax.swing.JPanel;
 
 /**
  *
@@ -55,11 +59,9 @@ public class GerenteFrame extends javax.swing.JFrame {
         lbNome = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
@@ -94,37 +96,41 @@ public class GerenteFrame extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 190, 630));
 
-        jButton2.setText("Add Car");
+        jButton2.setText("Add Carro");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, -1, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 10, 120, 40));
 
-        jButton3.setText("Editar");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, 40));
+        jButton3.setText("Adicionar Fornecedor");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 150, 40));
 
-        jButton4.setText("Pagar");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, -1, 40));
-
-        jButton5.setText("Listar");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, -1, 40));
+        jButton5.setText("Listar Carros");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, -1, 40));
 
         jButton6.setText("Comprimir");
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, -1, 40));
 
         jButton7.setText("Butao");
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 10, -1, 40));
-
-        jButton8.setText("jButton1");
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 10, -1, 40));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 90, 40));
 
         jButton11.setText("Carlitos");
-        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 10, -1, 40));
+        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 10, 80, 40));
 
         jButton13.setText("butao");
-        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, 40));
+        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, 90, 40));
 
         jToggleButton1.setText(">>>");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -136,6 +142,7 @@ public class GerenteFrame extends javax.swing.JFrame {
         getContentPane().add(contente, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 990, 610));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
@@ -144,7 +151,28 @@ public class GerenteFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-              AddCarro p1 = new AddCarro(this);
+              AddCarro p1;
+        try {
+            p1 = new AddCarro(this);
+              p1.setSize(1000, 620);
+        p1.setLocation(0,0);
+        contente.setLayout(new BorderLayout());
+        contente.removeAll();
+        contente.add(p1, BorderLayout.CENTER );
+        contente.revalidate();
+        contente.repaint();
+        } catch (SQLException ex) {
+            Logger.getLogger(GerenteFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(GerenteFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+              
+      
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+          AdicionarFornecedor p1 = new AdicionarFornecedor(this);
               
         p1.setSize(1000, 620);
         p1.setLocation(0,0);
@@ -153,8 +181,19 @@ public class GerenteFrame extends javax.swing.JFrame {
         contente.add(p1, BorderLayout.CENTER );
         contente.revalidate();
         contente.repaint();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+      
+        ListarPesquisarCarro p1 = new ListarPesquisarCarro();
+        p1.setSize(1000, 620);
+        p1.setLocation(0,0);
+        contente.setLayout(new BorderLayout());
+        contente.removeAll();
+        contente.add(p1, BorderLayout.CENTER );
+        contente.revalidate();
+        contente.repaint();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     public static void main(String args[]) {
       
@@ -172,6 +211,18 @@ public class GerenteFrame extends javax.swing.JFrame {
         });
     }
 
+    public JPanel getContente() {
+        return contente;
+    }
+
+    public void setContente(JPanel contente) {
+        this.contente = contente;
+    }
+
+    
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Acao2;
     private com.pedro.swing.win_button.ButtonBadges Messagem;
@@ -184,11 +235,9 @@ public class GerenteFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JToggleButton jToggleButton1;
