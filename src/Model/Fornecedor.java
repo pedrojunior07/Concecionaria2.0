@@ -14,9 +14,17 @@ public class Fornecedor {
    private String nomeDaEntidade, tipoDeComercio, email;
    private int numeroDoNegogio, contacto,ID;
    
-  private Date         dataDoNegocio;
+  private String         dataDoNegocio;
    private double precoDoNegocio;
    boolean status;
+
+    public String getDataDoNegocio() {
+        return dataDoNegocio;
+    }
+
+    public void setDataDoNegocio(String dataDoNegocio) {
+        this.dataDoNegocio = dataDoNegocio;
+    }
 
     public int getID() {
         return ID;
@@ -66,13 +74,7 @@ public class Fornecedor {
         this.contacto = contacto;
     }
 
-    public Date getDataDoNegocio() {
-        return dataDoNegocio;
-    }
-
-    public void setDataDoNegocio(Date dataDoNegocio) {
-        this.dataDoNegocio = dataDoNegocio;
-    }
+   
 
     public double getPrecoDoNegocio() {
         return precoDoNegocio;
