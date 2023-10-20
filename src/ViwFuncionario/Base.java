@@ -135,7 +135,7 @@ public class Base extends javax.swing.JFrame {
             }
         });
         Butons.add(jButton1);
-        jButton1.setBounds(20, 210, 80, 50);
+        jButton1.setBounds(60, 250, 80, 50);
 
         Estatisticas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/4.png"))); // NOI18N
         Estatisticas.addActionListener(new java.awt.event.ActionListener() {
@@ -144,7 +144,7 @@ public class Base extends javax.swing.JFrame {
             }
         });
         Butons.add(Estatisticas);
-        Estatisticas.setBounds(20, 270, 80, 50);
+        Estatisticas.setBounds(60, 330, 80, 50);
 
         jButton5.setText("jButton1");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -153,7 +153,7 @@ public class Base extends javax.swing.JFrame {
             }
         });
         Butons.add(jButton5);
-        jButton5.setBounds(20, 390, 80, 50);
+        jButton5.setBounds(60, 490, 80, 50);
 
         EfectuarVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ViwFuncionario/Carrinho.png"))); // NOI18N
         EfectuarVenda.addActionListener(new java.awt.event.ActionListener() {
@@ -162,7 +162,7 @@ public class Base extends javax.swing.JFrame {
             }
         });
         Butons.add(EfectuarVenda);
-        EfectuarVenda.setBounds(20, 150, 80, 50);
+        EfectuarVenda.setBounds(60, 170, 80, 50);
 
         VisualizarFuncio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ViwFuncionario/comercial1.png"))); // NOI18N
         VisualizarFuncio.addActionListener(new java.awt.event.ActionListener() {
@@ -171,13 +171,13 @@ public class Base extends javax.swing.JFrame {
             }
         });
         Butons.add(VisualizarFuncio);
-        VisualizarFuncio.setBounds(20, 330, 80, 50);
+        VisualizarFuncio.setBounds(60, 410, 80, 50);
 
         imageAvatar2.setGradientColor1(new java.awt.Color(242, 242, 242));
         imageAvatar2.setGradientColor2(new java.awt.Color(242, 242, 242));
         imageAvatar2.setImage(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/user.png"))); // NOI18N
         Butons.add(imageAvatar2);
-        imageAvatar2.setBounds(10, 30, 100, 100);
+        imageAvatar2.setBounds(50, 20, 100, 100);
 
         escuro.setText("Modo Escuro");
         escuro.addActionListener(new java.awt.event.ActionListener() {
@@ -188,11 +188,11 @@ public class Base extends javax.swing.JFrame {
         Butons.add(escuro);
         escuro.setBounds(0, 0, 93, 21);
 
-        getContentPane().add(Butons, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 570));
+        getContentPane().add(Butons, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 570));
 
         Base2.setLayout(new java.awt.BorderLayout());
 
-        inicial.setLayout(null);
+        inicial.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -207,8 +207,7 @@ public class Base extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        inicial.add(jScrollPane1);
-        jScrollPane1.setBounds(80, 340, 790, 160);
+        inicial.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 790, 160));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 255, 153), 2));
 
@@ -242,8 +241,7 @@ public class Base extends javax.swing.JFrame {
                 .addContainerGap(65, Short.MAX_VALUE))
         );
 
-        inicial.add(jPanel1);
-        jPanel1.setBounds(470, 50, 400, 150);
+        inicial.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, -1, -1));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 255, 153), 2));
 
@@ -276,17 +274,15 @@ public class Base extends javax.swing.JFrame {
                 .addContainerGap(72, Short.MAX_VALUE))
         );
 
-        inicial.add(jPanel2);
-        jPanel2.setBounds(60, 50, 400, 150);
+        inicial.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel7.setText("Carro mais Vendido");
-        inicial.add(jLabel7);
-        jLabel7.setBounds(360, 310, 160, 21);
+        inicial.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 160, -1));
 
         Base2.add(inicial, java.awt.BorderLayout.CENTER);
 
-        getContentPane().add(Base2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 1010, 570));
+        getContentPane().add(Base2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 990, 680));
 
         pack();
         setLocationRelativeTo(null);

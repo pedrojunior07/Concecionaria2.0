@@ -102,29 +102,15 @@ public class Login extends javax.swing.JFrame {
    String senha = new String(pfSenha.getPassword()).trim();
    if(senha.equalsIgnoreCase(object.getSenha())){
        ImagemDirectorioDAO dao = new ImagemDirectorioDAO();
-       
-//       ArrayList<ImagemDirectorios> openFile = dao.openFile("Imagens");
-//       for(int i =0; i<openFile.size(); i++ ){
-//       if(openFile.get(i).getIdentidade().equalsIgnoreCase(object.getIdentidade())){
-//      
-//             new GerenteFrame(openFile.get(i).getIcon(), object).setVisible(true);
-//       
-//       }
-//         
-//       }
-//   
-
-String teste= object.getIdentidade();
-
-   
-            ImagemDirectorioDAO img = new ImagemDirectorioDAO();
+        String teste= object.getIdentidade();
+         ImagemDirectorioDAO img = new ImagemDirectorioDAO();
             ArrayList<ImagemDirectorios> openFile = img.openFile("Imagens");
               for (int i=0; i<openFile.size();i++){
                   
               if(teste.equalsIgnoreCase(openFile.get(i).getIdentidade())){
              
                   new GerenteFrame(openFile.get(i).getIcon(), object).setVisible(true);
-
+                  this.dispose();
               }
                   }
    }
