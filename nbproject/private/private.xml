@@ -4,31 +4,43 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/DAO/DATABASE/GerenteDao.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/Model/Vendedor.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Admin/NewJFrame.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/GerenteFrame.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/test/combo_suggestion/ComboBoxSuggestion.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/Model/carrosMetodos.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/Controller/GerenteController.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/DAO/DATABASE/FornecedorDao.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Admin/GerirBaseDados.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Gerente/AdicionarFornecedor.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Admin/ProcurarFuncionario.java</file>
-            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/ViwFuncionario/EstatisticasCliente.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/Model/Fornecedor.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Login1.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/DAO/ImagemDirectorioDAO.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Admin/ListarFuncionarios.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Login.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/ADMFrame.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/Model/Carro.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/DAO/DATABASE/VendedorDAO.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Gerente/ListarPesquisarCarro.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Admin/Header.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/DAO/DATABASE/ClienteDAO.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/DAO/DATABASE/Conexao.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/test/textfield/TextField.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/style/FlatIntelliJLaf.properties</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Admin/Relatorios.java</file>
-            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Gerente/AdicionarCarro.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/Controller/ClienteModel.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/Model/Venda.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/ViwFuncionario/Base.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Gerente/ListarFonecedores.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/Model/Cliente.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/Model/ImagemDirectorios.java</file>
-            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/DAO/CarroDAO.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Admin/AddFuncionario.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/DAO/DATABASE/CarroDao.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/Controller/AdminController.java</file>
             <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/Gerente/AddCarro.java</file>
-            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/AdminFrame.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/DAO/DATABASE/ConexaoDAO.java</file>
+            <file>file:/C:/Users/Pedro/Documents/GitHub/Concecionaria2.0/src/View/NewClass.java</file>
         </group>
     </open-files>
 </project-private>

@@ -5,6 +5,7 @@
 package ViwFuncionario;
 
 import java.awt.BorderLayout;
+import org.netbeans.lib.awtextra.AbsoluteLayout;
 
 /**
  *
@@ -78,7 +79,7 @@ public class Pagamentos extends javax.swing.JPanel {
         Cartao.setText("Cartao");
 
         jRadioButton4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jRadioButton4.setText("Dinheiro vivo");
+        jRadioButton4.setText("Numerario");
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel4.setText("Prestacoes");
@@ -203,6 +204,7 @@ public class Pagamentos extends javax.swing.JPanel {
 
     private void AvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AvancarActionPerformed
         FormularioDoCliente form = new FormularioDoCliente();
+        BaseLocal.setLayout(new BorderLayout());
         BaseLocal.removeAll();
         BaseLocal.add(form,BorderLayout.CENTER);
         BaseLocal.revalidate();

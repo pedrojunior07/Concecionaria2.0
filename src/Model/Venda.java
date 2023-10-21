@@ -1,45 +1,92 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Model;
 
-import java.util.Date;
+import java.io.Serializable;
+
+
 
 /**
  *
- * @author Pedro
+ * @author Pedro Manjate
  */
-public class Venda {
-    private  int numMotor;
+public class Venda implements Serializable{
+    
+    private Carro carro;
+    private Cliente cliente;
     private int numeroDaVenda;
-    private String dataDavenda, DataDaGarantia;
+    private int mesDaVenda, anoDaVenda,diaDaVenda, mesDaGarantia, anoDaGarantia,diaDaGarantia;
     private double precoDaVenda;
     private boolean estado;
 
-    public int getNumMotor() {
-        return numMotor;
+  
+    
+    public Carro getCarro() {
+        return carro;
     }
 
-    public void setNumMotor(int numMotor) {
-        this.numMotor = numMotor;
+    public void setCarro(Carro carro) {
+        this.carro = carro;
     }
 
-    public String getDataDavenda() {
-        return dataDavenda;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setDataDavenda(String dataDavenda) {
-        this.dataDavenda = dataDavenda;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
-    public String getDataDaGarantia() {
-        return DataDaGarantia;
+    public int getMesDaVenda() {
+        return mesDaVenda;
     }
 
-    public void setDataDaGarantia(String DataDaGarantia) {
-        this.DataDaGarantia = DataDaGarantia;
+    public void setMesDaVenda(int mesDaVenda) {
+        this.mesDaVenda = mesDaVenda;
     }
+
+    public int getAnoDaVenda() {
+        return anoDaVenda;
+    }
+
+    public void setAnoDaVenda(int anoDaVenda) {
+        this.anoDaVenda = anoDaVenda;
+    }
+
+    public int getDiaDaVenda() {
+        return diaDaVenda;
+    }
+
+    public void setDiaDaVenda(int diaDaVenda) {
+        this.diaDaVenda = diaDaVenda;
+    }
+
+    public int getMesDaGarantia() {
+        return mesDaGarantia;
+    }
+
+    public void setMesDaGarantia(int mesDaGarantia) {
+        this.mesDaGarantia = mesDaGarantia;
+    }
+
+    public int getAnoDaGarantia() {
+        return anoDaGarantia;
+    }
+
+    public void setAnoDaGarantia(int anoDaGarantia) {
+        this.anoDaGarantia = anoDaGarantia;
+    }
+
+    public int getDiaDaGarantia() {
+        return diaDaGarantia;
+    }
+
+    public void setDiaDaGarantia(int diaDaGarantia) {
+        this.diaDaGarantia = diaDaGarantia;
+    }
+
+    
+
+  
 
   
 

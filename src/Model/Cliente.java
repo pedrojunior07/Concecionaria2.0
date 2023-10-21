@@ -1,16 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Model;
 
-import java.util.Date;
+import java.io.Serializable;
+
 
 /**
  *
  * @author Pedro
  */
-public class Cliente {
+public class Cliente implements Serializable {
     private String nome,sexo, apelido, naturalidade, identidade, estadocivil, especialidade, eMail, senha,dataNascimento;
     private int idade, Id, telefone;
 

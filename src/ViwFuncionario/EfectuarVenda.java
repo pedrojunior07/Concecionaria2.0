@@ -4,20 +4,54 @@
  */
 package ViwFuncionario;
 
+import Controller.GerenteController;
+import DAO.ImagemDirectorioDAO;
+import Model.Carro;
+import Model.ImagemDirectorios;
+import java.awt.BorderLayout;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.border.Border;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Celso Mongane
  */
 public class EfectuarVenda extends javax.swing.JPanel {
-
-    /**
-     * Creates new form EfectuarVeda
-     */
-    public EfectuarVenda() {
+      int courent=0;
+      DefaultTableModel model;
+     ArrayList<Carro> sellectAllCarros ;
+       ArrayList<ImageIcon> icon ;
+     JFrame frame;
+      
+    public EfectuarVenda(JFrame frame) throws SQLException, ClassNotFoundException {
       
         initComponents();
+        
+        
+        GerenteController cc = new GerenteController(frame);
+                sellectAllCarros = cc.sellectAllCarros();
+                model = new DefaultTableModel();
+		model.addColumn("Marca");
+		model.addColumn("modelo");
+		model.addColumn("Numero de Chassi");
+		model.addColumn("Numero do Motor");
+		model.addColumn("Preco");
+		model.addColumn("Estado");
+		model.addColumn("cor");
+		
+                
+                Table.setModel(model);
+                
+                  for(Carro c : sellectAllCarros){
+        
+        model.addRow(new Object[] {   c.getFabricante(), c.getModelo(),c.getNumChassi(),c.getNumMotor(),c.getPreco(), c.isVendido(), "sem cor" });
+        
+        }
     }
 
     /**
@@ -33,42 +67,34 @@ public class EfectuarVenda extends javax.swing.JPanel {
         jPanel5 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        Table = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
         Voltar1 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        fotoCarro = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        lb1 = new javax.swing.JLabel();
+        lb2 = new javax.swing.JLabel();
 
-        setLayout(null);
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Base3.setLayout(new java.awt.BorderLayout());
+        Base3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 255, 153)));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel6.setText("Selecinar o veiculo");
-        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 255)));
+        jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 190, 20));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        Table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableMouseClicked(evt);
             }
-        ));
-        jScrollPane2.setViewportView(jTable2);
+        });
+        jScrollPane2.setViewportView(Table);
 
-        jTextField2.setText("jTextField1");
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ViwFuncionario/Pesquisar.png"))); // NOI18N
+        jPanel5.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, 873, 224));
 
         jButton3.setText("Selecionar o veiculo");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -76,6 +102,7 @@ public class EfectuarVenda extends javax.swing.JPanel {
                 jButton3ActionPerformed(evt);
             }
         });
+        jPanel5.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 223, -1));
 
         Voltar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/datechooser/previous.png"))); // NOI18N
         Voltar1.setText("Back");
@@ -84,99 +111,40 @@ public class EfectuarVenda extends javax.swing.JPanel {
                 Voltar1ActionPerformed(evt);
             }
         });
+        jPanel5.add(Voltar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel7.setText("Veiculos disponiveis");
+        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 140, -1));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        fotoCarro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        fotoCarro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/galery_image_phot.png"))); // NOI18N
+        fotoCarro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel5.add(fotoCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, 510, 290));
+        fotoCarro.getAccessibleContext().setAccessibleName("");
+        fotoCarro.getAccessibleContext().setAccessibleDescription("");
 
-        jLabel1.setText("Foto do carro");
+        jButton1.setText("Foto Anterior");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(88, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
+        jButton2.setText("Proxima Foto");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 330, -1, -1));
+        jPanel5.add(lb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 330, 40));
+        jPanel5.add(lb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 330, 40));
 
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel8.setText("Pesquisar Veiculos");
+        Base3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 620));
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(396, 396, 396)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(89, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel6)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(jLabel2))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(Voltar1)
-                        .addGap(37, 37, 37))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 873, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(Voltar1))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(117, 117, 117)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jLabel7))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(48, Short.MAX_VALUE))
-        );
-
-        Base3.add(jPanel5, java.awt.BorderLayout.CENTER);
-
-        add(Base3);
-        Base3.setBounds(0, 0, 980, 560);
+        add(Base3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 620));
     }// </editor-fold>//GEN-END:initComponents
 
     private void Voltar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Voltar1ActionPerformed
@@ -186,6 +154,7 @@ public class EfectuarVenda extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Pagamentos form = new Pagamentos();
+        Base3.setLayout(new BorderLayout());
         Base3.removeAll();
         Base3.add(form);
         Base3.revalidate();
@@ -194,20 +163,59 @@ public class EfectuarVenda extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableMouseClicked
+        for(int j=0;j<sellectAllCarros.size();j++){
+        if(Table.isRowSelected(j)){
+            int numChassi = sellectAllCarros.get(j).getNumChassi();
+            ImagemDirectorioDAO dao = new ImagemDirectorioDAO();
+            ArrayList<ImagemDirectorios> openFile = dao.openFile("Imagens");
+            for(int k=0;k<openFile.size();k++){
+            if(openFile.get(k).getChassi()==numChassi){
+            
+     icon  =       openFile.get(k).getCarroImagens();
+     
+     fotoCarro.setIcon(icon.get(courent));
+            }
+            
+            }
+            lb1.setText(sellectAllCarros.get(j).getFabricante()+" "+sellectAllCarros.get(j).getModelo()+" "+ sellectAllCarros.get(j).getAnoDeFabrico());
+            lb2.setText("Com uma caixa "+sellectAllCarros.get(j).getTracao()+" "+" Motor a "+sellectAllCarros.get(j).getTipoDeComustivel());
+                }
+        }
+    }//GEN-LAST:event_TableMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+      if(icon!=null&&courent<icon.size()-1){
+    courent++;
+    fotoCarro.setIcon(icon.get(courent));
+    }else{
+            JOptionPane.showMessageDialog(frame, "sem Fotos", "Erro ", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(icon!=null&&courent>0){
+    courent--;
+    fotoCarro.setIcon(icon.get(courent));
+    }else{
+            JOptionPane.showMessageDialog(frame, "sem Fotos", "Erro ", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Base3;
+    private javax.swing.JTable Table;
     private javax.swing.JButton Voltar1;
+    private javax.swing.JLabel fotoCarro;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel lb1;
+    private javax.swing.JLabel lb2;
     // End of variables declaration//GEN-END:variables
 }

@@ -21,6 +21,7 @@ import View.Admin.AddFuncionario;
 import View.Gerente.AddCarro;
 import View.Gerente.AdicionarFornecedor;
 import View.Gerente.ListarPesquisarCarro;
+import View.Gerente.gStockTaxes;
 import java.sql.SQLException;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -59,17 +60,18 @@ Funcionario funcionrio;
         Acao2 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         lbNome = new javax.swing.JLabel();
+        jSlider1 = new javax.swing.JSlider();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
         contente = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -95,6 +97,7 @@ Funcionario funcionrio;
 
         lbNome.setText("Nome Completo");
         jPanel1.add(lbNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 170, 30));
+        jPanel1.add(jSlider1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 570, 170, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 190, 630));
 
@@ -120,19 +123,26 @@ Funcionario funcionrio;
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, -1, 40));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 110, 40));
 
-        jButton6.setText("Comprimir");
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, -1, 40));
+        jButton6.setText("Listar Funcionario");
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, -1, 40));
 
-        jButton7.setText("Butao");
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 90, 40));
-
-        jButton11.setText("Carlitos");
-        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 10, 80, 40));
+        jButton11.setText("Gestao de Taxas e Stock");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 170, 40));
 
         jButton13.setText("butao");
-        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, 90, 40));
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 10, 110, 40));
 
         jToggleButton1.setText(">>>");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +151,7 @@ Funcionario funcionrio;
             }
         });
         getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 70, -1));
-        getContentPane().add(contente, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 990, 610));
+        getContentPane().add(contente, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 1000, 620));
 
         pack();
         setLocationRelativeTo(null);
@@ -208,6 +218,22 @@ Funcionario funcionrio;
       
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        gStockTaxes p1 = new gStockTaxes();
+        
+        p1.setSize(1000, 620);
+        p1.setLocation(0,0);
+        contente.setLayout(new BorderLayout());
+        contente.removeAll();
+        contente.add(p1, BorderLayout.CENTER );
+        contente.revalidate();
+        contente.repaint();
+    }//GEN-LAST:event_jButton11ActionPerformed
+
     public static void main(String args[]) {
       
       try {
@@ -215,7 +241,7 @@ Funcionario funcionrio;
 
             UIManager.setLookAndFeel(new FlatIntelliJLaf());
         } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoginP.class.getName()).log(Level.SEVERE, null, ex);
         }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -250,9 +276,9 @@ Funcionario funcionrio;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSlider jSlider1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JLabel lbNome;
     // End of variables declaration//GEN-END:variables
