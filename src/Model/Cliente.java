@@ -2,18 +2,36 @@
 package Model;
 
 import java.io.Serializable;
-
-
+import javax.swing.ImageIcon;
 /**
  *
  * @author Pedro
+ * 
+ * 
  */
+
 public class Cliente implements Serializable {
-    private String nome,sexo, apelido, naturalidade, identidade, estadocivil, especialidade, eMail, senha,dataNascimento;
+    private String nome,sexo, apelido, naturalidade, identidade, estadocivil, eMail,dataNascimento;
+    private ImageIcon icon;
     private int idade, Id, telefone;
+    private Carro carro;
 
-    private Venda venda;
+    public ImageIcon getIcon() {
+        return icon;
+    }
 
+    public void setIcon(ImageIcon icon) {
+        this.icon = icon;
+    }
+    
+
+    public Carro getCarro() {
+        return carro;
+    }
+
+    public void setCarro(Carro carro) {
+        this.carro = carro;
+    }
     public String getNome() {
         return nome;
     }
@@ -29,9 +47,6 @@ public class Cliente implements Serializable {
     public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-
- 
-    
 
     public String getSexo() {
         return sexo;
@@ -73,13 +88,7 @@ public class Cliente implements Serializable {
         this.estadocivil = estadocivil;
     }
 
-    public String getEspecialidade() {
-        return especialidade;
-    }
-
-    public void setEspecialidade(String especialidade) {
-        this.especialidade = especialidade;
-    }
+  
 
     public String geteMail() {
         return eMail;
@@ -89,14 +98,7 @@ public class Cliente implements Serializable {
         this.eMail = eMail;
     }
 
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
+   
     public int getIdade() {
         return idade;
     }
@@ -121,13 +123,6 @@ public class Cliente implements Serializable {
         this.telefone = telefone;
     }
 
-    public Venda getVenda() {
-        return venda;
-    }
-
-    public void setVenda(Venda venda) {
-        this.venda = venda;
-    }
     
     
     

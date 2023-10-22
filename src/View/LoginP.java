@@ -8,7 +8,7 @@ import Controller.AdminController;
 import DAO.ImagemDirectorioDAO;
 import Model.Funcionario;
 import Model.ImagemDirectorios;
-import ViwFuncionario.Base;
+import ViewFuncionario.Base;
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import java.sql.SQLException;
 import java.util.ArrayList;

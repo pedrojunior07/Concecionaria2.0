@@ -6,12 +6,17 @@ import java.io.Serializable;
 
 public class StockeTaxas implements Serializable {
     private int qntToTalCarros, qntCarrosSuv, qntCarrosPickUp,qntCarrosTruck, qntCarrosBus;
-    private double imposto, taxaMensal6,taxaMensal12,taxaMansal18,promoDisconto;
-    
-    
-    
+    private double imposto, taxaMensal6,taxaMensal12,taxaMansal18,promoDisconto, acrescimo;
 
+    public double getAcrescimo() {
+        return acrescimo;
+    }
 
+    public void setAcrescimo(double acrescimo) {
+        this.acrescimo = acrescimo;
+    }
+    
+ 
     public int getQntToTalCarros() {
         return qntToTalCarros;
     }

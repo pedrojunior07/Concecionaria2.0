@@ -33,7 +33,7 @@ public void adicionarCliente(Cliente cliente) {
             preparedStatement.setString(4, cliente.getNaturalidade());
             preparedStatement.setString(5, cliente.getIdentidade());
             preparedStatement.setString(6, cliente.getEstadocivil());
-            preparedStatement.setString(7, cliente.getEspecialidade());
+           // preparedStatement.setString(7, cliente.getEspecialidade());
             preparedStatement.setString(8, cliente.geteMail());
             preparedStatement.setString(9, cliente.getDataNascimento() );
             

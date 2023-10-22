@@ -105,7 +105,7 @@ public class AddCarro extends javax.swing.JPanel {
         txAnoDeFabrico.setLabelText("Ano De Fabrico");
         add(txAnoDeFabrico, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 210, -1));
 
-        cCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Categoria", "Suv", "Bus", "PickUp", " " }));
+        cCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Categoria", "Suv", "Bus", "PickUp", "Truck" }));
         add(cCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 162, 220, 40));
 
         cCambio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cambio", "Manual", "Automatica" }));
@@ -137,7 +137,11 @@ public class AddCarro extends javax.swing.JPanel {
             }
         });
         add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, 370, 30));
-        add(lbnum, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 60, 130, 40));
+
+        lbnum.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        lbnum.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbnum.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        add(lbnum, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 70, 230, 40));
 
         txNumChassi.setLabelText("Numero Do chassi");
         add(txNumChassi, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, 220, -1));
@@ -205,7 +209,7 @@ public class AddCarro extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     
-   lbnum.setText("Numero De Imagens: "+imagens.size());
+   lbnum.setText("Numero De Imagens: "+imagens.size()+1);
   
        
         boolean save = jnaCh.showOpenDialog(frame);

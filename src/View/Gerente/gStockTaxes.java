@@ -31,7 +31,7 @@ public class gStockTaxes extends javax.swing.JPanel {
        txTaxaAdd18.setText(String.valueOf(openFile.get(0).getTaxaMansal18()));
        txTaxaAdd6.setText(String.valueOf(openFile.get(0).getTaxaMensal6()));
        txTruck.setText(String.valueOf(openFile.get(0).getQntCarrosTruck()));
-      
+       txAcrescim.setText(String.valueOf(openFile.get(0).getAcrescimo()));
         
     }
 
@@ -78,10 +78,20 @@ public class gStockTaxes extends javax.swing.JPanel {
         jLabel22 = new javax.swing.JLabel();
         btGuardar = new javax.swing.JButton();
         btEditar = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
+        txAcrescim = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
 
+        setMinimumSize(new java.awt.Dimension(1000, 620));
+        setPreferredSize(new java.awt.Dimension(1000, 620));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txPromo.setEditable(false);
+        txPromo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txPromoActionPerformed(evt);
+            }
+        });
         add(txPromo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, 110, 42));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -89,8 +99,8 @@ public class gStockTaxes extends javax.swing.JPanel {
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 210, 40));
 
-        jLabel2.setText("Promocao / Discontos (%)");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 220, 45));
+        jLabel2.setText("Acrescimo no preco de venda (%)");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 220, 45));
 
         txImposto.setEditable(false);
         add(txImposto, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 110, 42));
@@ -132,7 +142,7 @@ public class gStockTaxes extends javax.swing.JPanel {
 
         jLabel8.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabel8.setText("%");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, 20, 40));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, 20, 40));
 
         jLabel9.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         jLabel9.setText("%");
@@ -238,7 +248,7 @@ public class gStockTaxes extends javax.swing.JPanel {
                 btGuardarActionPerformed(evt);
             }
         });
-        add(btGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 490, 340, 60));
+        add(btGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 520, 340, 60));
 
         btEditar.setText("Editar");
         btEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -246,7 +256,17 @@ public class gStockTaxes extends javax.swing.JPanel {
                 btEditarActionPerformed(evt);
             }
         });
-        add(btEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 270, 60));
+        add(btEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 520, 270, 60));
+
+        jLabel23.setText("Promocao / Discontos (%)");
+        add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 220, 45));
+
+        txAcrescim.setEditable(false);
+        add(txAcrescim, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 440, 110, 42));
+
+        jLabel24.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
+        jLabel24.setText("%");
+        add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, 20, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txTaxaAdd6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txTaxaAdd6ActionPerformed
@@ -280,6 +300,7 @@ public class gStockTaxes extends javax.swing.JPanel {
        txTaxaAdd18.setEditable(true);
        txTaxaAdd6.setEditable(true);
        txTruck.setEditable(true);
+       txAcrescim.setEditable(true);
        btGuardar.setEnabled(true);
     }//GEN-LAST:event_btEditarActionPerformed
 
@@ -295,6 +316,7 @@ public class gStockTaxes extends javax.swing.JPanel {
        tax.setTaxaMansal18(Double.parseDouble(txTaxaAdd18.getText()));
        tax.setTaxaMensal6(Double.parseDouble(txTaxaAdd6.getText()));
        tax.setTaxaMensal12(Double.parseDouble(txTaxaAdd12.getText()));
+       tax.setAcrescimo(Double.parseDouble(txAcrescim.getText()));
         StockTaxasDao dao = new StockTaxasDao();
         dao.InsertTax(tax);
         
@@ -326,6 +348,10 @@ public class gStockTaxes extends javax.swing.JPanel {
       
     }//GEN-LAST:event_btGuardarActionPerformed
 
+    private void txPromoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txPromoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txPromoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btEditar;
@@ -345,6 +371,8 @@ public class gStockTaxes extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -352,6 +380,7 @@ public class gStockTaxes extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField txAcrescim;
     private javax.swing.JTextField txBus;
     private javax.swing.JTextField txImposto;
     private javax.swing.JTextField txPicUp;
