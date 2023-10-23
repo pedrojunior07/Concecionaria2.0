@@ -4,15 +4,12 @@
  */
 package DAO;
 
-import DAO.DATABASE.CarroDao;
-import DAO.DATABASE.Conexao;
+import Model.Notificacao;
 import Model.Venda;
-import Model.vendas;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -20,35 +17,16 @@ import javax.swing.JOptionPane;
  *
  * @author Pedro
  */
-public class VendaDao {
-    
-          public void insert(Venda user) {
-        ArrayList<Venda> usuario = openFile();
+public class NotificacoesDAO {
+       public void insert(Notificacao user) {
+        ArrayList<Notificacao> usuario = openFile();
         usuario.add(user);
-        closeFile(usuario, "venda");
-            JOptionPane.showMessageDialog(null, "Pedido de venda realizado com sucesso", "Gerente Vendas",
-                    JOptionPane.INFORMATION_MESSAGE);  
+        closeFile(usuario, "Notificacao");
+//            JOptionPane.showMessageDialog(null, "Pedido de venda realizado com sucesso", "Gerente Vendas",
+//                    JOptionPane.INFORMATION_MESSAGE);  
     }
-          
-          
-          public void  update(Venda user) throws SQLException, ClassNotFoundException{
-              ArrayList<Venda> openFile = openFile();
-              for(Venda v: openFile){
-              if(v.getNumeroDaVenda()== user.getNumeroDaVenda()){
-              openFile.remove(v);
-              openFile.add(user);
-                  closeFile(openFile, "venda");
-                  Conexao conexao = new Conexao();
-                  CarroDao dao = new CarroDao(conexao.getConnection());
-                   dao.VenderCarro(user.getCarro());
-              
-              }
-              }
-              
-          
-          }
  
-     public void closeFile(ArrayList<Venda> usuario, String file) {
+     public void closeFile(ArrayList<Notificacao> usuario, String file) {
         
         try {
             // Cria o ficheiro div.dat para armazenar os objetos
@@ -75,16 +53,16 @@ public class VendaDao {
     }
     
     
-      public ArrayList<Venda> openFile() {
+      public ArrayList<Notificacao> openFile() {
         
-        ArrayList<Venda> users = new ArrayList<>();
+        ArrayList<Notificacao> users = new ArrayList<>();
         try {
            // File files = new File(file);
-            FileInputStream meuFicheiro = new FileInputStream("venda");
+            FileInputStream meuFicheiro = new FileInputStream("Notificacao");
             ObjectInputStream in = new ObjectInputStream(meuFicheiro);
             
-            Venda vic = null;
-            while ((vic = (Venda) in.readObject()) != null) {
+            Notificacao vic = null;
+            while ((vic = (Notificacao) in.readObject()) != null) {
                 users.add(vic);
             }
             meuFicheiro.close();

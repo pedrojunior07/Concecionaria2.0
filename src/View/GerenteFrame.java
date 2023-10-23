@@ -18,31 +18,42 @@ import javax.swing.UnsupportedLookAndFeelException;
 import AppPackage.AnimationClass;
 import Model.Funcionario;
 import View.Admin.AddFuncionario;
+import View.Admin.mess;
 import View.Gerente.AddCarro;
 import View.Gerente.AdicionarFornecedor;
 import View.Gerente.ListarPesquisarCarro;
 import View.Gerente.gStockTaxes;
+import com.sun.mail.handlers.message_rfc822;
 import java.sql.SQLException;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import pedro.glasspanepopup.GlassPanePopup;
+
 import raven.toast.Notifications;
 
 /**
  *
  * @author Pedro
  */
+
+
 public class GerenteFrame extends javax.swing.JFrame {
 ImageIcon icon;
 Funcionario funcionrio;
+
+
     public GerenteFrame(ImageIcon icon, Funcionario funcionrio) {
         // UIManager.put( "Button.arc" , 999 );
          this.icon = icon;
          this.funcionrio= funcionrio;
           initComponents();
+          noti.setBackground(btListarCarro.getBackground());
+          Messagem.setBackground(btListarCarro.getBackground());
         // UIManager.put( "Button.arc" , 999 );
         imagem.setImage(icon);
         lbNome.setText(funcionrio.getNome()+" "+funcionrio.getApelido());
-          
+    
+          GlassPanePopup.install(this);
        
     }
 
@@ -54,19 +65,12 @@ Funcionario funcionrio;
         jPanel1 = new javax.swing.JPanel();
         imagem = new View.Admin.ImageAvatar();
         Messagem = new com.pedro.swing.win_button.ButtonBadges();
-        buttonBadges2 = new com.pedro.swing.win_button.ButtonBadges();
+        noti = new com.pedro.swing.win_button.ButtonBadges();
         jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        btListarCarro = new javax.swing.JButton();
         Acao2 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         lbNome = new javax.swing.JLabel();
-        jSlider1 = new javax.swing.JSlider();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
         contente = new javax.swing.JPanel();
 
@@ -77,72 +81,29 @@ Funcionario funcionrio;
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(imagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 180, 140));
 
-        Messagem.setText("mess");
+        Messagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/message.png"))); // NOI18N
         jPanel1.add(Messagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 80, 70));
 
-        buttonBadges2.setText("Noti");
-        jPanel1.add(buttonBadges2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 70));
+        noti.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/noti.png"))); // NOI18N
+        jPanel1.add(noti, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 70));
 
-        jButton9.setText("Acao3");
-        jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, -1, 90));
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/4.png"))); // NOI18N
+        jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 70, 90));
 
-        jButton10.setText("Acao 1");
-        jPanel1.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, 90));
+        btListarCarro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/cars.png"))); // NOI18N
+        jPanel1.add(btListarCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 70, 90));
 
-        Acao2.setText("Acao2");
-        jPanel1.add(Acao2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, -1, 90));
+        Acao2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/expense.png"))); // NOI18N
+        jPanel1.add(Acao2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 70, 90));
 
-        jButton12.setText("Acao4");
-        jPanel1.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, -1, 90));
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/5.png"))); // NOI18N
+        jPanel1.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, 70, 90));
 
+        lbNome.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         lbNome.setText("Nome Completo");
-        jPanel1.add(lbNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 170, 30));
-        jPanel1.add(jSlider1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 570, 170, -1));
+        jPanel1.add(lbNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 170, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 190, 630));
-
-        jButton2.setText("Add Carro");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 10, 120, 40));
-
-        jButton3.setText("Adicionar Fornecedor");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 150, 40));
-
-        jButton5.setText("Listar Carros");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 110, 40));
-
-        jButton6.setText("Listar Funcionario");
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, -1, 40));
-
-        jButton11.setText("Gestao de Taxas e Stock");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 170, 40));
-
-        jButton13.setText("butao");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 10, 110, 40));
 
         jToggleButton1.setText(">>>");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -150,7 +111,7 @@ Funcionario funcionrio;
                 jToggleButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 70, -1));
+        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 70, -1));
         getContentPane().add(contente, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 1000, 620));
 
         pack();
@@ -159,80 +120,15 @@ Funcionario funcionrio;
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
       AnimationClass painl = new AnimationClass();
+           GlassPanePopup.showPopup(new mess(this));
+           
+      
+      
+      
+      
+      
       
     }//GEN-LAST:event_jToggleButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-            
-        try {
-            AddCarro   p1 = new AddCarro(this);
-              p1.setSize(1000, 620);
-        p1.setLocation(0,0);
-        contente.setLayout(new BorderLayout());
-        contente.removeAll();
-        contente.add(p1, BorderLayout.CENTER );
-        contente.revalidate();
-        contente.repaint();
-        } catch (SQLException ex) {
-            Logger.getLogger(GerenteFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GerenteFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-              
-      
-
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-          AdicionarFornecedor p1 = new AdicionarFornecedor(this);
-              
-        p1.setSize(1000, 620);
-        p1.setLocation(0,0);
-        contente.setLayout(new BorderLayout());
-        contente.removeAll();
-        contente.add(p1, BorderLayout.CENTER );
-        contente.revalidate();
-        contente.repaint();
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-       
-      
-       
-        try {
-             ListarPesquisarCarro p1;
-            p1 = new ListarPesquisarCarro(this);
-             p1.setSize(1000, 620);
-              
-        p1.setLocation(0,0);
-        contente.setLayout(new BorderLayout());
-        contente.removeAll();
-        contente.add(p1, BorderLayout.CENTER );
-        contente.revalidate();
-        contente.repaint();
-        } catch (SQLException ex) {
-            Logger.getLogger(GerenteFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GerenteFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-      
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
-
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        gStockTaxes p1 = new gStockTaxes();
-        
-        p1.setSize(1000, 620);
-        p1.setLocation(0,0);
-        contente.setLayout(new BorderLayout());
-        contente.removeAll();
-        contente.add(p1, BorderLayout.CENTER );
-        contente.revalidate();
-        contente.repaint();
-    }//GEN-LAST:event_jButton11ActionPerformed
 
     public static void main(String args[]) {
       
@@ -265,21 +161,14 @@ Funcionario funcionrio;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Acao2;
     private com.pedro.swing.win_button.ButtonBadges Messagem;
-    private com.pedro.swing.win_button.ButtonBadges buttonBadges2;
+    private javax.swing.JButton btListarCarro;
     private javax.swing.JPanel contente;
     private View.Admin.ImageAvatar imagem;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSlider jSlider1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JLabel lbNome;
+    private com.pedro.swing.win_button.ButtonBadges noti;
     // End of variables declaration//GEN-END:variables
 }

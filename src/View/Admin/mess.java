@@ -4,17 +4,31 @@
  */
 package View.Admin;
 
+import View.Gerente.AddCarro;
+import View.Gerente.AdicionarFornecedor;
+import View.Gerente.ListarPesquisarCarro;
+import View.Gerente.gStockTaxes;
+import View.GerenteFrame;
+import com.itextpdf.text.log.Logger;
+import java.awt.BorderLayout;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.geom.RoundRectangle2D;
+import java.lang.System.Logger.Level;
+import java.sql.SQLException;
+
 /**
  *
  * @author Pedro
  */
 public class mess extends javax.swing.JPanel {
 
-    /**
-     * Creates new form mess
-     */
-    public mess() {
+    GerenteFrame frame ;
+    public mess( GerenteFrame frame) {
+        this.frame= frame;
         initComponents();
+        setOpaque(false);
     }
 
     /**
@@ -26,45 +40,143 @@ public class mess extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setMinimumSize(new java.awt.Dimension(1037, 264));
+        setPreferredSize(new java.awt.Dimension(1037, 264));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/error.png"))); // NOI18N
+        jButton2.setText("Add Carro");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 160, 50));
 
-        jLabel3.setFont(new java.awt.Font("Roboto Medium", 1, 36)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel3.setText("Sem Messagens");
+        jButton3.setText("Adicionar Fornecedor");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 160, 50));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(190, 190, 190)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(308, 308, 308)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(288, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(137, Short.MAX_VALUE))
-        );
+        jButton5.setText("Listar Carros");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, 160, 50));
+
+        jButton6.setText("Listar Funcionario");
+        add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 130, 160, 50));
+
+        jButton11.setText("Gestao de Taxas e Stock");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 130, 160, 50));
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+     
+            AddCarro   p1;
+        try {
+            p1 = new AddCarro(frame);
+              p1.setSize(1000, 620);
+            p1.setLocation(0,0);
+            frame.getContente().setLayout(new BorderLayout());
+             frame.getContente().removeAll();
+             frame.getContente().add(p1, BorderLayout.CENTER );
+             frame.getContente().revalidate();
+             frame.getContente().repaint();
+        } catch (java.sql.SQLException ex) {
+            java.util.logging.Logger.getLogger(mess.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(mess.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+          
+      
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        AdicionarFornecedor p1 = new AdicionarFornecedor(frame);
+
+        p1.setSize(1000, 620);
+        p1.setLocation(0,0);
+       frame.getContente().setLayout(new BorderLayout());
+       frame.getContente().removeAll();
+      frame.getContente().add(p1, BorderLayout.CENTER );
+        frame.getContente().revalidate();
+        frame.getContente().repaint();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+
+      
+            ListarPesquisarCarro p1;
+        try {
+            p1 = new ListarPesquisarCarro(frame);
+             p1.setSize(1000, 620);
+
+            p1.setLocation(0,0);
+          frame.getContente().setLayout(new BorderLayout());
+           frame.getContente().removeAll();
+            frame.getContente().add(p1, BorderLayout.CENTER );
+          frame.getContente().revalidate();
+           frame.getContente().repaint();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(mess.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(mess.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+           
+      
+
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        gStockTaxes p1 = new gStockTaxes();
+
+        p1.setSize(1000, 620);
+        p1.setLocation(0,0);
+        frame.getContente().setLayout(new BorderLayout());
+        frame.getContente().removeAll();
+       frame.getContente().add(p1, BorderLayout.CENTER );
+       frame.getContente().revalidate();
+       frame.getContente().repaint();
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    @Override
+    protected void paintComponent(Graphics grphcs) {
+        //super.paintComponent(g); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    
+     Graphics2D g2 = (Graphics2D) grphcs.create();
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g2.setColor(getBackground());
+        g2.fill(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 15, 15));
+        g2.dispose();
+        super.paintComponent(grphcs);
+    }
+
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     // End of variables declaration//GEN-END:variables
 }

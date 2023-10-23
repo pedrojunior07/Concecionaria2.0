@@ -64,6 +64,7 @@ public class Pagamentos extends javax.swing.JPanel {
         cambioTipoDeCombustivel1 = new javax.swing.JLabel();
         precoApagar = new javax.swing.JLabel();
         TermosCondicoesPrestacoes = new javax.swing.JButton();
+        lbPrestacoes = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -163,6 +164,9 @@ public class Pagamentos extends javax.swing.JPanel {
         TermosCondicoesPrestacoes.setText("Termos & Condicoes");
         BasePagamento.add(TermosCondicoesPrestacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 180, -1));
 
+        lbPrestacoes.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        BasePagamento.add(lbPrestacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 250, 50));
+
         BaseLocal.add(BasePagamento, java.awt.BorderLayout.CENTER);
 
         add(BaseLocal, java.awt.BorderLayout.CENTER);
@@ -193,7 +197,7 @@ TermosCondicoesPrestacoes.setVisible(false);
     private void ComboPrestacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboPrestacoesActionPerformed
       if(ComboPrestacoes.getSelectedIndex()==0){
       precoApagar.setText("Valor "+ venda.precoFinalComPrestacoes(1)+" MZN");
-      
+      lbPrestacoes.setText(" Vai pagar "+venda);
       }else if(ComboPrestacoes.getSelectedIndex()==1){
       precoApagar.setText("Valor "+ venda.precoFinalComPrestacoes(2)+" MZN");
       }else if(ComboPrestacoes.getSelectedIndex()==2){
@@ -204,6 +208,8 @@ TermosCondicoesPrestacoes.setVisible(false);
 
     private void AvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AvancarActionPerformed
       
+        g
+        
     }//GEN-LAST:event_AvancarActionPerformed
 
     private void CartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CartaoActionPerformed
@@ -234,6 +240,7 @@ TermosCondicoesPrestacoes.setVisible(false);
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel lbPrestacoes;
     private javax.swing.JLabel marcaModeloAno;
     private javax.swing.JRadioButton numerario;
     private javax.swing.JLabel precoApagar;
