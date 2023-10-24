@@ -55,25 +55,25 @@ public class Recibo extends javax.swing.JPanel {
         jLabel1.setText("Factura & Recibo");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 34, -1, 46));
 
-        lb3.setFont(new java.awt.Font("Courier New", 0, 20)); // NOI18N
+        lb3.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         lb3.setText("c");
-        add(lb3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 621, 71));
+        add(lb3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 690, 71));
 
-        lb1.setFont(new java.awt.Font("Courier New", 0, 20)); // NOI18N
+        lb1.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         lb1.setText("a");
-        add(lb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 603, 71));
+        add(lb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 690, 71));
 
-        lb4.setFont(new java.awt.Font("Courier New", 0, 20)); // NOI18N
+        lb4.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         lb4.setText("d");
-        add(lb4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 621, 71));
+        add(lb4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 690, 71));
 
-        lb2.setFont(new java.awt.Font("Courier New", 0, 20)); // NOI18N
+        lb2.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         lb2.setText("b");
-        add(lb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 621, 71));
+        add(lb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 690, 71));
 
-        lb5.setFont(new java.awt.Font("Courier New", 0, 20)); // NOI18N
+        lb5.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         lb5.setText("e");
-        add(lb5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, 621, 71));
+        add(lb5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 690, 71));
 
         jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("Courier New", 0, 24)); // NOI18N
@@ -85,7 +85,7 @@ public class Recibo extends javax.swing.JPanel {
                 jTextField1ActionPerformed(evt);
             }
         });
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 500, 280, 30));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 500, 290, 30));
 
         jTextField2.setEditable(false);
         jTextField2.setFont(new java.awt.Font("Courier New", 0, 24)); // NOI18N
@@ -97,11 +97,11 @@ public class Recibo extends javax.swing.JPanel {
                 jTextField2ActionPerformed(evt);
             }
         });
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, 280, 30));
+        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 470, 280, 30));
 
         jLabel2.setFont(new java.awt.Font("Courier New", 0, 20)); // NOI18N
         jLabel2.setText("xxxxxxxxxxxxxxxxxxxxxxx");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 540, 300, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 533, 290, 20));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

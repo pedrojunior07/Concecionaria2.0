@@ -29,7 +29,7 @@
     <Container class="javax.swing.JPanel" name="content">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="80" y="50" width="1010" height="626"/>
+          <AbsoluteConstraints x="100" y="50" width="1010" height="626"/>
         </Constraint>
       </Constraints>
 
@@ -98,7 +98,7 @@
                   <Component id="bt6" min="-2" pref="45" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                   <Component id="bt7" min="-2" pref="45" max="-2" attributes="0"/>
-                  <EmptySpace pref="125" max="32767" attributes="0"/>
+                  <EmptySpace pref="128" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -110,7 +110,7 @@
               <Font name="Roboto Medium" size="48" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/dashboard/icon/menu1.png"/>
+              <Image iconType="3" name="/dashboard/icon/chart-simple-horizontal.png"/>
             </Property>
           </Properties>
           <Events>
@@ -151,6 +151,11 @@
         <Component class="javax.swing.JButton" name="bt6">
         </Component>
         <Component class="javax.swing.JButton" name="bt4">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/dashboard/icon/equality (1).png"/>
+            </Property>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="bt7">
           <Properties>

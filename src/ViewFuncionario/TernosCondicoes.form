@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,97,0,0,4,39"/>
+  </AuxValues>
+
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+    <Property name="useNullLayout" type="boolean" value="false"/>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="0" y="20" width="1060" height="630"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="jTextArea1">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Courier New" size="12" style="0"/>
+            </Property>
+            <Property name="rows" type="int" value="5"/>
+            <Property name="text" type="java.lang.String" value="Termos e Condi&#xe7;&#xf5;es para Compra de Ve&#xed;culos por Presta&#xe7;&#xf5;es&#xa;&#xa;Estes Termos e Condi&#xe7;&#xf5;es (&quot;T&amp;C&quot;) regem a compra de ve&#xed;culos por meio de um plano de pagamento em presta&#xe7;&#xf5;es. Certifique-se de ler atentamente e entender completamente os termos e condi&#xe7;&#xf5;es antes de prosseguir com a aquisi&#xe7;&#xe3;o de um ve&#xed;culo por presta&#xe7;&#xf5;es. Ao aceitar esses T&amp;C, voc&#xea; concorda com os seguintes requisitos primordiais:&#xa;&#xa;1. Elegibilidade:&#xa;&#xa;Para se qualificar para o plano de pagamento em presta&#xe7;&#xf5;es, o comprador deve atender aos seguintes requisitos:&#xa;&#xa;a. Emprego e Fonte de Renda Segura:&#xa;O comprador deve estar atualmente empregado e possuir uma fonte de renda est&#xe1;vel que permita o pagamento mensal das presta&#xe7;&#xf5;es. A estabilidade da fonte de renda ser&#xe1; avaliada pelo vendedor antes da aprova&#xe7;&#xe3;o do plano de pagamento.&#xa;&#xa;b. Seguro de Emprego:&#xa;O comprador deve possuir um seguro de emprego adequado que cubra o pagamento das presta&#xe7;&#xf5;es em caso de perda de emprego ou incapacidade. O comprador deve fornecer comprovante deste seguro antes da conclus&#xe3;o da compra.&#xa;&#xa;2. Pagamento das Presta&#xe7;&#xf5;es:&#xa;&#xa;a. Valor da Entrada:&#xa;O comprador concorda em pagar um valor inicial, conforme acordado com o vendedor, antes de iniciar o pagamento das presta&#xe7;&#xf5;es.&#xa;&#xa;b. Pagamentos Mensais:&#xa;O comprador concorda em efetuar pagamentos mensais das presta&#xe7;&#xf5;es de acordo com o cronograma acordado. O n&#xe3;o pagamento de uma presta&#xe7;&#xe3;o acarretar&#xe1; penalidades e a possibilidade de apreens&#xe3;o do ve&#xed;culo.&#xa;&#xa;c. Entrega do Ve&#xed;culo:&#xa;O ve&#xed;culo ser&#xe1; entregue ao comprador quando 80% do valor total do ve&#xed;culo tiver sido pago. O t&#xed;tulo de propriedade permanecer&#xe1; com o vendedor at&#xe9; que o pagamento integral seja efetuado.&#xa;&#xa;3. Manuten&#xe7;&#xe3;o e Cuidados com o Ve&#xed;culo:&#xa;&#xa;O comprador &#xe9; respons&#xe1;vel por manter e cuidar do ve&#xed;culo durante o per&#xed;odo do pagamento. Quaisquer danos ou desgastes excessivos que n&#xe3;o sejam decorrentes do uso normal ser&#xe3;o de responsabilidade do comprador.&#xa;&#xa;4. Rescis&#xe3;o do Contrato:&#xa;&#xa;O contrato de pagamento em presta&#xe7;&#xf5;es pode ser rescindido pelo vendedor em caso de inadimpl&#xea;ncia significativa ou viola&#xe7;&#xe3;o dos termos deste contrato. Nesse caso, o vendedor poder&#xe1; retomar a posse do ve&#xed;culo.&#xa;5. Altera&#xe7;&#xf5;es nos Termos e Condi&#xe7;&#xf5;es:&#xa;&#xa;O vendedor se reserva o direito de fazer altera&#xe7;&#xf5;es nestes T&amp;C a qualquer momento, com notifica&#xe7;&#xe3;o pr&#xe9;via ao comprador.&#xa;&#xa;Ao aceitar esses Termos e Condi&#xe7;&#xf5;es, o comprador concorda em cumprir todos os requisitos e obriga&#xe7;&#xf5;es estabelecidos acima. O n&#xe3;o cumprimento dessas condi&#xe7;&#xf5;es pode resultar na rescis&#xe3;o do contrato e na perda do ve&#xed;culo.&#xa;Certifique-se de ler e compreender completamente estes termos antes de prosseguir com a compra."/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

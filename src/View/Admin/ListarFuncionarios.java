@@ -36,7 +36,7 @@ public class ListarFuncionarios extends javax.swing.JPanel {
 		model.addColumn("Nacionalidade");
 		
 		
-        Tabela.setModel(model);
+       Tabela.setModel(model);
     }
 
     /**

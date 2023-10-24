@@ -73,7 +73,7 @@
         <Component class="javax.swing.JButton" name="jButton9">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/dashboard/icon/4.png"/>
+              <Image iconType="3" name="/dashboard/icon/stats.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -85,7 +85,7 @@
         <Component class="javax.swing.JButton" name="btListarCarro">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/dashboard/icon/cars.png"/>
+              <Image iconType="3" name="/dashboard/icon/Listar.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -97,7 +97,7 @@
         <Component class="javax.swing.JButton" name="Acao2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icon/expense.png"/>
+              <Image iconType="3" name="/dashboard/icon/sack-dollar.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -109,7 +109,7 @@
         <Component class="javax.swing.JButton" name="jButton12">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/dashboard/icon/5.png"/>
+              <Image iconType="3" name="/dashboard/icon/gears.png"/>
             </Property>
           </Properties>
           <Constraints>

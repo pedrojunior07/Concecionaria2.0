@@ -154,10 +154,10 @@ int xMouse, yMouse;
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         content.add(imageAvatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 170, 140));
 
-        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 1010, 626));
+        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 1010, 626));
 
         jButton1.setFont(new java.awt.Font("Roboto Medium", 1, 48)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/menu1.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/chart-simple-horizontal.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -185,6 +185,8 @@ int xMouse, yMouse;
                 btListarActionPerformed(evt);
             }
         });
+
+        bt4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/equality (1).png"))); // NOI18N
 
         bt7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/5.png"))); // NOI18N
 
@@ -226,7 +228,7 @@ int xMouse, yMouse;
                 .addComponent(bt6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(bt7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, 630));

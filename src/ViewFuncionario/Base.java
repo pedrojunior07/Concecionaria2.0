@@ -25,6 +25,7 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
+import pedro.glasspanepopup.GlassPanePopup;
 
 /**
  *
@@ -47,6 +48,7 @@ public class Base extends javax.swing.JFrame {
         this.funcionario = vendedor;
         UIManager.put("Button.arc", 999);
         initComponents();
+        GlassPanePopup.install(this);
         jLabel1.setText(vendedor.getNome()+" "+vendedor.getApelido());
         imageAvatar2.setImage(icon);
     }

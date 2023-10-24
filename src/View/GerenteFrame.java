@@ -95,16 +95,16 @@ Funcionario funcionrio;
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(imagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 180, 140));
 
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/4.png"))); // NOI18N
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/stats.png"))); // NOI18N
         jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 70, 90));
 
-        btListarCarro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/cars.png"))); // NOI18N
+        btListarCarro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/Listar.png"))); // NOI18N
         jPanel1.add(btListarCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 70, 90));
 
-        Acao2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/expense.png"))); // NOI18N
+        Acao2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/sack-dollar.png"))); // NOI18N
         jPanel1.add(Acao2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 70, 90));
 
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/5.png"))); // NOI18N
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/gears.png"))); // NOI18N
         jPanel1.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, 70, 90));
 
         lbNome.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N

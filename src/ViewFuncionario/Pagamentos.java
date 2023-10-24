@@ -4,6 +4,8 @@
  */
 package ViewFuncionario;
 
+import DAO.DATABASE.CarroDao;
+import DAO.DATABASE.Conexao;
 import DAO.StockTaxasDao;
 import DAO.VendaDao;
 import Model.Carro;
@@ -16,10 +18,14 @@ import Model.StockeTaxas;
 import Model.Venda;
 import Model.vendas;
 import java.awt.BorderLayout;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import org.netbeans.lib.awtextra.AbsoluteLayout;
+import pedro.glasspanepopup.GlassPanePopup;
 
 /**
  *
@@ -174,6 +180,11 @@ public class Pagamentos extends javax.swing.JPanel {
 
         TermosCondicoesPrestacoes.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         TermosCondicoesPrestacoes.setText("Termos & Condicoes");
+        TermosCondicoesPrestacoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TermosCondicoesPrestacoesActionPerformed(evt);
+            }
+        });
         BasePagamento.add(TermosCondicoesPrestacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 180, -1));
 
         lbPrestacoes.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
@@ -255,6 +266,16 @@ TermosCondicoesPrestacoes.setVisible(false);
              factura.setCliente(cliente);
              factura.setVenda(venda);
              factura.setFuncionario(funcionario);
+             Conexao c1 = new  Conexao();
+          try {
+              CarroDao cd = new CarroDao(c1.getConnection());
+              
+              cd.VenderCarro(carro);
+          } catch (SQLException ex) {
+              Logger.getLogger(Pagamentos.class.getName()).log(Level.SEVERE, null, ex);
+          } catch (ClassNotFoundException ex) {
+              Logger.getLogger(Pagamentos.class.getName()).log(Level.SEVERE, null, ex);
+          }
              
              Recibo form = new Recibo(venda);
               frame.getBase2().setLayout(new BorderLayout());
@@ -289,6 +310,10 @@ TermosCondicoesPrestacoes.setVisible(false);
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void TermosCondicoesPrestacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TermosCondicoesPrestacoesActionPerformed
+      GlassPanePopup.showPopup(new TernosCondicoes());
+    }//GEN-LAST:event_TermosCondicoesPrestacoesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
