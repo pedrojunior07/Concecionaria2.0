@@ -256,6 +256,7 @@ TermosCondicoesPrestacoes.setVisible(false);
         venda.setAnoDaVenda(c.get(Calendar.YEAR));
         venda.setCarro(carro);
         venda.setCliente(cliente);
+        venda.setFuncionario(funcionario);
         venda.setEstado(false);
         venda.setNumeroDaVenda(openFile.size()+1);
         venda.setPrecoDaVenda( precoFinal);
@@ -267,6 +268,8 @@ TermosCondicoesPrestacoes.setVisible(false);
              factura.setVenda(venda);
              factura.setFuncionario(funcionario);
              Conexao c1 = new  Conexao();
+             VendaDao d = new VendaDao();
+                d.insert(venda);
           try {
               CarroDao cd = new CarroDao(c1.getConnection());
               

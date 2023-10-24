@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 public class FinacasDao {
     
           public void insert(Financas user) {
-        ArrayList<Financas> usuario = openFile();
+        ArrayList<Financas> usuario = new ArrayList<>();
         usuario.add(user);
         closeFile(usuario, "Financas");
             JOptionPane.showMessageDialog(null, "Confre Atualizado com sucesso", "Gerente Vendas",

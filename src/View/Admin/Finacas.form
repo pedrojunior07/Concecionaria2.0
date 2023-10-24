@@ -41,16 +41,16 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel3" min="-2" pref="221" max="-2" attributes="0"/>
-                  <EmptySpace pref="23" max="32767" attributes="0"/>
-              </Group>
               <Group type="102" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel4" min="-2" pref="152" max="-2" attributes="0"/>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
+                  <Component id="lDinhInvestido" min="-2" pref="152" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                  <Component id="jLabel3" min="-2" pref="161" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -62,7 +62,7 @@
                   <Component id="jLabel3" min="-2" pref="34" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel4" min="-2" pref="88" max="-2" attributes="0"/>
+                      <Component id="lDinhInvestido" min="-2" pref="88" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="90" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="34" max="32767" attributes="0"/>
@@ -79,7 +79,7 @@
             <Property name="text" type="java.lang.String" value="Dinheiro investido"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="lDinhInvestido">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto Medium" size="24" style="0"/>
@@ -113,7 +113,7 @@
     <Container class="javax.swing.JPanel" name="p1">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="50" y="200" width="260" height="170"/>
+          <AbsoluteConstraints x="50" y="190" width="260" height="180"/>
         </Constraint>
       </Constraints>
 
@@ -121,34 +121,30 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                          <Component id="jLabel7" min="-2" pref="152" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="ldispesas" min="-2" pref="152" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="jLabel6" min="-2" pref="221" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace pref="36" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" pref="34" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="ldispesas" min="-2" pref="88" max="-2" attributes="0"/>
                       <Component id="jLabel8" min="-2" pref="90" max="-2" attributes="0"/>
-                      <Component id="jLabel7" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="38" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -159,10 +155,10 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto Medium" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Total em Dispesas :"/>
+            <Property name="text" type="java.lang.String" value="Total em Despesas :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel7">
+        <Component class="javax.swing.JLabel" name="ldispesas">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto Medium" size="24" style="0"/>
@@ -183,38 +179,36 @@
     <Container class="javax.swing.JPanel" name="p2">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="380" y="190" width="250" height="170"/>
+          <AbsoluteConstraints x="380" y="190" width="250" height="180"/>
         </Constraint>
       </Constraints>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel10" min="-2" pref="152" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace pref="32" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                      <Component id="lReceita" min="-2" pref="152" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                  <Component id="jLabel9" min="-2" pref="221" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="32" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace pref="27" max="32767" attributes="0"/>
                   <Component id="jLabel9" min="-2" pref="34" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel11" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
-                      <Component id="jLabel10" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
+                      <Component id="lReceita" min="-2" pref="88" max="-2" attributes="0"/>
+                      <Component id="jLabel11" min="-2" pref="90" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -228,7 +222,7 @@
             <Property name="text" type="java.lang.String" value="Total da Recita :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel10">
+        <Component class="javax.swing.JLabel" name="lReceita">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto Medium" size="24" style="0"/>
@@ -249,23 +243,23 @@
     <Container class="javax.swing.JPanel" name="p3">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="670" y="200" width="250" height="170"/>
+          <AbsoluteConstraints x="670" y="190" width="250" height="180"/>
         </Constraint>
       </Constraints>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace pref="32" max="32767" attributes="0"/>
                   <Component id="lbSaldo" min="-2" pref="152" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="32" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel12" min="-2" pref="221" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                  <Component id="jLabel12" min="-2" pref="136" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -273,14 +267,14 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   <Component id="jLabel12" min="-2" pref="34" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel14" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
-                      <Component id="lbSaldo" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel14" alignment="3" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="lbSaldo" alignment="3" min="-2" pref="88" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="29" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -319,15 +313,21 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Adicionar Valor"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="670" y="390" width="240" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="txDinheiro">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txDinheiroActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -335,13 +335,17 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btGardar">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Roboto Medium" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Guardar"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btGardarActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="670" y="470" width="240" height="-1"/>
@@ -358,17 +362,15 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel13" min="-2" pref="221" max="-2" attributes="0"/>
-                  <EmptySpace pref="23" max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel15" min="-2" pref="152" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                      <Component id="lLucro" min="-2" pref="152" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel16" min="-2" pref="30" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="31" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -379,7 +381,7 @@
                   <Component id="jLabel13" min="-2" pref="34" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel15" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
+                      <Component id="lLucro" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
                       <Component id="jLabel16" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="34" max="32767" attributes="0"/>
@@ -396,7 +398,7 @@
             <Property name="text" type="java.lang.String" value="Total De Lucro"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel15">
+        <Component class="javax.swing.JLabel" name="lLucro">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto Medium" size="24" style="0"/>

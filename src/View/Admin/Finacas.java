@@ -4,9 +4,13 @@
  */
 package View.Admin;
 
+import DAO.FinacasDao;
+import Model.Financas;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatGitHubIJTheme;
 import com.formdev.flatlaf.ui.FlatLineBorder;
 import java.awt.Color;
+import java.awt.Insets;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,8 +22,23 @@ public class Finacas extends javax.swing.JPanel {
      * Creates new form Finacas
      */
     public Finacas() {
-        initComponents();    p1.setBorder(new FlatLineBorder(1, Color.yellow));
+        initComponents(); 
+        Insets insets = new Insets(1, 1, 1, 1);
+        p1.setBorder(new FlatLineBorder(insets, new Color(78, 170, 82), 2, 111));
+          p2.setBorder(new FlatLineBorder(insets, new Color(78, 170, 82), 2, 000));
+            p1.setBorder(new FlatLineBorder(insets, new Color(78, 170, 82), 2, 000));
+              p3.setBorder(new FlatLineBorder(insets, new Color(78, 170, 82), 2, 000));
+                p4.setBorder(new FlatLineBorder(insets, new Color(78, 170, 82), 2, 000));
+                  p5.setBorder(new FlatLineBorder(insets, new Color(78, 170, 82), 2, 000));
        
+                   FinacasDao f = new FinacasDao();
+        ArrayList<Financas> openFile = f.openFile();
+        lDinhInvestido.setText(String.valueOf(openFile.get(0).getDinhInvestido()));
+        lLucro.setText(String.valueOf(openFile.get(0).getLucro()));
+        lReceita.setText(String.valueOf(openFile.get(0).getReceita()));
+        lbSaldo.setText(String.valueOf(openFile.get(0).getSaldo()));
+        ldispesas.setText(String.valueOf(openFile.get(0).getDispesas()));
+                  
     }
 
     /**
@@ -34,27 +53,27 @@ public class Finacas extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         p5 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lDinhInvestido = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         p1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        ldispesas = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         p2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        lReceita = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         p3 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         lbSaldo = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        txDinheiro = new javax.swing.JTextField();
+        btGardar = new javax.swing.JButton();
         p4 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        lLucro = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -66,8 +85,8 @@ public class Finacas extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel3.setText("Dinheiro investido");
 
-        jLabel4.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
-        jLabel4.setText("000000");
+        lDinhInvestido.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
+        lDinhInvestido.setText("000000");
 
         jLabel1.setFont(new java.awt.Font("Roboto Thin", 1, 48)); // NOI18N
         jLabel1.setText("$");
@@ -77,14 +96,14 @@ public class Finacas extends javax.swing.JPanel {
         p5Layout.setHorizontalGroup(
             p5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
-            .addGroup(p5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addComponent(lDinhInvestido, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
+            .addGroup(p5Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         p5Layout.setVerticalGroup(
@@ -94,7 +113,7 @@ public class Finacas extends javax.swing.JPanel {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(p5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lDinhInvestido, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
@@ -106,10 +125,10 @@ public class Finacas extends javax.swing.JPanel {
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 18, -1, 140));
 
         jLabel6.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        jLabel6.setText("Total em Dispesas :");
+        jLabel6.setText("Total em Despesas :");
 
-        jLabel7.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
-        jLabel7.setText("000000");
+        ldispesas.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
+        ldispesas.setText("000000");
 
         jLabel8.setFont(new java.awt.Font("Roboto Thin", 1, 48)); // NOI18N
         jLabel8.setText("$");
@@ -119,37 +138,34 @@ public class Finacas extends javax.swing.JPanel {
         p1Layout.setHorizontalGroup(
             p1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(38, 38, 38)
                 .addGroup(p1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
                     .addGroup(p1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel8)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(p1Layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(ldispesas, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel8)))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         p1Layout.setVerticalGroup(
             p1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(p1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(ldispesas, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
-        add(p1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 260, 170));
+        add(p1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 260, 180));
 
         jLabel9.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel9.setText("Total da Recita :");
 
-        jLabel10.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
-        jLabel10.setText("000000");
+        lReceita.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
+        lReceita.setText("000000");
 
         jLabel11.setFont(new java.awt.Font("Roboto Thin", 1, 48)); // NOI18N
         jLabel11.setText("$");
@@ -159,29 +175,27 @@ public class Finacas extends javax.swing.JPanel {
         p2Layout.setHorizontalGroup(
             p2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addGroup(p2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel9)
+                    .addComponent(lReceita, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(p2Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         p2Layout.setVerticalGroup(
             p2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(p2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lReceita, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23))
         );
 
-        add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 250, 170));
+        add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 250, 180));
 
         jLabel12.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel12.setText("Saldo Total :");
@@ -197,50 +211,62 @@ public class Finacas extends javax.swing.JPanel {
         p3Layout.setHorizontalGroup(
             p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(32, Short.MAX_VALUE)
                 .addComponent(lbSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel14)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
             .addGroup(p3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         p3Layout.setVerticalGroup(
             p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p3Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(14, 14, 14)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
-        add(p3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 200, 250, 170));
+        add(p3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 250, 180));
 
         jButton1.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         jButton1.setText("Adicionar Valor");
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 390, 240, 30));
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 430, 240, 30));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 390, 240, 30));
 
-        jButton2.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
-        jButton2.setText("Guardar");
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 470, 240, -1));
+        txDinheiro.setEnabled(false);
+        txDinheiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txDinheiroActionPerformed(evt);
+            }
+        });
+        add(txDinheiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 430, 240, 30));
+
+        btGardar.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+        btGardar.setText("Guardar");
+        btGardar.setEnabled(false);
+        btGardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btGardarActionPerformed(evt);
+            }
+        });
+        add(btGardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 470, 240, -1));
 
         jLabel13.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel13.setText("Total De Lucro");
 
-        jLabel15.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
-        jLabel15.setText("000000");
+        lLucro.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
+        lLucro.setText("000000");
 
         jLabel16.setFont(new java.awt.Font("Roboto Thin", 1, 48)); // NOI18N
         jLabel16.setText("$");
@@ -250,15 +276,13 @@ public class Finacas extends javax.swing.JPanel {
         p4Layout.setHorizontalGroup(
             p4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
-            .addGroup(p4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addGroup(p4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel13)
+                    .addComponent(lLucro, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         p4Layout.setVerticalGroup(
             p4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,7 +291,7 @@ public class Finacas extends javax.swing.JPanel {
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(p4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lLucro, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
@@ -275,36 +299,53 @@ public class Finacas extends javax.swing.JPanel {
         add(p4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 250, 170));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txDinheiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txDinheiroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txDinheiroActionPerformed
+
+    private void btGardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGardarActionPerformed
+        FinacasDao f = new FinacasDao();
+        ArrayList<Financas> openFile = f.openFile();
+      
+        openFile.get(0).setSaldo( openFile.get(0).getSaldo()+Double.parseDouble(txDinheiro.getText()));
+        openFile.get(0).setDinhInvestido(openFile.get(0).getDinhInvestido() + Double.parseDouble(txDinheiro.getText()));
+      f.insert(openFile.get(0));
+      txDinheiro.setEnabled(false);
+        btGardar.setEnabled(false);
+      
+    }//GEN-LAST:event_btGardarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        txDinheiro.setEnabled(true);
+        btGardar.setEnabled(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btGardar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lDinhInvestido;
+    private javax.swing.JLabel lLucro;
+    private javax.swing.JLabel lReceita;
     private javax.swing.JLabel lbSaldo;
+    private javax.swing.JLabel ldispesas;
     private javax.swing.JPanel p1;
     private javax.swing.JPanel p2;
     private javax.swing.JPanel p3;
     private javax.swing.JPanel p4;
     private javax.swing.JPanel p5;
+    private javax.swing.JTextField txDinheiro;
     // End of variables declaration//GEN-END:variables
 }

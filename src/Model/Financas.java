@@ -10,9 +10,27 @@ import java.io.Serializable;
 public class Financas implements Serializable {
   private double saldo;
   private double dispesas;
+  private double receita;
   private double lucro;
+  private double DinhInvestido;
 
-    public double getSaldo() {
+    public double getDinhInvestido() {
+        return DinhInvestido;
+    }
+
+    public void setDinhInvestido(double DinhInvestido) {
+        this.DinhInvestido = DinhInvestido;
+    }
+
+    public double getReceita() {
+        return receita;
+    }
+
+    public void setReceita(double receita) {
+        this.receita = receita;
+    }  
+
+  public double getSaldo() {
         return saldo;
     }
 

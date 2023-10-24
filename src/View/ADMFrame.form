@@ -156,6 +156,9 @@
               <Image iconType="3" name="/dashboard/icon/equality (1).png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt4ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bt7">
           <Properties>

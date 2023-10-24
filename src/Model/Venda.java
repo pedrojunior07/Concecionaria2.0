@@ -35,7 +35,18 @@ public class Venda implements Serializable, vendas{
     private String tipoDePagamento;
     private boolean estado, pedido;
     private StockeTaxas taxes;
+    private Funcionario funcionario;
 
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
+    }
+    
+    
+    
     
     
     

@@ -8,6 +8,7 @@ import Controller.AdminController;
 import Model.Funcionario;
 import Model.Vendedor;
 import View.Admin.AddFuncionario;
+import View.Admin.Finacas;
 import View.Admin.Header;
 import View.Admin.ListarFuncionarios;
 import View.Admin.ProcurarFuncionario;
@@ -187,6 +188,11 @@ int xMouse, yMouse;
         });
 
         bt4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/equality (1).png"))); // NOI18N
+        bt4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt4ActionPerformed(evt);
+            }
+        });
 
         bt7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/5.png"))); // NOI18N
 
@@ -460,6 +466,16 @@ yMouse = evt.getY();
                         content.revalidate();
                         content.repaint();
     }//GEN-LAST:event_bt3ActionPerformed
+
+    private void bt4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt4ActionPerformed
+                      Finacas p1 = new Finacas();
+                       p1.setSize(1000, 620);
+                        p1.setLocation(0,0);
+                        content.removeAll();
+                        content.add(p1, BorderLayout.CENTER );
+                        content.revalidate();
+                        content.repaint();
+    }//GEN-LAST:event_bt4ActionPerformed
 
     /**
      * @param args the command line arguments
