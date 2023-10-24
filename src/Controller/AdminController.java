@@ -64,5 +64,7 @@ public class AdminController {
         }
         return lista;
     }
-    
+    public void bud(){
+        System.out.println("bug");
+    }
 }

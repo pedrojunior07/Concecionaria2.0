@@ -52,9 +52,9 @@ int xMouse, yMouse;
      ArrayList<Funcionario> useri;
     public ADMFrame() {
          UIManager.put( "Button.arc" , 999 );
-         UIManager.put( "TextField.arc" , 999 );
+      //  UIManager.put( "TextField.arc" , 999 );
           initComponents();
-         UIManager.put( "Button.arc" , 999 );
+        // UIManager.put( "Button.arc" , 999 );
          
            
           content.setLayout(new BorderLayout());
@@ -251,6 +251,7 @@ int xMouse, yMouse;
 
         btNoti.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/noti.png"))); // NOI18N
 
+        escuro.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         escuro.setText("ModoEscuro");
         escuro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -263,7 +264,7 @@ int xMouse, yMouse;
         BArraDeTituloLayout.setHorizontalGroup(
             BArraDeTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BArraDeTituloLayout.createSequentialGroup()
-                .addContainerGap(681, Short.MAX_VALUE)
+                .addContainerGap(676, Short.MAX_VALUE)
                 .addComponent(escuro)
                 .addGap(180, 180, 180)
                 .addComponent(btNoti, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -353,7 +354,7 @@ yMouse = evt.getY();
         .header(new Header())
         .space(3)
         .addChild(new DrawerItem("Adicionar Funcionario ").icon(new ImageIcon(getClass().getResource("/icon/user.png"))).build())
-        .addChild(new DrawerItem("Fornecedores").icon(new ImageIcon(getClass().getResource("/icon/cont.png"))).build())
+        .addChild(new DrawerItem("Listar Funcionaarrios").icon(new ImageIcon(getClass().getResource("/icon/employees.png"))).build())
         .addChild(new DrawerItem("Relatorios").icon(new ImageIcon(getClass().getResource("/icon/report.png"))).build())
         .addChild(new DrawerItem("Receita").icon(new ImageIcon(getClass().getResource("/icon/income.png"))).build())
         .addChild(new DrawerItem("Despesa").icon(new ImageIcon(getClass().getResource("/icon/expense.png"))).build())
@@ -367,7 +368,20 @@ yMouse = evt.getY();
                 }
 
                 switch (index) {
-                    case 1:{System.out.println("1");}break;
+                    case 1:{       
+                        
+                        ListarFuncionarios p1 = new ListarFuncionarios(fr);
+                        p1.setSize(1000, 620);
+                        p1.setLocation(0,0);
+                        content.removeAll();
+                        content.add(p1, BorderLayout.CENTER );
+                        content.revalidate();
+                        content.repaint();
+
+                    
+                    
+                    
+                    }break;
                     case 2 :{
                         System.out.println("2");
                     }break;
@@ -415,7 +429,7 @@ yMouse = evt.getY();
     }//GEN-LAST:event_btListarActionPerformed
 
     private void bt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt1ActionPerformed
-                AddFuncionario p1 = new AddFuncionario(this);
+        AddFuncionario p1 = new AddFuncionario(this);
         p1.setSize(1000, 620);
         p1.setLocation(0,0);
         content.setLayout(new BorderLayout());

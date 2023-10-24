@@ -254,7 +254,7 @@ public Base frame;
        a.setCarro(carro);
         dao.insert(a);
         
-         Pagamentos form = new Pagamentos(funcionario, carro, a);
+         Pagamentos form = new Pagamentos(funcionario, carro, a,frame);
          
          frame.getBase2().setLayout(new BorderLayout());
          frame.getBase2().removeAll();

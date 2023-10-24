@@ -5,14 +5,20 @@
 package ViewFuncionario;
 
 import DAO.StockTaxasDao;
+import DAO.VendaDao;
 import Model.Carro;
 import Model.Cliente;
+
+import Model.FacturaRecibo;
 import Model.Funcionario;
+import Model.Notificacao;
 import Model.StockeTaxas;
 import Model.Venda;
 import Model.vendas;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
+import java.util.Calendar;
+import javax.swing.JFrame;
 import org.netbeans.lib.awtextra.AbsoluteLayout;
 
 /**
@@ -20,11 +26,15 @@ import org.netbeans.lib.awtextra.AbsoluteLayout;
  * @author Celso Mongane
  */
 public class Pagamentos extends javax.swing.JPanel {
-    Carro carro;
-    Funcionario funcionario;
-    Cliente cliente;
-    Venda venda;
-    public Pagamentos(Funcionario funcionario,Carro carro, Cliente cliente) {
+   private Carro carro;
+   private  Funcionario funcionario;
+   private Cliente cliente;
+   private Venda venda;
+   private double precoFinal;
+   private String tipPagamento;
+   private Base frame ;
+    public Pagamentos(Funcionario funcionario,Carro carro, Cliente cliente, Base frame) {
+        this.frame = frame;
         this.cliente = cliente;
         this.funcionario =funcionario;
         this.carro = carro;
@@ -65,6 +75,8 @@ public class Pagamentos extends javax.swing.JPanel {
         precoApagar = new javax.swing.JLabel();
         TermosCondicoesPrestacoes = new javax.swing.JButton();
         lbPrestacoes = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -149,7 +161,7 @@ public class Pagamentos extends javax.swing.JPanel {
 
         jLabel7.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel7.setText("Detalhes do veiculo");
-        BasePagamento.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 105, 260, 28));
+        BasePagamento.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 190, 28));
 
         marcaModeloAno.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         BasePagamento.add(marcaModeloAno, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 290, 40));
@@ -167,7 +179,18 @@ public class Pagamentos extends javax.swing.JPanel {
         lbPrestacoes.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         BasePagamento.add(lbPrestacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 250, 50));
 
-        BaseLocal.add(BasePagamento, java.awt.BorderLayout.CENTER);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        BasePagamento.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 260, 40));
+
+        jLabel1.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jLabel1.setText("Valor de entrada");
+        BasePagamento.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 250, 30));
+
+        BaseLocal.add(BasePagamento, java.awt.BorderLayout.PAGE_START);
 
         add(BaseLocal, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
@@ -175,7 +198,7 @@ public class Pagamentos extends javax.swing.JPanel {
     private void PrestacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrestacoesActionPerformed
 if(Prestacoes.isSelected()){
 Avista.setSelected(false);
-
+tipPagamento = "Prestacoes";
 precoApagar.setText(" ");
 }     
 
@@ -188,7 +211,9 @@ TermosCondicoesPrestacoes.setVisible(true);
               Prestacoes.setSelected(false);
               
               precoApagar.setText("Valor "+ venda.precoFinalSemPrestacoes()+" MZN");
-
+              precoFinal = venda.precoFinalSemPrestacoes();
+              tipPagamento ="Avista";
+              
         }
           ComboPrestacoes.setEnabled(false);
 TermosCondicoesPrestacoes.setVisible(false);
@@ -197,18 +222,55 @@ TermosCondicoesPrestacoes.setVisible(false);
     private void ComboPrestacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboPrestacoesActionPerformed
       if(ComboPrestacoes.getSelectedIndex()==0){
       precoApagar.setText("Valor "+ venda.precoFinalComPrestacoes(1)+" MZN");
+      precoFinal = venda.precoFinalComPrestacoes(1);
       lbPrestacoes.setText(" Vai pagar "+venda);
       }else if(ComboPrestacoes.getSelectedIndex()==1){
       precoApagar.setText("Valor "+ venda.precoFinalComPrestacoes(2)+" MZN");
+       precoFinal = venda.precoFinalComPrestacoes(2);
       }else if(ComboPrestacoes.getSelectedIndex()==2){
       precoApagar.setText("Valor "+ venda.precoFinalComPrestacoes(3)+" MZN");
+       precoFinal = venda.precoFinalComPrestacoes(3);
       }
         
     }//GEN-LAST:event_ComboPrestacoesActionPerformed
 
     private void AvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AvancarActionPerformed
-      
-        g
+      StockeTaxas taxes  = new StockeTaxas()
+              ;
+        VendaDao dao = new  VendaDao();
+        ArrayList<Venda> openFile = dao.openFile();
+        Calendar c = Calendar.getInstance();
+        Venda venda = new Venda(taxes);
+        venda.setAnoDaGarantia(c.get(Calendar.YEAR+1));
+        venda.setAnoDaVenda(c.get(Calendar.YEAR));
+        venda.setCarro(carro);
+        venda.setCliente(cliente);
+        venda.setEstado(false);
+        venda.setNumeroDaVenda(openFile.size()+1);
+        venda.setPrecoDaVenda( precoFinal);
+        venda.setTipoDePagamento(tipPagamento);
+         if(Avista.isSelected()){
+         
+             FacturaRecibo  factura = new  FacturaRecibo();
+             factura.setCliente(cliente);
+             factura.setVenda(venda);
+             factura.setFuncionario(funcionario);
+             
+             Recibo form = new Recibo(venda);
+              frame.getBase2().setLayout(new BorderLayout());
+         frame.getBase2().removeAll();
+         frame.getBase2().add(form,BorderLayout.CENTER);
+         frame.getBase2().revalidate();
+         frame.getBase2().repaint();
+         
+         }else{
+             Notificacao notificacao = new Notificacao();
+             notificacao.setVenda(venda);
+             notificacao.setStatus(false);
+             
+         
+         
+         }
         
     }//GEN-LAST:event_AvancarActionPerformed
 
@@ -224,6 +286,10 @@ TermosCondicoesPrestacoes.setVisible(false);
        }
     }//GEN-LAST:event_numerarioActionPerformed
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Avancar;
@@ -235,11 +301,13 @@ TermosCondicoesPrestacoes.setVisible(false);
     private javax.swing.JRadioButton Prestacoes;
     private javax.swing.JButton TermosCondicoesPrestacoes;
     private javax.swing.JLabel cambioTipoDeCombustivel1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lbPrestacoes;
     private javax.swing.JLabel marcaModeloAno;
     private javax.swing.JRadioButton numerario;

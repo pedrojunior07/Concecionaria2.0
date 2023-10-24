@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 
 
-/**
+/**Algoritmo de PEDRO MANJATE ESCUTANDO ROCK'NROLL_____-----
  *
  * @author Pedro Manjate
  */
@@ -32,16 +32,25 @@ public class Venda implements Serializable, vendas{
     private int numeroDaVenda;
     private int mesDaVenda, anoDaVenda,diaDaVenda, mesDaGarantia, anoDaGarantia,diaDaGarantia;
     private double precoDaVenda;
+    private String tipoDePagamento;
     private boolean estado, pedido;
     private StockeTaxas taxes;
 
+    
+    
+    
+    
+    public String getTipoDePagamento() {
+        return tipoDePagamento;
+    }
+
+    public void setTipoDePagamento(String tipoDePagamento) {
+        this.tipoDePagamento = tipoDePagamento;
+    }
     public Venda(StockeTaxas taxes) {
         this.taxes = taxes;
     }
 
-   
-  
-    
     public Carro getCarro() {
         return carro;
     }
@@ -106,12 +115,6 @@ public class Venda implements Serializable, vendas{
         this.diaDaGarantia = diaDaGarantia;
     }
 
-    
-
-  
-
-  
-
     public int getNumeroDaVenda() {
         return numeroDaVenda;
     }
@@ -119,8 +122,7 @@ public class Venda implements Serializable, vendas{
     public void setNumeroDaVenda(int numeroDaVenda) {
         this.numeroDaVenda = numeroDaVenda;
     }
-
-   
+ 
 
     public double getPrecoDaVenda() {
         return precoDaVenda;
@@ -143,7 +145,7 @@ public class Venda implements Serializable, vendas{
 
     @Override
     public void AtulisarStock() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       
     }
 
     @Override

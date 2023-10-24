@@ -10,8 +10,10 @@ import Model.Funcionario;
 import Model.ImagemDirectorios;
 import ViewFuncionario.Base;
 import com.formdev.flatlaf.FlatIntelliJLaf;
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatGitHubIJTheme;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -25,9 +27,15 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 public class LoginP extends javax.swing.JFrame {
   
+    
     ImageIcon icon ;
       ArrayList<Funcionario> sellectAllFuncionario;
     public LoginP() throws SQLException, ClassNotFoundException {
+         Calendar c = Calendar.getInstance();
+         System.out.println(c.getTime().toString());
+        UIManager.put("PasswordField.capsLockIconColor", "#B92303");
+        UIManager.put("PasswordField.showRevealButton", true);
+   //   UIManager.put( "Button.arc" , 999 );
         initComponents();
         
          Controller.AdminController cc= new AdminController(this);
@@ -177,9 +185,9 @@ public class LoginP extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         try {
-            FlatIntelliJLaf.registerCustomDefaultsSource("style");
-
-            UIManager.setLookAndFeel(new FlatIntelliJLaf());
+           // FlatIntelliJLaf.registerCustomDefaultsSource("style");
+// FlatGitHubIJTheme.setup();
+            UIManager.setLookAndFeel(new FlatGitHubIJTheme());
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(LoginP.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -23,7 +23,11 @@ import View.Gerente.AddCarro;
 import View.Gerente.AdicionarFornecedor;
 import View.Gerente.ListarPesquisarCarro;
 import View.Gerente.gStockTaxes;
+import com.formdev.flatlaf.FlatLaf;
+import com.formdev.flatlaf.extras.FlatAnimatedLafChange;
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatGitHubDarkIJTheme;
 import com.sun.mail.handlers.message_rfc822;
+import java.awt.EventQueue;
 import java.sql.SQLException;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -54,7 +58,7 @@ Funcionario funcionrio;
         lbNome.setText(funcionrio.getNome()+" "+funcionrio.getApelido());
     
           GlassPanePopup.install(this);
-       
+            FlatGitHubIJTheme.setup();
     }
 
   
@@ -62,30 +66,34 @@ Funcionario funcionrio;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jToggleButton1 = new javax.swing.JToggleButton();
+        contente = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         imagem = new View.Admin.ImageAvatar();
-        Messagem = new com.pedro.swing.win_button.ButtonBadges();
-        noti = new com.pedro.swing.win_button.ButtonBadges();
         jButton9 = new javax.swing.JButton();
         btListarCarro = new javax.swing.JButton();
         Acao2 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         lbNome = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        contente = new javax.swing.JPanel();
+        noti = new com.pedro.swing.win_button.ButtonBadges();
+        Messagem = new com.pedro.swing.win_button.ButtonBadges();
+        escuro = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jToggleButton1.setText(">>>");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 70, -1));
+        getContentPane().add(contente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1000, 620));
+
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(imagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 180, 140));
-
-        Messagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/message.png"))); // NOI18N
-        jPanel1.add(Messagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 80, 70));
-
-        noti.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/noti.png"))); // NOI18N
-        jPanel1.add(noti, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 70));
+        jPanel1.add(imagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 180, 140));
 
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/4.png"))); // NOI18N
         jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 70, 90));
@@ -101,18 +109,28 @@ Funcionario funcionrio;
 
         lbNome.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         lbNome.setText("Nome Completo");
-        jPanel1.add(lbNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 170, 30));
+        jPanel1.add(lbNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 170, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 190, 630));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 80, -1, 600));
 
-        jToggleButton1.setText(">>>");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        noti.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/noti.png"))); // NOI18N
+        noti.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                notiActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 70, -1));
-        getContentPane().add(contente, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 1000, 620));
+        getContentPane().add(noti, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 10, 50, 40));
+
+        Messagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/message.png"))); // NOI18N
+        getContentPane().add(Messagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 10, 40, 40));
+
+        escuro.setText("Modo Escuro");
+        escuro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                escuroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(escuro, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 20, 100, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -130,20 +148,49 @@ Funcionario funcionrio;
       
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
+    private void notiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_notiActionPerformed
+
+    private void escuroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_escuroActionPerformed
+           if(escuro.isSelected()){
+       EventQueue.invokeLater(new Runnable() {
+           @Override
+           public void run() {
+                FlatAnimatedLafChange.showSnapshot();
+                FlatGitHubDarkIJTheme.setup();
+                 FlatLaf.updateUI();
+                FlatAnimatedLafChange.hideSnapshotWithAnimation();
+           
+                //++++++++++++++++++++++++++++++++++++++++++
+       
+           }
+       });
+   }else{
+   
+    EventQueue.invokeLater(new Runnable() {
+           @Override
+           public void run() {
+                FlatAnimatedLafChange.showSnapshot();
+                  FlatGitHubIJTheme.setup();
+                 FlatLaf.updateUI();
+                FlatAnimatedLafChange.hideSnapshotWithAnimation();
+           }
+       });
+    
+    
+   }
+    }//GEN-LAST:event_escuroActionPerformed
+
     public static void main(String args[]) {
       
-      try {
-            FlatIntelliJLaf.registerCustomDefaultsSource("style");
-
-            UIManager.setLookAndFeel(new FlatIntelliJLaf());
-        } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(LoginP.class.getName()).log(Level.SEVERE, null, ex);
-        }
+             FlatGitHubIJTheme.setup();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-            //    new GerenteFrame().setVisible(true);
+             //   new ADMFrame().setVisible(true);
             }
         });
+
     }
 
     public JPanel getContente() {
@@ -163,6 +210,7 @@ Funcionario funcionrio;
     private com.pedro.swing.win_button.ButtonBadges Messagem;
     private javax.swing.JButton btListarCarro;
     private javax.swing.JPanel contente;
+    private javax.swing.JRadioButton escuro;
     private View.Admin.ImageAvatar imagem;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton9;
