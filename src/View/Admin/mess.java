@@ -6,17 +6,23 @@ package View.Admin;
 
 import View.Gerente.AddCarro;
 import View.Gerente.AdicionarFornecedor;
+import View.Gerente.GerenciamentoDeprestacoes;
 import View.Gerente.ListarPesquisarCarro;
+import View.Gerente.ListarPrestacoes;
 import View.Gerente.gStockTaxes;
 import View.GerenteFrame;
+import com.formdev.flatlaf.ui.FlatLineBorder;
 import com.itextpdf.text.log.Logger;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Insets;
 import java.awt.RenderingHints;
 import java.awt.geom.RoundRectangle2D;
 import java.lang.System.Logger.Level;
 import java.sql.SQLException;
+import javax.swing.border.Border;
 
 /**
  *
@@ -28,6 +34,14 @@ public class mess extends javax.swing.JPanel {
     public mess( GerenteFrame frame) {
         this.frame= frame;
         initComponents();
+        
+          Insets insets = new Insets(1, 1, 1, 1);
+       
+        initComponents(); 
+     //   Insets insets = new Insets(1, 1, 1, 1);
+        
+        Border border = new FlatLineBorder(insets, new Color(78, 170, 82), 3,000);
+        setBorder(border);
         setOpaque(false);
     }
 
@@ -45,6 +59,7 @@ public class mess extends javax.swing.JPanel {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(1037, 264));
@@ -57,7 +72,7 @@ public class mess extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 160, 50));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 160, 50));
 
         jButton3.setText("Adicionar Fornecedor");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -65,7 +80,7 @@ public class mess extends javax.swing.JPanel {
                 jButton3ActionPerformed(evt);
             }
         });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 160, 50));
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 160, 50));
 
         jButton5.setText("Listar Carros");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -73,10 +88,10 @@ public class mess extends javax.swing.JPanel {
                 jButton5ActionPerformed(evt);
             }
         });
-        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, 160, 50));
+        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 160, 50));
 
         jButton6.setText("Listar Funcionario");
-        add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 130, 160, 50));
+        add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 160, 50));
 
         jButton11.setText("Gestao de Taxas e Stock");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +100,14 @@ public class mess extends javax.swing.JPanel {
             }
         });
         add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 130, 160, 50));
+
+        jButton1.setText("Gerir Prestacoes");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 50, 160, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -158,6 +181,18 @@ public class mess extends javax.swing.JPanel {
        frame.getContente().repaint();
     }//GEN-LAST:event_jButton11ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        ListarPrestacoes p1 = new ListarPrestacoes(frame);
+          p1.setSize(1000, 620);
+        p1.setLocation(0,0);
+        frame.getContente().setLayout(new BorderLayout());
+        frame.getContente().removeAll();
+       frame.getContente().add(p1, BorderLayout.CENTER );
+       frame.getContente().revalidate();
+       frame.getContente().repaint();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     @Override
     protected void paintComponent(Graphics grphcs) {
         //super.paintComponent(g); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
@@ -173,6 +208,7 @@ public class mess extends javax.swing.JPanel {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

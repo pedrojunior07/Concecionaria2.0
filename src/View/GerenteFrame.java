@@ -99,6 +99,11 @@ Funcionario funcionrio;
         jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 70, 90));
 
         btListarCarro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/Listar.png"))); // NOI18N
+        btListarCarro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btListarCarroActionPerformed(evt);
+            }
+        });
         jPanel1.add(btListarCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 70, 90));
 
         Acao2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/sack-dollar.png"))); // NOI18N
@@ -181,6 +186,10 @@ Funcionario funcionrio;
     
    }
     }//GEN-LAST:event_escuroActionPerformed
+
+    private void btListarCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListarCarroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btListarCarroActionPerformed
 
     public static void main(String args[]) {
       

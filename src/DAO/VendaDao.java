@@ -26,7 +26,7 @@ public class VendaDao {
         ArrayList<Venda> usuario = openFile();
         usuario.add(user);
         closeFile(usuario, "venda");
-            JOptionPane.showMessageDialog(null, "Pedido de venda realizado com sucesso", "Gerente Vendas",
+            JOptionPane.showMessageDialog(null, "Pedido de venda !!!!!!!!!!!realizado com sucesso", "Gerente Vendas",
                     JOptionPane.INFORMATION_MESSAGE);  
     }
           

@@ -189,7 +189,7 @@ public class EfectuarVenda extends javax.swing.JPanel {
 
     private void TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableMouseClicked
     courent= 0;
-    carro = null; 
+//    carro = null; 
     for(int j=0;j<sellectAllCarros.size();j++){
         if(Table.isRowSelected(j)){
             int numChassi = sellectAllCarros.get(j).getNumChassi();

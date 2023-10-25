@@ -5,13 +5,16 @@
 package View;
 
 import Controller.AdminController;
+import Model.Admin;
 import Model.Funcionario;
 import Model.Vendedor;
 import View.Admin.AddFuncionario;
 import View.Admin.Finacas;
 import View.Admin.Header;
 import View.Admin.ListarFuncionarios;
+import View.Admin.NewAdmin;
 import View.Admin.ProcurarFuncionario;
+import View.Admin.TelaAdmin;
 
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import com.formdev.flatlaf.FlatLaf;
@@ -49,22 +52,33 @@ import javax.swing.UIManager;
 public class ADMFrame extends javax.swing.JFrame {
 int xMouse, yMouse;
     DrawerController drawer ;
-    JFrame fr = this;
+    ADMFrame fr = this;
      ArrayList<Funcionario> useri;
-    public ADMFrame() {
+     Admin admin;
+    public ADMFrame(  Admin admin) {
+        this.admin= admin;
          UIManager.put( "Button.arc" , 999 );
       //  UIManager.put( "TextField.arc" , 999 );
           initComponents();
+          btMassage.setBackground(bt1.getBackground());
+          btNoti.setBackground(bt1.getBackground());
+       //   btNoti.setBadges(5);
         // UIManager.put( "Button.arc" , 999 );
          
-           
+          TelaAdmin p1 = new TelaAdmin(fr, admin);
+        p1.setSize(1000, 620);
+        p1.setLocation(0,0);
+        content.setLayout(new BorderLayout());
+        content.removeAll();
+        content.add(p1, BorderLayout.CENTER );
+        content.revalidate();
+        content.repaint();
           content.setLayout(new BorderLayout());
           //============PopUP
       
           //===============================
           //++++++++++++++++++++++++++++++++++++++++++
-        btMassage.setBackground(this.getForeground());
-        btNoti.setBackground(this.getForeground());
+      
      // FlatGitHubIJTheme.installBorder(bt1, "Round");
 
     //++++++++++++++++++++++++++++++++++++++++++
@@ -258,6 +272,11 @@ int xMouse, yMouse;
         });
 
         btNoti.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/noti.png"))); // NOI18N
+        btNoti.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btNotiActionPerformed(evt);
+            }
+        });
 
         escuro.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         escuro.setText("ModoEscuro");
@@ -323,7 +342,8 @@ yMouse = evt.getY();
                 FlatAnimatedLafChange.hideSnapshotWithAnimation();
            
                 //++++++++++++++++++++++++++++++++++++++++++
-       
+         btMassage.setBackground(bt1.getBackground());
+          btNoti.setBackground(bt1.getBackground());
            }
        });
    }else{
@@ -335,6 +355,9 @@ yMouse = evt.getY();
                   FlatGitHubIJTheme.setup();
                  FlatLaf.updateUI();
                 FlatAnimatedLafChange.hideSnapshotWithAnimation();
+           
+             btMassage.setBackground(bt1.getBackground());
+          btNoti.setBackground(bt1.getBackground());
            }
        });
     
@@ -477,6 +500,10 @@ yMouse = evt.getY();
                         content.repaint();
     }//GEN-LAST:event_bt4ActionPerformed
 
+    private void btNotiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNotiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btNotiActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -485,7 +512,7 @@ yMouse = evt.getY();
         FlatGitHubIJTheme.setup();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ADMFrame().setVisible(true);
+              //  new ADMFrame().setVisible(true);
             }
         });
     }

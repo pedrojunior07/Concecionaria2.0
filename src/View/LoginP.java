@@ -5,7 +5,9 @@
 package View;
 
 import Controller.AdminController;
+import DAO.AdminDao;
 import DAO.ImagemDirectorioDAO;
+import Model.Admin;
 import Model.Funcionario;
 import Model.ImagemDirectorios;
 import ViewFuncionario.Base;
@@ -27,10 +29,13 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 public class LoginP extends javax.swing.JFrame {
   
-    
+    AdminDao adminDao ;
     ImageIcon icon ;
+    ArrayList<Admin> openFile ;
       ArrayList<Funcionario> sellectAllFuncionario;
     public LoginP() throws SQLException, ClassNotFoundException {
+        adminDao = new AdminDao();
+         openFile = adminDao.openFile();
          Calendar c = Calendar.getInstance();
          System.out.println(c.getTime().toString());
         UIManager.put("PasswordField.capsLockIconColor", "#B92303");
@@ -51,10 +56,22 @@ public class LoginP extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         pfSenha = new textfield.PasswordField();
         txEmail = new textfield.TextField();
         jButton1 = new javax.swing.JButton();
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -172,9 +189,20 @@ public class LoginP extends javax.swing.JFrame {
                   }
    }else{JOptionPane.showMessageDialog(rootPane, "Usuario ou senha Incorrectos", "Erro Autenticacao", JOptionPane.ERROR_MESSAGE);}
    
-   }else{
-       JOptionPane.showMessageDialog(rootPane, "Usuario ou senha Incorrectos", "Erro Autenticacao", JOptionPane.ERROR_MESSAGE);
-   }
+   }else if(txEmail.getText().equalsIgnoreCase(openFile.get(0).getE_mail())){
+      
+       String senha = new String(pfSenha.getPassword()).trim();
+       if(senha.equalsIgnoreCase(openFile.get(0).getSenha())){
+       new  ADMFrame(openFile.get(0)).setVisible(true);
+        this.dispose();
+       }else{
+    JOptionPane.showMessageDialog(rootPane, "Usuario ou senha Incorrectos", "Erro Autenticacao", JOptionPane.ERROR_MESSAGE);   
+       
+       }
+       
+   }else {
+            JOptionPane.showMessageDialog(rootPane, "Usuario ou senha Incorrectos", "Erro Autenticacao", JOptionPane.ERROR_MESSAGE);
+           }
    
    
 
@@ -208,6 +236,7 @@ public class LoginP extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private textfield.PasswordField pfSenha;
     private textfield.TextField txEmail;
     // End of variables declaration//GEN-END:variables

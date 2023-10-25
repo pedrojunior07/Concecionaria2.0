@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package DAO;
 
 import Model.Notificacao;
@@ -22,8 +19,8 @@ public class NotificacoesDAO {
         ArrayList<Notificacao> usuario = openFile();
         usuario.add(user);
         closeFile(usuario, "Notificacao");
-//            JOptionPane.showMessageDialog(null, "Pedido de venda realizado com sucesso", "Gerente Vendas",
-//                    JOptionPane.INFORMATION_MESSAGE);  
+            JOptionPane.showMessageDialog(null, "Noti", "Gerente Vendas",
+                    JOptionPane.INFORMATION_MESSAGE);  
     }
  
      public void closeFile(ArrayList<Notificacao> usuario, String file) {

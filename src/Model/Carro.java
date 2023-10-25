@@ -4,13 +4,14 @@
  */
 package Model;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
 /**
  *
  * @author Pedro
  */
-public class Carro extends Veiculo implements carrosMetodos {
+public class Carro extends Veiculo implements carrosMetodos, Serializable {
 private String modelo, tracao;
 private int numMotor, numChassi, quilometosPercoridos;
 private boolean vendido, operacional;

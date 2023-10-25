@@ -4,8 +4,11 @@
  */
 package DAO.DATABASE;
 
+import DAO.FinacasDao;
 import Model.Carro;
+import Model.Financas;
 import Model.Vendedor;
+import View.ADMFrame;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -97,7 +100,11 @@ public class CarroDao {
             statement.setBoolean(1, true);
             statement.setInt(2, user.getId());
             int rowsUpdated = statement.executeUpdate();
+           
+        
             return rowsUpdated > 0;
+           
+            
 
 }
      

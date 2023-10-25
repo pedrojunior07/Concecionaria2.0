@@ -4,13 +4,14 @@
  */
 package Model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author Pedro
  */
-public class Fornecedor {
+public class Fornecedor implements Serializable{
    private String nomeDaEntidade, tipoDeComercio, email;
    private int numeroDoNegogio, contacto,ID;
    

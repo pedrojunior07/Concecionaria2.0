@@ -4,6 +4,7 @@
  */
 package Model;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -11,7 +12,7 @@ import java.util.Date;
  *
  * @author Pedro
  */
-public abstract class Funcionario {
+public abstract class Funcionario implements Serializable {
     private String nome,sexo, apelido, naturalidade, identidade, estadocivil, especialidade, eMail, senha;
     private int idade, Id, telefone;
 

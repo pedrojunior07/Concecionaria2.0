@@ -4,11 +4,13 @@
  */
 package Model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Pedro
  */
-public abstract class  Veiculo  {
+public abstract class  Veiculo implements Serializable  {
     int Id;
   private String categoria,  tipoDeComustivel, fabricante;
   private int anoDeFabrico, idProduto;

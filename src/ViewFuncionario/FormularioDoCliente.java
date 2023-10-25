@@ -252,6 +252,7 @@ public Base frame;
        a.setDataNascimento(Data);
        a.setIcon(image);
        a.setCarro(carro);
+        System.out.println(carro.getFabricante());
         dao.insert(a);
         
          Pagamentos form = new Pagamentos(funcionario, carro, a,frame);

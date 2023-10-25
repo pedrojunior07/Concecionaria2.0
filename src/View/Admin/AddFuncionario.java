@@ -42,7 +42,7 @@ public class AddFuncionario extends javax.swing.JPanel {
     */
     public JFrame frame;
     ImageIcon icone;
- JnaFileChooser jnaCh; 
+    JnaFileChooser jnaCh; 
     public AddFuncionario(JFrame frame) {
         this.frame = frame;
         initComponents();

@@ -1,11 +1,14 @@
 
 package Model;
 
+import java.io.Serializable;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Pedro
  */
-public class Prestacoes {
+public class Prestacoes implements Serializable{
     Venda venda;
   boolean status;
   private double valorPago, valorAPagar;
@@ -35,10 +38,27 @@ public class Prestacoes {
     public void setValorAPagar(double valorAPagar) {
         this.valorAPagar = valorAPagar;
     }
+    
+    
+    
     public double percentagemPago(){
-    return (100-(100*(valorAPagar/valorPago)));
+    return ((100*(valorPago/venda.getPrecoDaVenda())));
     }
     
+    public void pagarPrestacao(double cash ){
+    valorAPagar = valorAPagar- cash;
+    valorPago = valorPago + cash;
+    if(cash<=valorAPagar){
+     valorAPagar = valorAPagar- cash;
+    valorPago = valorPago + cash;
     
+    }else if(cash>valorAPagar){
+    
+     valorAPagar = valorAPagar- valorAPagar;
+    valorPago = valorPago + (valorAPagar);
+        JOptionPane.showConfirmDialog(null, "Valor a mais Troco = "+(cash-valorAPagar));
+    }
+    
+    }
     
 }

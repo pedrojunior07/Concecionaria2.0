@@ -1,13 +1,14 @@
 
 package Model;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
 /**
  *
  * @author Pedro
  */
-public class Vendedor extends Funcionario {
+public class Vendedor extends Funcionario implements Serializable{
     private int numeroDeVendas;
 
     public Vendedor() {

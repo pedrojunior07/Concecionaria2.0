@@ -22,8 +22,11 @@ public class Finacas extends javax.swing.JPanel {
      * Creates new form Finacas
      */
     public Finacas() {
+           Insets insets = new Insets(1, 1, 1, 1);
+       
         initComponents(); 
-        Insets insets = new Insets(1, 1, 1, 1);
+     //   Insets insets = new Insets(1, 1, 1, 1);
+        
         p1.setBorder(new FlatLineBorder(insets, new Color(78, 170, 82), 2, 111));
           p2.setBorder(new FlatLineBorder(insets, new Color(78, 170, 82), 2, 000));
             p1.setBorder(new FlatLineBorder(insets, new Color(78, 170, 82), 2, 000));

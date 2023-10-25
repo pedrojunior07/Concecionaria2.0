@@ -6,6 +6,9 @@ package ViewFuncionario;
 
 import DAO.DATABASE.CarroDao;
 import DAO.DATABASE.Conexao;
+import DAO.FinacasDao;
+import DAO.NotificacoesDAO;
+import DAO.PrestacoesDAO;
 import DAO.StockTaxasDao;
 import DAO.VendaDao;
 import Model.Carro;
@@ -14,6 +17,7 @@ import Model.Cliente;
 import Model.FacturaRecibo;
 import Model.Funcionario;
 import Model.Notificacao;
+import Model.Prestacoes;
 import Model.StockeTaxas;
 import Model.Venda;
 import Model.vendas;
@@ -44,7 +48,7 @@ public class Pagamentos extends javax.swing.JPanel {
         this.cliente = cliente;
         this.funcionario =funcionario;
         this.carro = carro;
-        
+        System.out.println(carro.getFabricante());
         initComponents();
         marcaModeloAno.setText(carro.getFabricante()+" "+ carro.getModelo()+" "+carro.getAnoDeFabrico());
         cambioTipoDeCombustivel1.setText("Cambio "+carro.getTracao()+" "+" Motor a "+ carro.getTipoDeComustivel());
@@ -81,7 +85,7 @@ public class Pagamentos extends javax.swing.JPanel {
         precoApagar = new javax.swing.JLabel();
         TermosCondicoesPrestacoes = new javax.swing.JButton();
         lbPrestacoes = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txValorDeEntrada = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
@@ -190,18 +194,18 @@ public class Pagamentos extends javax.swing.JPanel {
         lbPrestacoes.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         BasePagamento.add(lbPrestacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 250, 50));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txValorDeEntrada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txValorDeEntradaActionPerformed(evt);
             }
         });
-        BasePagamento.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 260, 40));
+        BasePagamento.add(txValorDeEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 180, 260, 40));
 
         jLabel1.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel1.setText("Valor de entrada");
         BasePagamento.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 250, 30));
 
-        BaseLocal.add(BasePagamento, java.awt.BorderLayout.PAGE_START);
+        BaseLocal.add(BasePagamento, java.awt.BorderLayout.CENTER);
 
         add(BaseLocal, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
@@ -268,11 +272,14 @@ TermosCondicoesPrestacoes.setVisible(false);
              factura.setVenda(venda);
              factura.setFuncionario(funcionario);
              Conexao c1 = new  Conexao();
-             VendaDao d = new VendaDao();
-                d.insert(venda);
+             venda.setCarro(carro);
+               
+               // FinacasDao
           try {
               CarroDao cd = new CarroDao(c1.getConnection());
-              
+                           VendaDao d = new VendaDao();
+                       openFile.add(venda);
+                       d.closeFile(openFile, "venda");
               cd.VenderCarro(carro);
           } catch (SQLException ex) {
               Logger.getLogger(Pagamentos.class.getName()).log(Level.SEVERE, null, ex);
@@ -288,10 +295,35 @@ TermosCondicoesPrestacoes.setVisible(false);
          frame.getBase2().repaint();
          
          }else{
-             Notificacao notificacao = new Notificacao();
+             
+       
+        venda.setAnoDaGarantia(c.get(Calendar.YEAR+1));
+        venda.setAnoDaVenda(c.get(Calendar.YEAR));
+        venda.setCarro(carro);
+        venda.setCliente(cliente);
+        venda.setFuncionario(funcionario);
+        venda.setEstado(false);
+        venda.setNumeroDaVenda(openFile.size()+1);
+        venda.setPrecoDaVenda( precoFinal);
+         openFile.add(venda);
+            VendaDao d = new VendaDao();
+                       d.closeFile(openFile, "venda");   
+        
+        Notificacao notificacao = new Notificacao();
              notificacao.setVenda(venda);
              notificacao.setStatus(false);
-             
+             NotificacoesDAO ddd = new NotificacoesDAO();
+             ddd.insert(notificacao);
+             venda.setCarro(carro);
+             Prestacoes presta  = new Prestacoes();
+             presta.setStatus(false);
+           
+             double valorEntrada = Double.parseDouble(txValorDeEntrada.getText());
+             presta.setValorAPagar((precoFinal)-valorEntrada );
+             presta.setValorPago(valorEntrada);
+             presta.setVenda(venda);
+             PrestacoesDAO aO = new PrestacoesDAO();
+               aO.insert(presta);
          
          
          }
@@ -310,9 +342,9 @@ TermosCondicoesPrestacoes.setVisible(false);
        }
     }//GEN-LAST:event_numerarioActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txValorDeEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txValorDeEntradaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txValorDeEntradaActionPerformed
 
     private void TermosCondicoesPrestacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TermosCondicoesPrestacoesActionPerformed
       GlassPanePopup.showPopup(new TernosCondicoes());
@@ -335,11 +367,11 @@ TermosCondicoesPrestacoes.setVisible(false);
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lbPrestacoes;
     private javax.swing.JLabel marcaModeloAno;
     private javax.swing.JRadioButton numerario;
     private javax.swing.JLabel precoApagar;
     private javax.swing.JLabel precoPorMes;
+    private javax.swing.JTextField txValorDeEntrada;
     // End of variables declaration//GEN-END:variables
 }
