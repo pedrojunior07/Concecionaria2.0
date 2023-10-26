@@ -26,7 +26,7 @@ import View.Gerente.gStockTaxes;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.extras.FlatAnimatedLafChange;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatGitHubDarkIJTheme;
-import com.sun.mail.handlers.message_rfc822;
+
 import java.awt.EventQueue;
 import java.sql.SQLException;
 import javax.swing.ImageIcon;

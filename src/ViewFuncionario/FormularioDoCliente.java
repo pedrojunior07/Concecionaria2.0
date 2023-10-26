@@ -74,12 +74,19 @@ public Base frame;
         Nacionalidade = new javax.swing.JComboBox<>();
         jLabel16 = new javax.swing.JLabel();
         JestadoCivil = new javax.swing.JComboBox<>();
+        Email1 = new javax.swing.JTextField();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 255, 153)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(NomedoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 109, 263, 27));
+
+        NomedoCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NomedoClienteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(NomedoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 263, 40));
 
         jLabel7.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel7.setText("Preechimento do formulario do cliente");
@@ -88,42 +95,42 @@ public Base frame;
         jLabel3.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/2.png"))); // NOI18N
         jLabel3.setText("Nome do cliente");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 72, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
         Apelido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ApelidoActionPerformed(evt);
             }
         });
-        jPanel1.add(Apelido, new org.netbeans.lib.awtextra.AbsoluteConstraints(372, 109, 220, 27));
+        jPanel1.add(Apelido, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 220, 40));
 
         jLabel8.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel8.setText("Apelido");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(372, 77, 97, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 97, 30));
 
         jLabel9.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel9.setText("BI");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(372, 154, 27, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 27, -1));
 
         BilhetedeIdentidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BilhetedeIdentidadeActionPerformed(evt);
             }
         });
-        jPanel1.add(BilhetedeIdentidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(372, 183, 220, 31));
+        jPanel1.add(BilhetedeIdentidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 220, 40));
 
         jLabel10.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel10.setText("Nacionalidade");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 154, 97, -1));
-        jPanel1.add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(372, 258, 220, 30));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 97, 30));
+        jPanel1.add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 220, 40));
 
         jLabel12.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel12.setText("Sexo:");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 97, 23));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 97, 23));
 
         jLabel13.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel13.setText("Data de Nascimento");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, 131, 23));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, 131, 23));
 
         rMasculino.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         rMasculino.setText("Masculino");
@@ -132,7 +139,7 @@ public Base frame;
                 rMasculinoActionPerformed(evt);
             }
         });
-        jPanel1.add(rMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 80, -1));
+        jPanel1.add(rMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 80, -1));
 
         rFeminino.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         rFeminino.setText("Femenino");
@@ -141,14 +148,14 @@ public Base frame;
                 rFemininoActionPerformed(evt);
             }
         });
-        jPanel1.add(rFeminino, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, -1, -1));
+        jPanel1.add(rFeminino, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, -1, -1));
 
         DatedeNascimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DatedeNascimentoActionPerformed(evt);
             }
         });
-        jPanel1.add(DatedeNascimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 150, 27));
+        jPanel1.add(DatedeNascimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, 150, 30));
 
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,17 +166,17 @@ public Base frame;
 
         jLabel14.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel14.setText("Estado Civil");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, -1, 26));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 430, -1, 26));
 
         jLabel15.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cont.png"))); // NOI18N
         jLabel15.setText("Telefone");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 229, 97, 23));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 97, 30));
 
         imageAvatar2.setGradientColor1(new java.awt.Color(242, 242, 242));
         imageAvatar2.setGradientColor2(new java.awt.Color(242, 242, 242));
         imageAvatar2.setImage(new javax.swing.ImageIcon(getClass().getResource("/dashboard/icon/user.png"))); // NOI18N
-        jPanel1.add(imageAvatar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(652, 104, 150, 148));
+        jPanel1.add(imageAvatar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 100, 200, 170));
 
         Selecionar.setText("Selecionar foto");
         Selecionar.addActionListener(new java.awt.event.ActionListener() {
@@ -177,7 +184,7 @@ public Base frame;
                 SelecionarActionPerformed(evt);
             }
         });
-        jPanel1.add(Selecionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(662, 278, 140, -1));
+        jPanel1.add(Selecionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 290, 140, 30));
 
         Registar.setText("Registar");
         Registar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -186,7 +193,7 @@ public Base frame;
                 RegistarActionPerformed(evt);
             }
         });
-        jPanel1.add(Registar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 460, 108, -1));
+        jPanel1.add(Registar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 380, 108, 30));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/datechooser/previous.png"))); // NOI18N
         jButton3.setText("Voltar");
@@ -196,14 +203,14 @@ public Base frame;
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 105, -1));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 80, 30));
 
         Nacionalidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nacionalidade", "Abecásia", "Afeganistão", "África do Sul", "Albânia", "Alemanha", "Andorra", "Angola", "Antígua e Barbuda", "Arábia Saudita", "Argélia", "Argentina", "Armênia", "Austrália", "Áustria", "Azerbaijão", "Bahamas", "Bahrein (ou Barein, ou Barém)", "Bangladesh", "Barbados", "Bélgica", "Belize", "Benim", "Bielorrússia", "Bolívia", "Bósnia e Herzegovina", "Botswana (ou Botsuana)", "Brasil", "Brunei", "Bulgária", "Burkina Faso (ou Burquina Faso)", "Burundi", "Butão", "Cabo Verde", "Camarões", "Camboja", "Canadá", "Catar (ou Qatar)", "Cazaquistão", "Chade", "Chile", "China", "Chipre", "Cingapura (ou Singapura)", "Colômbia", "Comores", "Congo", "Coreia do Norte", "Coreia do Sul", "Costa do Marfim", "Costa Rica", "Croácia", "Cuba", "Dinamarca", "Djibouti (ou Djibuti)", "Dominica", "Egito", "El Salvador", "Emirados Árabes Unidos", "Equador", "Eritreia", "Escócia", "Eslováquia", "Eslovênia", "Espanha", "Estados Federados da Micronésia", "Estados Unidos da América", "Estônia", "Eswatini (ou Essuatíni, ou Suazilândia)", "Etiópia", "Fiji", "Filipinas", "Finlândia", "França", "Gabão", "Gâmbia", "Gana", "Geórgia", "Granada", "Grécia", "Guatemala", "Guiana", "Guiné", "Guiné-Bissau", "Guiné Equatorial", "Haiti", "Holanda", "Honduras", "Hungria", "Iêmen", "Índia", "Indonésia", "Inglaterra", "Irã (ou Irão)", "Iraque", "Irlanda do Norte", "Irlanda", "Islândia", "Israel", "Itália", "Jamaica", "Japão", "Jordânia", "Kiribati (ou Quiribati)", "Kosovo", "Kuwait", "Laos", "Lesoto", "Letônia", "Líbano", "Libéria", "Líbia", "Liechtenstein (ou Listenstaine)", "Lituânia", "Luxemburgo", "Macedônia do Norte", "Madagascar (ou Madagáscar)", "Malásia", "Malawi (ou Malauí)", "Maldivas", "Mali", "Malta", "Marrocos", "Marshall", "Maurícia", "Mauritânia", "México", "Mianmar", "Micronésia", "Moçambique", "Moldávia", "Mônaco", "Mongólia", "Montenegro", "Namíbia", "Nauru", "Nepal", "Nicarágua", "Níger", "Nigéria", "Noruega", "Nova Zelândia", "Omã", "Ossétia do Sul", "País de Gales", "Países Baixos", "Palau", "Palestina", "Panamá", "Papua-Nova Guiné", "Paquistão", "Paraguai", "Peru", "Polônia", "Portugal", "Qatar (ou Catar)", "Quênia", "Quirguistão", "Quiribati (ou Kiribati)", "Reino Unido", "República Árabe Saaraui Democrática", "República Centro-Africana", "República Democrática do Congo", "República do Congo", "República Dominicana", "República Tcheca (ou Tchéquia)", "República Turca de Chipre do Norte", "Romênia", "Ruanda", "Rússia", "Salomão", "Samoa", "San Marino (ou São Marinho)", "Santa Lúcia", "São Cristóvão e Névis (ou São Cristóvão e Neves)", "São Tomé e Príncipe", "São Vicente e Granadinas", "Senegal", "Serra Leoa", "Sérvia", "Seychelles (ou Seicheles)", "Singapura (ou Cingapura)", "Síria", "Somália", "Sri Lanka", "Suazilândia (ou Eswatini, ou Essuatíni)", "Sudão do Sul", "Sudão", "Suécia", "Suíça", "Suriname", "Tailândia", "Taiwan", "Tajiquistão (ou Tadjiquistão)", "Tanzânia", "Tchéquia (ou República Tcheca)", "Timor-Leste", "Togo", "Tonga", "Trinidad e Tobago", "Tunísia", "Turcomenistão (ou Turquemenistão)", "Turquia", "Tuvalu", "Ucrânia", "Uganda", "Uruguai", "Uzbequistão", "Vanuatu", "Vaticano", "Venezuela", "Vietnã (ou Vietname)", "Zâmbia", "Zimbábue" }));
-        jPanel1.add(Nacionalidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 183, 263, 31));
+        jPanel1.add(Nacionalidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 210, 40));
 
         jLabel16.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel16.setText("Email");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(372, 229, 97, 23));
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 263, 97, 30));
 
         JestadoCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estado Civil", "Solteriro/a", "Casado/a", "Divorciado/", " " }));
         JestadoCivil.addActionListener(new java.awt.event.ActionListener() {
@@ -211,9 +218,10 @@ public Base frame;
                 JestadoCivilActionPerformed(evt);
             }
         });
-        jPanel1.add(JestadoCivil, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, 220, 31));
+        jPanel1.add(JestadoCivil, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 460, 220, 40));
+        jPanel1.add(Email1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 220, 40));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 590));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 910, 590));
     }// </editor-fold>//GEN-END:initComponents
 
     private void JestadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JestadoCivilActionPerformed
@@ -308,6 +316,10 @@ public Base frame;
         // TODO add your handling code here:
     }//GEN-LAST:event_ApelidoActionPerformed
 
+    private void NomedoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomedoClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NomedoClienteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Apelido;
@@ -315,6 +327,7 @@ public Base frame;
     private ViewFuncionario.DateChooser Datas;
     private javax.swing.JTextField DatedeNascimento;
     private javax.swing.JTextField Email;
+    private javax.swing.JTextField Email1;
     private javax.swing.JComboBox<String> JestadoCivil;
     private javax.swing.JComboBox<String> Nacionalidade;
     private javax.swing.JTextField NomedoCliente;

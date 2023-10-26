@@ -43,7 +43,7 @@ public class Base extends javax.swing.JFrame {
         this.Base2 = Base2;
     }
        
-  
+    int id;
     public Base(ImageIcon icon, Funcionario vendedor  ) {
         this.funcionario = vendedor;
         UIManager.put("Button.arc", 999);
@@ -51,6 +51,7 @@ public class Base extends javax.swing.JFrame {
         GlassPanePopup.install(this);
         jLabel1.setText(vendedor.getNome()+" "+vendedor.getApelido());
         imageAvatar2.setImage(icon);
+        this.id = vendedor.getId();
     }
 
     
@@ -244,8 +245,13 @@ public class Base extends javax.swing.JFrame {
     }//GEN-LAST:event_EfectuarVendaActionPerformed
 
     private void VisualizarFuncioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizarFuncioActionPerformed
-        // TODO add your handling code here:
-        Base2.add(this);
+        ClientesLocais c = new ClientesLocais(id);
+        Base2.setLayout(new BorderLayout());
+        Base2.removeAll();
+        Base2.add(c, BorderLayout.CENTER);
+        Base2.revalidate();
+        Base2.repaint();
+                        
     }//GEN-LAST:event_VisualizarFuncioActionPerformed
 
     private void escuroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_escuroActionPerformed
