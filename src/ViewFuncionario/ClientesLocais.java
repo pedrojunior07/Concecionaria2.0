@@ -7,6 +7,7 @@ package ViewFuncionario;
 import DAO.VendaDao;
 import Model.Venda;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -16,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ClientesLocais extends javax.swing.JPanel {
 DefaultTableModel model;
+    ImageIcon imagem;
     /**
      * Creates new form FuncionariosLocais
      * @param i
@@ -51,6 +53,10 @@ DefaultTableModel model;
         jScrollPane1 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
         Listar = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
+        FotodoCliente = new pedro.swing.ImageAvatar();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -63,6 +69,11 @@ DefaultTableModel model;
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        Table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(Table);
 
         Listar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -73,48 +84,97 @@ DefaultTableModel model;
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        jLabel1.setText("Clientes Locais");
+
+        FotodoCliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 255, 153)));
+
+        jLabel2.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jLabel2.setText("Imagem do Clinte");
+
+        jLabel3.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jLabel3.setText("Clintes");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(321, 321, 321)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(FotodoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(104, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Listar)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 796, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 796, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Listar)
+                        .addGap(231, 231, 231)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(61, 61, 61))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(287, Short.MAX_VALUE)
-                .addComponent(Listar)
+                .addGap(14, 14, 14)
+                .addComponent(jLabel1)
                 .addGap(18, 18, 18)
+                .addComponent(FotodoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Listar)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addGap(53, 53, 53))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void ListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarActionPerformed
     VendaDao a = new VendaDao();
     ArrayList<Venda> openFile = a.openFile();
-      
-   for(Venda v : openFile){
-     
-       if(v!= null){
+    if(Listar.isSelected()){
+    for(Venda v : openFile){
+        model.setRowCount(0);
           if(v.getFuncionario().getId() == Id){
           model.addRow(new Object[] {v.getCliente().getNome(), v.getCliente().getApelido(),v.getCliente().getIdentidade()});
            }else{
            JOptionPane.showMessageDialog(null, "Nao existem Clientes registados");
        }
         }
-   }
+   
+   
     }//GEN-LAST:event_ListarActionPerformed
+    }
+    private void TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableMouseClicked
+       
+        imagem = new  ImageIcon();
+        VendaDao a = new VendaDao();
+    ArrayList<Venda> openFile = a.openFile();
+     for(int j=0;j<openFile.size();j++){
+         if(Table.isRowSelected(j)){
+        imagem = openFile.get(j+1).getCliente().getIcon();
+             FotodoCliente.setIcon(imagem);
+         }
+     }
+    }//GEN-LAST:event_TableMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private pedro.swing.ImageAvatar FotodoCliente;
     private javax.swing.JRadioButton Listar;
     private javax.swing.JTable Table;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

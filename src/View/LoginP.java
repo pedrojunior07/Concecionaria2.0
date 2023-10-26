@@ -227,6 +227,7 @@ public class LoginP extends javax.swing.JFrame {
                 } catch (SQLException ex) {
                     Logger.getLogger(LoginP.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (ClassNotFoundException ex) {
+                
                     Logger.getLogger(LoginP.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
