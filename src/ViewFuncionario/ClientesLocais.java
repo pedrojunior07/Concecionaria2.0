@@ -141,14 +141,15 @@ DefaultTableModel model;
     private void ListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarActionPerformed
     VendaDao a = new VendaDao();
     ArrayList<Venda> openFile = a.openFile();
+        System.out.println( openFile.size());
     if(Listar.isSelected()){
     for(Venda v : openFile){
-        model.setRowCount(0);
+       // model.setRowCount(0);
           if(v.getFuncionario().getId() == Id){
           model.addRow(new Object[] {v.getCliente().getNome(), v.getCliente().getApelido(),v.getCliente().getIdentidade()});
-           }else{
-           JOptionPane.showMessageDialog(null, "Nao existem Clientes registados");
-       }
+           }//else{
+           //JOptionPane.showMessageDialog(null, "Nao existem Clientes registados");
+       //}
         }
    
    
@@ -159,12 +160,15 @@ DefaultTableModel model;
         imagem = new  ImageIcon();
         VendaDao a = new VendaDao();
     ArrayList<Venda> openFile = a.openFile();
-     for(int j=0;j<openFile.size();j++){
+     for(int j=0;j<=openFile.size();j++){
+          if(openFile.get(j).getFuncionario().getId() == Id){
          if(Table.isRowSelected(j)){
-        imagem = openFile.get(j+1).getCliente().getIcon();
-             FotodoCliente.setIcon(imagem);
+      
+        imagem = openFile.get(j).getCliente().getIcon();
+        FotodoCliente.setIcon(imagem);
+            }
          }
-     }
+         }
     }//GEN-LAST:event_TableMouseClicked
 
 
